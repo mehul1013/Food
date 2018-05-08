@@ -31,13 +31,15 @@
 		0E311C85209DB15E008F7DD1 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C79209DB15E008F7DD1 /* Roboto-Thin.ttf */; };
 		0E311C86209DB15E008F7DD1 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */; };
 		0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */; };
-		0E311C8D209DBCEB008F7DD1 /* FunAsia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C8C209DBCEB008F7DD1 /* FunAsia.jpg */; };
 		0ECA5FBE209CA7410034AE81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FBD209CA7410034AE81 /* AppDelegate.swift */; };
 		0ECA5FC3209CA7410034AE81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA5FC1209CA7410034AE81 /* Main.storyboard */; };
 		0ECA5FC5209CA7410034AE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA5FC4209CA7410034AE81 /* Assets.xcassets */; };
 		0ECA5FC8209CA7410034AE81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA5FC6209CA7410034AE81 /* LaunchScreen.storyboard */; };
 		0ECA5FD3209CA7410034AE81 /* OrderFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FD2209CA7410034AE81 /* OrderFoodTests.swift */; };
 		0ECA5FDE209CA7410034AE81 /* OrderFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FDD209CA7410034AE81 /* OrderFoodUITests.swift */; };
+		2ABB1B2A20A16CB00097B596 /* FunAsia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABB1B2920A16CB00097B596 /* FunAsia.jpg */; };
+		2ABB1B2F20A172F10097B596 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB1B2E20A172F10097B596 /* Checkout.swift */; };
+		2ABB1B3420A174470097B596 /* MyCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB1B3320A174470097B596 /* MyCart.swift */; };
 		643D2027C924032FDE32F317 /* Pods_OrderFoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48C80487B6966BA787AFFED /* Pods_OrderFoodUITests.framework */; };
 		F5D11CB08D13932A37859BEA /* Pods_OrderFoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDFE6774D0BD07827899BC1 /* Pods_OrderFoodTests.framework */; };
 /* End PBXBuildFile section */
@@ -83,7 +85,6 @@
 		0E311C79209DB15E008F7DD1 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetail.swift; sourceTree = "<group>"; };
-		0E311C8C209DBCEB008F7DD1 /* FunAsia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = FunAsia.jpg; path = ../../../../../../../../../../Downloads/FunAsia.jpg; sourceTree = "<group>"; };
 		0ECA5FBA209CA7410034AE81 /* OrderFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECA5FBD209CA7410034AE81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ECA5FC2209CA7410034AE81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +98,9 @@
 		0ECA5FDD209CA7410034AE81 /* OrderFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFoodUITests.swift; sourceTree = "<group>"; };
 		0ECA5FDF209CA7410034AE81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F757BEDC2925B660A2405CE /* Pods_OrderFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ABB1B2920A16CB00097B596 /* FunAsia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FunAsia.jpg; sourceTree = "<group>"; };
+		2ABB1B2E20A172F10097B596 /* Checkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
+		2ABB1B3320A174470097B596 /* MyCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCart.swift; sourceTree = "<group>"; };
 		5D42B0994F70F8D9683B34EB /* Pods-OrderFoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderFoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderFoodTests/Pods-OrderFoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		984C93AE2F70E9350803795A /* Pods-OrderFoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderFoodTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderFoodTests/Pods-OrderFoodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A4E40B2690D58829964133C3 /* Pods-OrderFoodUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderFoodUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderFoodUITests/Pods-OrderFoodUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,7 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				0E311C56209D8FE1008F7DD1 /* FoodItem.png */,
-				0E311C8C209DBCEB008F7DD1 /* FunAsia.jpg */,
+				2ABB1B2920A16CB00097B596 /* FunAsia.jpg */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -192,6 +196,8 @@
 		0E311C57209D8FE1008F7DD1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2ABB1B2D20A172F10097B596 /* Checkout */,
+				2ABB1B3220A174470097B596 /* MyCart */,
 				0E311C58209D8FE1008F7DD1 /* CategoryItems */,
 				0E311C89209DBB65008F7DD1 /* VenueDetail */,
 				0E311C5C209D8FE1008F7DD1 /* LandingPage */,
@@ -323,6 +329,22 @@
 				E48C80487B6966BA787AFFED /* Pods_OrderFoodUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2ABB1B2D20A172F10097B596 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				2ABB1B2E20A172F10097B596 /* Checkout.swift */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
+		2ABB1B3220A174470097B596 /* MyCart */ = {
+			isa = PBXGroup;
+			children = (
+				2ABB1B3320A174470097B596 /* MyCart.swift */,
+			);
+			path = MyCart;
 			sourceTree = "<group>";
 		};
 		C09A70064EDDE437351D50F6 /* Pods */ = {
@@ -461,9 +483,9 @@
 				0E311C7E209DB15E008F7DD1 /* Roboto-BoldItalic.ttf in Resources */,
 				0E311C66209D8FE1008F7DD1 /* CellItem.xib in Resources */,
 				0E311C81209DB15E008F7DD1 /* Roboto-LightItalic.ttf in Resources */,
-				0E311C8D209DBCEB008F7DD1 /* FunAsia.jpg in Resources */,
 				0E311C83209DB15E008F7DD1 /* Roboto-MediumItalic.ttf in Resources */,
 				0ECA5FC8209CA7410034AE81 /* LaunchScreen.storyboard in Resources */,
+				2ABB1B2A20A16CB00097B596 /* FunAsia.jpg in Resources */,
 				0E311C80209DB15E008F7DD1 /* Roboto-Light.ttf in Resources */,
 				0E311C67209D8FE1008F7DD1 /* FoodItem.png in Resources */,
 				0E311C7C209DB15E008F7DD1 /* Roboto-BlackItalic.ttf in Resources */,
@@ -631,6 +653,8 @@
 				0E311C6C209D8FE1008F7DD1 /* SuperViewController.swift in Sources */,
 				0E311C69209D8FE1008F7DD1 /* UIView+constraints.swift in Sources */,
 				0E311C6E209D8FE1008F7DD1 /* Constants.swift in Sources */,
+				2ABB1B2F20A172F10097B596 /* Checkout.swift in Sources */,
+				2ABB1B3420A174470097B596 /* MyCart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -90,6 +90,8 @@ class Constants: NSObject {
         //Caster
         static let VENUE_DETAIL             = "VenueDetail"
         static let HOME                     = "Home"
+        static let MY_CART                  = "MyCart"
+        static let CHECKOUT                 = "Checkout"
     }
     
     

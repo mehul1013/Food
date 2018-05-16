@@ -40,6 +40,7 @@
 		2ABB1B2A20A16CB00097B596 /* FunAsia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABB1B2920A16CB00097B596 /* FunAsia.jpg */; };
 		2ABB1B2F20A172F10097B596 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB1B2E20A172F10097B596 /* Checkout.swift */; };
 		2ABB1B3420A174470097B596 /* MyCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB1B3320A174470097B596 /* MyCart.swift */; };
+		2AC9CB0A20AC6537005AD6A9 /* CellMyCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9CB0920AC6537005AD6A9 /* CellMyCart.swift */; };
 		643D2027C924032FDE32F317 /* Pods_OrderFoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48C80487B6966BA787AFFED /* Pods_OrderFoodUITests.framework */; };
 		F5D11CB08D13932A37859BEA /* Pods_OrderFoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDFE6774D0BD07827899BC1 /* Pods_OrderFoodTests.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,7 @@
 		2ABB1B2920A16CB00097B596 /* FunAsia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FunAsia.jpg; sourceTree = "<group>"; };
 		2ABB1B2E20A172F10097B596 /* Checkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
 		2ABB1B3320A174470097B596 /* MyCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCart.swift; sourceTree = "<group>"; };
+		2AC9CB0920AC6537005AD6A9 /* CellMyCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMyCart.swift; sourceTree = "<group>"; };
 		5D42B0994F70F8D9683B34EB /* Pods-OrderFoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderFoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderFoodTests/Pods-OrderFoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		984C93AE2F70E9350803795A /* Pods-OrderFoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderFoodTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderFoodTests/Pods-OrderFoodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A4E40B2690D58829964133C3 /* Pods-OrderFoodUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderFoodUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderFoodUITests/Pods-OrderFoodUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,18 +153,11 @@
 		0E311C52209D8FE1008F7DD1 /* AppResources */ = {
 			isa = PBXGroup;
 			children = (
-				0E311C53209D8FE1008F7DD1 /* Document */,
+				2AC9CB0820AC5EFC005AD6A9 /* Document */,
 				0E311C54209D8FE1008F7DD1 /* Fonts */,
 				0E311C55209D8FE1008F7DD1 /* Media */,
 			);
 			path = AppResources;
-			sourceTree = "<group>";
-		};
-		0E311C53209D8FE1008F7DD1 /* Document */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Document;
 			sourceTree = "<group>";
 		};
 		0E311C54209D8FE1008F7DD1 /* Fonts */ = {
@@ -232,20 +227,6 @@
 			path = SuperViewController;
 			sourceTree = "<group>";
 		};
-		0E311C60209D8FE1008F7DD1 /* ModelManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ModelManager;
-			sourceTree = "<group>";
-		};
-		0E311C61209D8FE1008F7DD1 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ThirdParty;
-			sourceTree = "<group>";
-		};
 		0E311C62209D8FE1008F7DD1 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,8 +276,8 @@
 				0ECA5FC9209CA7410034AE81 /* Info.plist */,
 				0E311C4F209D8FE1008F7DD1 /* CustomClasses */,
 				0E311C52209D8FE1008F7DD1 /* AppResources */,
-				0E311C60209D8FE1008F7DD1 /* ModelManager */,
-				0E311C61209D8FE1008F7DD1 /* ThirdParty */,
+				2AC9CB0620AC5EDF005AD6A9 /* ModelManager */,
+				2AC9CB0720AC5EDF005AD6A9 /* ThirdParty */,
 				0E311C62209D8FE1008F7DD1 /* Utility */,
 				0E311C57209D8FE1008F7DD1 /* ViewController */,
 			);
@@ -343,8 +324,32 @@
 			isa = PBXGroup;
 			children = (
 				2ABB1B3320A174470097B596 /* MyCart.swift */,
+				2AC9CB0920AC6537005AD6A9 /* CellMyCart.swift */,
 			);
 			path = MyCart;
+			sourceTree = "<group>";
+		};
+		2AC9CB0620AC5EDF005AD6A9 /* ModelManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ModelManager;
+			path = OrderFood/ModelManager;
+			sourceTree = SOURCE_ROOT;
+		};
+		2AC9CB0720AC5EDF005AD6A9 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ThirdParty;
+			path = OrderFood/ThirdParty;
+			sourceTree = SOURCE_ROOT;
+		};
+		2AC9CB0820AC5EFC005AD6A9 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Document;
 			sourceTree = "<group>";
 		};
 		C09A70064EDDE437351D50F6 /* Pods */ = {
@@ -644,6 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E311C6A209D8FE1008F7DD1 /* Home.swift in Sources */,
+				2AC9CB0A20AC6537005AD6A9 /* CellMyCart.swift in Sources */,
 				0E311C65209D8FE1008F7DD1 /* CellItem.swift in Sources */,
 				0E311C6B209D8FE1008F7DD1 /* LandingPage.swift in Sources */,
 				0E311C6D209D8FE1008F7DD1 /* AppUtils.swift in Sources */,

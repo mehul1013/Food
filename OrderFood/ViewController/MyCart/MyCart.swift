@@ -11,6 +11,7 @@ import UIKit
 class MyCart: SuperViewController {
 
     @IBOutlet weak var tableViewMyCart: UITableView!
+    @IBOutlet weak var btnCheckout: UIButton!
     
     
     
@@ -30,6 +31,13 @@ class MyCart: SuperViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: - Checkout
+    @IBAction func btnCheckoutClicked(_ sender: Any) {
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.CHECKOUT) as! Checkout
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
+    
 }
 
 //MARK: - UITableView Methods

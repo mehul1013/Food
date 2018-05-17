@@ -21,6 +21,10 @@ class Home: SuperViewController {
         //Navigation Title
         self.navigationItem.title = "Home"
         
+        //Right Bar Button
+        let rightBar = UIBarButtonItem(title: "Search", style: .plain, target: self, action: #selector(searchClicked))
+        self.navigationItem.rightBarButtonItem = rightBar
+        
         //Category wise controller
         let viewControllers = (0...10).map { CategoryViewController(index: $0) }
         
@@ -46,5 +50,10 @@ class Home: SuperViewController {
     }
 
 
+    //MARK: - Search
+    func searchClicked() -> Void {
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.SEARCH) as! Search
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
 }
 

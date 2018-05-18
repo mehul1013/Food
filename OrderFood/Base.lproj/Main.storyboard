@@ -48,7 +48,29 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Show only veg dishes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAA-BI-vl1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.94867008919999996" green="0.94938892129999997" blue="0.94878143069999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wPb-Oj-S7j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                                <color key="textColor" red="0.63137254899999995" green="0.2156862745" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHD-VE-FS2">
+                                <rect key="frame" x="311" y="9" width="51" height="31"/>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LAA-BI-vl1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DG9-el-G0F"/>
+                            <constraint firstItem="LAA-BI-vl1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fe9-h9-D2T"/>
+                            <constraint firstAttribute="trailing" secondItem="LAA-BI-vl1" secondAttribute="trailing" id="JOt-h7-naO"/>
+                            <constraint firstAttribute="trailing" secondItem="bHD-VE-FS2" secondAttribute="trailing" constant="15" id="Je9-pP-egj"/>
+                            <constraint firstItem="bHD-VE-FS2" firstAttribute="centerY" secondItem="LAA-BI-vl1" secondAttribute="centerY" id="Mnf-u8-bpy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="76n-IT-JSF">
                         <barButtonItem key="leftBarButtonItem" image="BackButton" id="vAF-t5-BZl">

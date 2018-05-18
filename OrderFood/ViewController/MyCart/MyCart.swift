@@ -14,7 +14,6 @@ class MyCart: SuperViewController {
     @IBOutlet weak var btnCheckout: UIButton!
     
     
-    
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

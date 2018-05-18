@@ -50,8 +50,11 @@ open class PagingView: UIView {
       metrics: metrics,
       views: views)
     
+    //MeHuLa, 18 May 2018
+    //Added -40- for 40 spaces from top space
+    //https://www.appcoda.com/auto-layout-programmatically/
     let verticalContraints = NSLayoutConstraint.constraints(
-      withVisualFormat: "V:|[collectionView(==height)][pageView]|",
+      withVisualFormat: "V:|-50-[collectionView(==height)][pageView]|",
       options: NSLayoutFormatOptions(),
       metrics: metrics,
       views: views)

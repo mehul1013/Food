@@ -35,7 +35,7 @@ class Home: SuperViewController {
         }*/
         
         let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
-        
+                
         // Make sure you add the PagingViewController as a child view
         // controller and constrain it to the edges of the view.
         addChildViewController(pagingViewController)

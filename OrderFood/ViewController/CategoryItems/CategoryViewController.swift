@@ -17,7 +17,7 @@ class CategoryViewController: UIViewController {
         self.title = "Category \(index)"
         
         //Add TableView
-        tableViewItems = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - (60 + 40)))
+        tableViewItems = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - (60 + 40) - 54))
         view.addSubview(tableViewItems)
         
         //Register Cell

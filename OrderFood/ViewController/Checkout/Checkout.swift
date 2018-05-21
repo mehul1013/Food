@@ -41,4 +41,27 @@ class Checkout: SuperViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    //MARK: - UIButton Actions
+    //MARK: - Online
+    @IBAction func btnOnlineClicked(_ sender: Any) {
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.ORDER_CONFIRMATION) as! OrderConfirmation
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
+    
+    //MARK: - Cash
+    @IBAction func btnCashClicked(_ sender: Any) {
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.ORDER_CONFIRMATION) as! OrderConfirmation
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
+    
+}
+
+
+//MARK: - UITextField Methods
+extension Checkout: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return resignFirstResponder()
+    }
 }

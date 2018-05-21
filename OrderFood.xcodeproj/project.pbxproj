@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		057D7367718CB44E54097479 /* Pods_OrderFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F757BEDC2925B660A2405CE /* Pods_OrderFood.framework */; };
+		0E0E69D920B346C100D98723 /* OrderConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0E69D820B346C100D98723 /* OrderConfirmation.swift */; };
+		0E0E69DB20B347B100D98723 /* CellOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0E69DA20B347B100D98723 /* CellOrder.swift */; };
 		0E311C65209D8FE1008F7DD1 /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E311C50209D8FE1008F7DD1 /* CellItem.swift */; };
 		0E311C66209D8FE1008F7DD1 /* CellItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C51209D8FE1008F7DD1 /* CellItem.xib */; };
 		0E311C67209D8FE1008F7DD1 /* FoodItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C56209D8FE1008F7DD1 /* FoodItem.png */; };
@@ -64,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E0E69D820B346C100D98723 /* OrderConfirmation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderConfirmation.swift; sourceTree = "<group>"; };
+		0E0E69DA20B347B100D98723 /* CellOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellOrder.swift; sourceTree = "<group>"; };
 		0E311C50209D8FE1008F7DD1 /* CellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
 		0E311C51209D8FE1008F7DD1 /* CellItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellItem.xib; sourceTree = "<group>"; };
 		0E311C56209D8FE1008F7DD1 /* FoodItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FoodItem.png; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0E69D720B346C100D98723 /* OrderConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				0E0E69D820B346C100D98723 /* OrderConfirmation.swift */,
+				0E0E69DA20B347B100D98723 /* CellOrder.swift */,
+			);
+			path = OrderConfirmation;
+			sourceTree = "<group>";
+		};
 		0E311C4F209D8FE1008F7DD1 /* CustomClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +206,7 @@
 		0E311C57209D8FE1008F7DD1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0E0E69D720B346C100D98723 /* OrderConfirmation */,
 				0E6B100A20ADF250007F3EFA /* Search */,
 				2ABB1B2D20A172F10097B596 /* Checkout */,
 				2ABB1B3220A174470097B596 /* MyCart */,
@@ -663,7 +677,9 @@
 				2AC9CB0A20AC6537005AD6A9 /* CellMyCart.swift in Sources */,
 				0E311C65209D8FE1008F7DD1 /* CellItem.swift in Sources */,
 				0E311C6B209D8FE1008F7DD1 /* LandingPage.swift in Sources */,
+				0E0E69D920B346C100D98723 /* OrderConfirmation.swift in Sources */,
 				0E311C6D209D8FE1008F7DD1 /* AppUtils.swift in Sources */,
+				0E0E69DB20B347B100D98723 /* CellOrder.swift in Sources */,
 				0E311C68209D8FE1008F7DD1 /* CategoryViewController.swift in Sources */,
 				0ECA5FBE209CA7410034AE81 /* AppDelegate.swift in Sources */,
 				0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */,

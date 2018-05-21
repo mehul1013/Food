@@ -93,6 +93,7 @@ class Constants: NSObject {
         static let MY_CART                  = "MyCart"
         static let CHECKOUT                 = "Checkout"
         static let SEARCH                   = "Search"
+        static let ORDER_CONFIRMATION       = "OrderConfirmation"
     }
     
     

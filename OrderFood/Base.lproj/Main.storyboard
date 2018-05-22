@@ -99,7 +99,49 @@
                     <view key="view" contentMode="scaleToFill" id="iaw-q8-WNE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gU8-L0-Ghn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search item here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XVd-HS-Q5H">
+                                        <rect key="frame" x="20" y="5" width="335" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="OgN-xA-dBo" id="bDy-ie-wvH"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ym7-O0-6dy">
+                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Doc-eX-S0R"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="XVd-HS-Q5H" firstAttribute="leading" secondItem="gU8-L0-Ghn" secondAttribute="leading" constant="20" id="6Ac-ZY-e6X"/>
+                                    <constraint firstAttribute="bottom" secondItem="XVd-HS-Q5H" secondAttribute="bottom" constant="5" id="6ug-bk-bkX"/>
+                                    <constraint firstItem="Ym7-O0-6dy" firstAttribute="leading" secondItem="gU8-L0-Ghn" secondAttribute="leading" id="Bx8-5A-a6o"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ym7-O0-6dy" secondAttribute="trailing" id="Irp-ei-ikf"/>
+                                    <constraint firstAttribute="trailing" secondItem="XVd-HS-Q5H" secondAttribute="trailing" constant="20" id="Jch-pf-ME1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ym7-O0-6dy" secondAttribute="bottom" id="Jsh-Pr-KL9"/>
+                                    <constraint firstItem="XVd-HS-Q5H" firstAttribute="top" secondItem="gU8-L0-Ghn" secondAttribute="top" constant="5" id="VUe-yz-I3t"/>
+                                    <constraint firstAttribute="height" constant="50" id="tKt-dK-1T7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gU8-L0-Ghn" firstAttribute="top" secondItem="iaw-q8-WNE" secondAttribute="top" id="SY2-Ec-Efb"/>
+                            <constraint firstAttribute="trailing" secondItem="gU8-L0-Ghn" secondAttribute="trailing" id="T1B-qZ-oIs"/>
+                            <constraint firstItem="gU8-L0-Ghn" firstAttribute="leading" secondItem="iaw-q8-WNE" secondAttribute="leading" id="wHA-rX-DyC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="uPm-1r-J8B">
                         <barButtonItem key="leftBarButtonItem" image="BackButton" id="Hat-24-s1K">
@@ -109,10 +151,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="txtSearch" destination="XVd-HS-Q5H" id="dTK-lX-AJ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mv-JI-27I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2196" y="113"/>
+            <point key="canvasLocation" x="2196" y="112.89355322338831"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="Y5Z-Im-74m">

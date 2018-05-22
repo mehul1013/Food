@@ -10,6 +10,7 @@ import UIKit
 
 class Search: SuperViewController {
 
+    @IBOutlet weak var txtSearch: UITextField!
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -23,5 +24,13 @@ class Search: SuperViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+
+//MARK: - UITextField Methods
+extension Search: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return resignFirstResponder()
     }
 }

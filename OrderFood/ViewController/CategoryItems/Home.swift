@@ -22,8 +22,11 @@ class Home: SuperViewController {
         self.navigationItem.title = "Home"
         
         //Right Bar Button
-        let rightBar = UIBarButtonItem(title: "Search", style: .plain, target: self, action: #selector(searchClicked))
-        self.navigationItem.rightBarButtonItem = rightBar
+        let rightBarWhistle = UIBarButtonItem(image: UIImage(named: "Whistle")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(whistleClicked))
+        
+        let rightBarSearch = UIBarButtonItem(image: UIImage(named: "Search")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(searchClicked))
+        
+        self.navigationItem.rightBarButtonItems = [rightBarWhistle, rightBarSearch]
         
         //Category wise controller
         let viewControllers = (0...10).map { CategoryViewController(index: $0) }
@@ -54,6 +57,11 @@ class Home: SuperViewController {
     func searchClicked() -> Void {
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.SEARCH) as! Search
         self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
+    
+    //MARK: - Whistle
+    func whistleClicked() -> Void {
+        AppUtils.showAlertWithTitle(title: "", message: "Do you want to call waiter?", viewController: self)
     }
 }
 

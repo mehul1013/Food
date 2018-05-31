@@ -7,8 +7,12 @@
 //
 
 import UIKit
+//import MBProgressHUD
 
 class AppUtils: NSObject {
+    
+    static var progressView : MBProgressHUD?
+    
     //MARK: App Delegate Object
     static func APPDELEGATE() -> AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
@@ -34,6 +38,49 @@ class AppUtils: NSObject {
         
         //viewController.present(alert, animated: true, completion: nil)
         viewController.view.window?.rootViewController?.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    //MARK: Loading View
+    static func startLoading(view : UIView) {
+        progressView = MBProgressHUD.showAdded(to: view, animated: true)
+    }
+    
+    static func startLoadingWithText(strText: String, view : UIView) {
+        progressView = MBProgressHUD.showAdded(to: view, animated: true)
+        progressView?.labelText = strText
+    }
+    
+    
+    class func showLoader() {
+        let progressHUD = MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow, animated: true)
+        progressHUD?.color = UIColor.darkGray
+        progressHUD?.labelText = "Loading"
+    }
+    
+    class func showLoaderWithText(_ strText: String) {
+        if progressView == nil {
+            progressView = MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow, animated: true)
+        }
+        progressView?.color = UIColor.darkGray
+        progressView?.labelText = strText
+        
+        /*
+         let progressHUD = MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow, animated: true)
+         progressHUD?.color = UIColor.darkGray
+         progressHUD?.labelText = strText
+         */
+    }
+    
+    class func hideLoader() {
+        MBProgressHUD.hideAllHUDs(for: UIApplication.shared.keyWindow, animated: true)
+    }
+    
+    static func stopLoading() {
+        self.progressView!.hide(true)
+    }
+    
+    static func hudWasHidden() {
     }
 }
 

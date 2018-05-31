@@ -40,6 +40,31 @@
 		0ECA5FC8209CA7410034AE81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA5FC6209CA7410034AE81 /* LaunchScreen.storyboard */; };
 		0ECA5FD3209CA7410034AE81 /* OrderFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FD2209CA7410034AE81 /* OrderFoodTests.swift */; };
 		0ECA5FDE209CA7410034AE81 /* OrderFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FDD209CA7410034AE81 /* OrderFoodUITests.swift */; };
+		2A9CB46020C00F4900B749AD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43220C00F4900B749AD /* MBProgressHUD.m */; };
+		2A9CB46120C00F4900B749AD /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43520C00F4900B749AD /* MKAnnotationView+WebCache.m */; };
+		2A9CB46220C00F4900B749AD /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43720C00F4900B749AD /* NSData+ImageContentType.m */; };
+		2A9CB46320C00F4900B749AD /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43920C00F4900B749AD /* SDImageCache.m */; };
+		2A9CB46420C00F4900B749AD /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43B20C00F4900B749AD /* SDWebImageCompat.m */; };
+		2A9CB46520C00F4900B749AD /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43D20C00F4900B749AD /* SDWebImageDecoder.m */; };
+		2A9CB46620C00F4900B749AD /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43F20C00F4900B749AD /* SDWebImageDownloader.m */; };
+		2A9CB46720C00F4900B749AD /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB44120C00F4900B749AD /* SDWebImageDownloaderOperation.m */; };
+		2A9CB46820C00F4900B749AD /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB44320C00F4900B749AD /* SDWebImageManager.m */; };
+		2A9CB46920C00F4900B749AD /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB44620C00F4900B749AD /* SDWebImagePrefetcher.m */; };
+		2A9CB46A20C00F4900B749AD /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB44820C00F4900B749AD /* UIButton+WebCache.m */; };
+		2A9CB46B20C00F4900B749AD /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB44A20C00F4900B749AD /* UIImage+GIF.m */; };
+		2A9CB46C20C00F4900B749AD /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB44C20C00F4900B749AD /* UIImage+MultiFormat.m */; };
+		2A9CB46D20C00F4900B749AD /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB44E20C00F4900B749AD /* UIImage+WebP.m */; };
+		2A9CB46E20C00F4900B749AD /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45020C00F4900B749AD /* UIImageView+HighlightedWebCache.m */; };
+		2A9CB46F20C00F4900B749AD /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45220C00F4900B749AD /* UIImageView+WebCache.m */; };
+		2A9CB47020C00F4900B749AD /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45420C00F4900B749AD /* UIView+WebCacheOperation.m */; };
+		2A9CB47120C00F4900B749AD /* HeaderClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45720C00F4900B749AD /* HeaderClass.swift */; };
+		2A9CB47220C00F4900B749AD /* WebSerivceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45820C00F4900B749AD /* WebSerivceManager.swift */; };
+		2A9CB47320C00F4900B749AD /* WebServiceReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45920C00F4900B749AD /* WebServiceReponse.swift */; };
+		2A9CB47420C00F4900B749AD /* CastDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45B20C00F4900B749AD /* CastDetailModel.swift */; };
+		2A9CB47520C00F4900B749AD /* CastScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45C20C00F4900B749AD /* CastScreenModel.swift */; };
+		2A9CB47620C00F4900B749AD /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45D20C00F4900B749AD /* CityModel.swift */; };
+		2A9CB47720C00F4900B749AD /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45E20C00F4900B749AD /* UserProfileModel.swift */; };
+		2A9CB47820C00F4900B749AD /* VersionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45F20C00F4900B749AD /* VersionControl.swift */; };
 		2ABB1B2A20A16CB00097B596 /* FunAsia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABB1B2920A16CB00097B596 /* FunAsia.jpg */; };
 		2ABB1B2F20A172F10097B596 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB1B2E20A172F10097B596 /* Checkout.swift */; };
 		2ABB1B3420A174470097B596 /* MyCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB1B3320A174470097B596 /* MyCart.swift */; };
@@ -105,6 +130,50 @@
 		0ECA5FDD209CA7410034AE81 /* OrderFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFoodUITests.swift; sourceTree = "<group>"; };
 		0ECA5FDF209CA7410034AE81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F757BEDC2925B660A2405CE /* Pods_OrderFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9CB43120C00F4900B749AD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		2A9CB43220C00F4900B749AD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		2A9CB43420C00F4900B749AD /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
+		2A9CB43520C00F4900B749AD /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
+		2A9CB43620C00F4900B749AD /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		2A9CB43720C00F4900B749AD /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		2A9CB43820C00F4900B749AD /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		2A9CB43920C00F4900B749AD /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		2A9CB43A20C00F4900B749AD /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		2A9CB43B20C00F4900B749AD /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
+		2A9CB43C20C00F4900B749AD /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		2A9CB43D20C00F4900B749AD /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		2A9CB43E20C00F4900B749AD /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		2A9CB43F20C00F4900B749AD /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		2A9CB44020C00F4900B749AD /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		2A9CB44120C00F4900B749AD /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		2A9CB44220C00F4900B749AD /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		2A9CB44320C00F4900B749AD /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		2A9CB44420C00F4900B749AD /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
+		2A9CB44520C00F4900B749AD /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		2A9CB44620C00F4900B749AD /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		2A9CB44720C00F4900B749AD /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
+		2A9CB44820C00F4900B749AD /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		2A9CB44920C00F4900B749AD /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		2A9CB44A20C00F4900B749AD /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		2A9CB44B20C00F4900B749AD /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		2A9CB44C20C00F4900B749AD /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		2A9CB44D20C00F4900B749AD /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
+		2A9CB44E20C00F4900B749AD /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
+		2A9CB44F20C00F4900B749AD /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		2A9CB45020C00F4900B749AD /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		2A9CB45120C00F4900B749AD /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		2A9CB45220C00F4900B749AD /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		2A9CB45320C00F4900B749AD /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		2A9CB45420C00F4900B749AD /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		2A9CB45720C00F4900B749AD /* HeaderClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderClass.swift; sourceTree = "<group>"; };
+		2A9CB45820C00F4900B749AD /* WebSerivceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSerivceManager.swift; sourceTree = "<group>"; };
+		2A9CB45920C00F4900B749AD /* WebServiceReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceReponse.swift; sourceTree = "<group>"; };
+		2A9CB45B20C00F4900B749AD /* CastDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastDetailModel.swift; sourceTree = "<group>"; };
+		2A9CB45C20C00F4900B749AD /* CastScreenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastScreenModel.swift; sourceTree = "<group>"; };
+		2A9CB45D20C00F4900B749AD /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		2A9CB45E20C00F4900B749AD /* UserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
+		2A9CB45F20C00F4900B749AD /* VersionControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionControl.swift; sourceTree = "<group>"; };
+		2A9CB47920C00FAA00B749AD /* OrderFood_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderFood_Bridging_Header.h; sourceTree = "<group>"; };
 		2ABB1B2920A16CB00097B596 /* FunAsia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FunAsia.jpg; sourceTree = "<group>"; };
 		2ABB1B2E20A172F10097B596 /* Checkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
 		2ABB1B3320A174470097B596 /* MyCart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCart.swift; sourceTree = "<group>"; };
@@ -299,10 +368,11 @@
 				0ECA5FC4209CA7410034AE81 /* Assets.xcassets */,
 				0ECA5FC6209CA7410034AE81 /* LaunchScreen.storyboard */,
 				0ECA5FC9209CA7410034AE81 /* Info.plist */,
+				2A9CB47920C00FAA00B749AD /* OrderFood_Bridging_Header.h */,
 				0E311C4F209D8FE1008F7DD1 /* CustomClasses */,
 				0E311C52209D8FE1008F7DD1 /* AppResources */,
-				2AC9CB0620AC5EDF005AD6A9 /* ModelManager */,
-				2AC9CB0720AC5EDF005AD6A9 /* ThirdParty */,
+				2A9CB45520C00F4900B749AD /* ModelManager */,
+				2A9CB42F20C00F4900B749AD /* ThirdParty */,
 				0E311C62209D8FE1008F7DD1 /* Utility */,
 				0E311C57209D8FE1008F7DD1 /* ViewController */,
 			);
@@ -337,6 +407,95 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2A9CB42F20C00F4900B749AD /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB43020C00F4900B749AD /* MBProgressHUD */,
+				2A9CB43320C00F4900B749AD /* SDWebImage */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		2A9CB43020C00F4900B749AD /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB43120C00F4900B749AD /* MBProgressHUD.h */,
+				2A9CB43220C00F4900B749AD /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		2A9CB43320C00F4900B749AD /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB43420C00F4900B749AD /* MKAnnotationView+WebCache.h */,
+				2A9CB43520C00F4900B749AD /* MKAnnotationView+WebCache.m */,
+				2A9CB43620C00F4900B749AD /* NSData+ImageContentType.h */,
+				2A9CB43720C00F4900B749AD /* NSData+ImageContentType.m */,
+				2A9CB43820C00F4900B749AD /* SDImageCache.h */,
+				2A9CB43920C00F4900B749AD /* SDImageCache.m */,
+				2A9CB43A20C00F4900B749AD /* SDWebImageCompat.h */,
+				2A9CB43B20C00F4900B749AD /* SDWebImageCompat.m */,
+				2A9CB43C20C00F4900B749AD /* SDWebImageDecoder.h */,
+				2A9CB43D20C00F4900B749AD /* SDWebImageDecoder.m */,
+				2A9CB43E20C00F4900B749AD /* SDWebImageDownloader.h */,
+				2A9CB43F20C00F4900B749AD /* SDWebImageDownloader.m */,
+				2A9CB44020C00F4900B749AD /* SDWebImageDownloaderOperation.h */,
+				2A9CB44120C00F4900B749AD /* SDWebImageDownloaderOperation.m */,
+				2A9CB44220C00F4900B749AD /* SDWebImageManager.h */,
+				2A9CB44320C00F4900B749AD /* SDWebImageManager.m */,
+				2A9CB44420C00F4900B749AD /* SDWebImageOperation.h */,
+				2A9CB44520C00F4900B749AD /* SDWebImagePrefetcher.h */,
+				2A9CB44620C00F4900B749AD /* SDWebImagePrefetcher.m */,
+				2A9CB44720C00F4900B749AD /* UIButton+WebCache.h */,
+				2A9CB44820C00F4900B749AD /* UIButton+WebCache.m */,
+				2A9CB44920C00F4900B749AD /* UIImage+GIF.h */,
+				2A9CB44A20C00F4900B749AD /* UIImage+GIF.m */,
+				2A9CB44B20C00F4900B749AD /* UIImage+MultiFormat.h */,
+				2A9CB44C20C00F4900B749AD /* UIImage+MultiFormat.m */,
+				2A9CB44D20C00F4900B749AD /* UIImage+WebP.h */,
+				2A9CB44E20C00F4900B749AD /* UIImage+WebP.m */,
+				2A9CB44F20C00F4900B749AD /* UIImageView+HighlightedWebCache.h */,
+				2A9CB45020C00F4900B749AD /* UIImageView+HighlightedWebCache.m */,
+				2A9CB45120C00F4900B749AD /* UIImageView+WebCache.h */,
+				2A9CB45220C00F4900B749AD /* UIImageView+WebCache.m */,
+				2A9CB45320C00F4900B749AD /* UIView+WebCacheOperation.h */,
+				2A9CB45420C00F4900B749AD /* UIView+WebCacheOperation.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		2A9CB45520C00F4900B749AD /* ModelManager */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB45620C00F4900B749AD /* ServiceHandler */,
+				2A9CB45A20C00F4900B749AD /* WebserviceModels */,
+			);
+			path = ModelManager;
+			sourceTree = "<group>";
+		};
+		2A9CB45620C00F4900B749AD /* ServiceHandler */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB45720C00F4900B749AD /* HeaderClass.swift */,
+				2A9CB45820C00F4900B749AD /* WebSerivceManager.swift */,
+				2A9CB45920C00F4900B749AD /* WebServiceReponse.swift */,
+			);
+			path = ServiceHandler;
+			sourceTree = "<group>";
+		};
+		2A9CB45A20C00F4900B749AD /* WebserviceModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A9CB45B20C00F4900B749AD /* CastDetailModel.swift */,
+				2A9CB45C20C00F4900B749AD /* CastScreenModel.swift */,
+				2A9CB45D20C00F4900B749AD /* CityModel.swift */,
+				2A9CB45E20C00F4900B749AD /* UserProfileModel.swift */,
+				2A9CB45F20C00F4900B749AD /* VersionControl.swift */,
+			);
+			path = WebserviceModels;
+			sourceTree = "<group>";
+		};
 		2ABB1B2D20A172F10097B596 /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,22 +512,6 @@
 			);
 			path = MyCart;
 			sourceTree = "<group>";
-		};
-		2AC9CB0620AC5EDF005AD6A9 /* ModelManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ModelManager;
-			path = OrderFood/ModelManager;
-			sourceTree = SOURCE_ROOT;
-		};
-		2AC9CB0720AC5EDF005AD6A9 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ThirdParty;
-			path = OrderFood/ThirdParty;
-			sourceTree = SOURCE_ROOT;
 		};
 		2AC9CB0820AC5EFC005AD6A9 /* Document */ = {
 			isa = PBXGroup;
@@ -402,7 +545,6 @@
 				0ECA5FB7209CA7410034AE81 /* Frameworks */,
 				0ECA5FB8209CA7410034AE81 /* Resources */,
 				46D1559C7725653DA4D919D7 /* [CP] Embed Pods Frameworks */,
-				FE5033420697EF09C58E89A0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -421,8 +563,6 @@
 				0ECA5FCA209CA7410034AE81 /* Sources */,
 				0ECA5FCB209CA7410034AE81 /* Frameworks */,
 				0ECA5FCC209CA7410034AE81 /* Resources */,
-				8536980218161DEAF6E17DBA /* [CP] Embed Pods Frameworks */,
-				86CD2F0BE813BF906FD890EF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -442,7 +582,6 @@
 				0ECA5FD5209CA7410034AE81 /* Sources */,
 				0ECA5FD6209CA7410034AE81 /* Frameworks */,
 				0ECA5FD7209CA7410034AE81 /* Resources */,
-				39E72BF7573AC2CDDE5BF7D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -555,28 +694,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrderFoodUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		39E72BF7573AC2CDDE5BF7D4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OrderFoodUITests/Pods-OrderFoodUITests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		46D1559C7725653DA4D919D7 /* [CP] Embed Pods Frameworks */ = {
@@ -585,9 +712,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OrderFood/Pods-OrderFood-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -600,43 +738,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrderFood-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8536980218161DEAF6E17DBA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OrderFoodTests/Pods-OrderFoodTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		86CD2F0BE813BF906FD890EF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OrderFoodTests/Pods-OrderFoodTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CCA59995CFC574CBEA2A3B68 /* [CP] Check Pods Manifest.lock */ = {
@@ -645,28 +756,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrderFoodTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FE5033420697EF09C58E89A0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OrderFood/Pods-OrderFood-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -676,22 +775,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9CB46620C00F4900B749AD /* SDWebImageDownloader.m in Sources */,
 				0E311C6A209D8FE1008F7DD1 /* Home.swift in Sources */,
 				2AC9CB0A20AC6537005AD6A9 /* CellMyCart.swift in Sources */,
+				2A9CB46920C00F4900B749AD /* SDWebImagePrefetcher.m in Sources */,
+				2A9CB47020C00F4900B749AD /* UIView+WebCacheOperation.m in Sources */,
 				0E311C65209D8FE1008F7DD1 /* CellItem.swift in Sources */,
 				0E311C6B209D8FE1008F7DD1 /* LandingPage.swift in Sources */,
+				2A9CB46C20C00F4900B749AD /* UIImage+MultiFormat.m in Sources */,
+				2A9CB46D20C00F4900B749AD /* UIImage+WebP.m in Sources */,
 				0E0E69D920B346C100D98723 /* OrderConfirmation.swift in Sources */,
 				0E311C6D209D8FE1008F7DD1 /* AppUtils.swift in Sources */,
+				2A9CB46F20C00F4900B749AD /* UIImageView+WebCache.m in Sources */,
 				0E0E69DB20B347B100D98723 /* CellOrder.swift in Sources */,
+				2A9CB47320C00F4900B749AD /* WebServiceReponse.swift in Sources */,
+				2A9CB46020C00F4900B749AD /* MBProgressHUD.m in Sources */,
 				0E311C68209D8FE1008F7DD1 /* CategoryViewController.swift in Sources */,
+				2A9CB47120C00F4900B749AD /* HeaderClass.swift in Sources */,
+				2A9CB47620C00F4900B749AD /* CityModel.swift in Sources */,
 				0ECA5FBE209CA7410034AE81 /* AppDelegate.swift in Sources */,
 				0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */,
 				0E311C6C209D8FE1008F7DD1 /* SuperViewController.swift in Sources */,
 				0E311C69209D8FE1008F7DD1 /* UIView+constraints.swift in Sources */,
+				2A9CB46220C00F4900B749AD /* NSData+ImageContentType.m in Sources */,
 				0E311C6E209D8FE1008F7DD1 /* Constants.swift in Sources */,
 				2ABB1B2F20A172F10097B596 /* Checkout.swift in Sources */,
+				2A9CB47420C00F4900B749AD /* CastDetailModel.swift in Sources */,
+				2A9CB46820C00F4900B749AD /* SDWebImageManager.m in Sources */,
+				2A9CB46520C00F4900B749AD /* SDWebImageDecoder.m in Sources */,
+				2A9CB46720C00F4900B749AD /* SDWebImageDownloaderOperation.m in Sources */,
 				2ABB1B3420A174470097B596 /* MyCart.swift in Sources */,
 				0E6B100C20ADF250007F3EFA /* Search.swift in Sources */,
+				2A9CB46120C00F4900B749AD /* MKAnnotationView+WebCache.m in Sources */,
+				2A9CB46420C00F4900B749AD /* SDWebImageCompat.m in Sources */,
+				2A9CB47220C00F4900B749AD /* WebSerivceManager.swift in Sources */,
+				2A9CB47720C00F4900B749AD /* UserProfileModel.swift in Sources */,
+				2A9CB46A20C00F4900B749AD /* UIButton+WebCache.m in Sources */,
+				2A9CB47520C00F4900B749AD /* CastScreenModel.swift in Sources */,
+				2A9CB47820C00F4900B749AD /* VersionControl.swift in Sources */,
+				2A9CB46E20C00F4900B749AD /* UIImageView+HighlightedWebCache.m in Sources */,
+				2A9CB46B20C00F4900B749AD /* UIImage+GIF.m in Sources */,
+				2A9CB46320C00F4900B749AD /* SDImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,7 +916,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8fdc165f-02cd-4252-812b-8d2c845d9a4a";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -838,7 +962,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "8fdc165f-02cd-4252-812b-8d2c845d9a4a";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -857,8 +981,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mobapp.at.foodandbeverage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8fdc165f-02cd-4252-812b-8d2c845d9a4a";
-				PROVISIONING_PROFILE_SPECIFIER = "Food and Beverage Development";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = OrderFood/OrderFood_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -876,8 +1001,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mobapp.at.foodandbeverage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8fdc165f-02cd-4252-812b-8d2c845d9a4a";
-				PROVISIONING_PROFILE_SPECIFIER = "Food and Beverage Development";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = OrderFood/OrderFood_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

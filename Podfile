@@ -7,6 +7,12 @@ target 'OrderFood' do
 
   # Pods for OrderFood
 pod 'Parchment'
+pod 'Alamofire', '~> 4.7'
+pod 'SwiftyJSON'
+pod 'ObjectMapper', '~> 3.2'
+pod 'ActionSheetPicker-3.0'
+pod 'Fabric'
+pod 'Crashlytics'
 
   target 'OrderFoodTests' do
     inherit! :search_paths

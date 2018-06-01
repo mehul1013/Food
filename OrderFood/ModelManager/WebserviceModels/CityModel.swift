@@ -35,7 +35,7 @@ class CityModel: Mappable {
         
         let params:[String:AnyObject] = ["iCountry":countryId as AnyObject]
 
-        WebSerivceManager.POSTRequest(url: Web_Service.state_list, showLoader: showLoader, Parameter: params) { (isSuccess, response, error) in
+        WebSerivceManager.POSTRequest(url: "", showLoader: showLoader, Parameter: params) { (isSuccess, response, error) in
             
             if isSuccess == true {
                 if response?.success == true {
@@ -79,7 +79,7 @@ class AreaModel: Mappable {
         
         let params:[String:AnyObject] = ["iCityID": cityId as AnyObject]
         
-        WebSerivceManager.POSTRequest(url: Web_Service.city_list, showLoader: showLoader, Parameter: params) { (isSuccess, response, error) in
+        WebSerivceManager.POSTRequest(url: "", showLoader: showLoader, Parameter: params) { (isSuccess, response, error) in
             
             if isSuccess == true {
                 if response?.success == true {

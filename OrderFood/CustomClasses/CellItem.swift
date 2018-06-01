@@ -18,6 +18,11 @@ class CellItem: UITableViewCell {
     @IBOutlet weak var lblItemInfo: UILabel!
     @IBOutlet weak var btnAdd: UIButton!
     
+    @IBOutlet weak var btnPlus: UIButton!
+    @IBOutlet weak var lblNumberOfItem: UILabel!
+    @IBOutlet weak var btnMinus: UIButton!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

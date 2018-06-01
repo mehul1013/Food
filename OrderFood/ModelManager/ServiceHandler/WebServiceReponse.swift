@@ -22,6 +22,10 @@ class WebServiceReponse : Mappable {
     internal var total   : String?
     internal var totalApprov   : String = "0"
     internal var totalPending  : String = "0"
+    
+    internal var Errors : String?
+    internal var AggregateResults : String?
+    internal var Total : String?
    
     
     init() {
@@ -38,9 +42,14 @@ class WebServiceReponse : Mappable {
     }
     
     func mapping(map: Map) {
+        Errors <- map["Errors"]
+        AggregateResults <- map["AggregateResults"]
+        Total <- map["Total"]
+        
         status <- map["STATUS"]
         message <- map["MESSAGE"]
-        data <- map["DATA"]
+        //data <- map["DATA"]
+        data <- map["Data"]
         key <- map["key"]
         
         //iCastID

@@ -106,16 +106,12 @@ enum Web_Service : String {
     case version_control     = "version/checkVersion"
 }
 
-//Test
-//private let mainUrl : String = "http://52.31.119.11/ws/"
+//MARK: base url
+let WS_BASE_URL: String = "http://fnb-admin.azurewebsites.net/apiapp/"
 
-//LIVE
-private let mainUrl : String = "https://www.controlcastapp.com/user/ws/"
-
-//BETA
-//private let mainUrl : String = "https://www.controlcastapp.com/beta/ws/"
-
-
+//MARK: WS REquest Constant
+let WS_GET_CATEGORY     = WS_BASE_URL + "GetQrCategory?QrString="
+let WS_GET_ITEM         = WS_BASE_URL + "getappfooditem?categoryid="
 
 
 class WebSerivceManager:NSObject {
@@ -133,7 +129,7 @@ class WebSerivceManager:NSObject {
     }
     
     //Post method
-    class func POSTRequest(url:Web_Service, showLoader : Bool, Parameter:[String : AnyObject]?, success:((Bool,WebServiceReponse?, Error?) -> Void)?)
+    class func POSTRequest(url: String, showLoader : Bool, Parameter:[String : AnyObject]?, success:((Bool,WebServiceReponse?, Error?) -> Void)?)
     {
         if(showLoader) {
             //Run on main thread
@@ -151,9 +147,9 @@ class WebSerivceManager:NSObject {
         configuration.timeoutIntervalForResource = 60 // seconds
         let alamofireManager = Alamofire.SessionManager(configuration: configuration)
         
-        print("URL : \(mainUrl + url.rawValue)")
+        print("URL : \(url)")
         
-        alamofireManager.request(mainUrl + url.rawValue, method: .post, parameters: Parameter, encoding: JSONEncoding.default, headers: HeaderClass.objHeaderClass.HeaderDictionary).responseJSON { (response:DataResponse<Any>) in
+        alamofireManager.request(url, method: .post, parameters: Parameter, encoding: JSONEncoding.default, headers: HeaderClass.objHeaderClass.HeaderDictionary).responseJSON { (response:DataResponse<Any>) in
             alamofireManager.session.invalidateAndCancel()
             
             //var dataString = String(data: response.data!, encoding: .utf8)
@@ -205,7 +201,7 @@ class WebSerivceManager:NSObject {
                     
                     if (response.result.error as? NSError)?.code == -1005 {
                         
-                        Alamofire.request(mainUrl + url.rawValue, method: .post, parameters: Parameter, encoding: JSONEncoding.default, headers: HeaderClass.objHeaderClass.HeaderDictionary).responseJSON { (response:DataResponse<Any>) in
+                        Alamofire.request(url, method: .post, parameters: Parameter, encoding: JSONEncoding.default, headers: HeaderClass.objHeaderClass.HeaderDictionary).responseJSON { (response:DataResponse<Any>) in
                             
                             switch(response.result) {
                             case .success(_):
@@ -249,14 +245,14 @@ class WebSerivceManager:NSObject {
     }
     
     //GET method
-    class func GETRequest(url:Web_Service, showLoader : Bool, success:((Bool,WebServiceReponse?, Error?) -> Void)?)
+    class func GETRequest(url: String, showLoader : Bool, success:((Bool,WebServiceReponse?, Error?) -> Void)?)
     {
         if(showLoader) {
             AppUtils.showLoader()
         }
         print(HeaderClass.objHeaderClass.HeaderDictionary!)
         
-        Alamofire.request(mainUrl + url.rawValue, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HeaderClass.objHeaderClass.HeaderDictionary).responseJSON { (response:DataResponse<Any>) in
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HeaderClass.objHeaderClass.HeaderDictionary).responseJSON { (response:DataResponse<Any>) in
             
             switch(response.result) {
             case .success(_):
@@ -283,7 +279,7 @@ class WebSerivceManager:NSObject {
     }
     
     //POST Multipart
-    class func POSTMultipartRequest(url : Web_Service, parameterDitionary: [String : String]? , parameterwithImage : [String : String]?, success:((Bool,WebServiceReponse?, Error?) -> Void)?) {
+    class func POSTMultipartRequest(url : String, parameterDitionary: [String : String]? , parameterwithImage : [String : String]?, success:((Bool,WebServiceReponse?, Error?) -> Void)?) {
         
         AppUtils.showLoader()
         print(HeaderClass.objHeaderClass.HeaderDictionary!)
@@ -300,7 +296,7 @@ class WebSerivceManager:NSObject {
                 multipartFormData.append(NSURL(string:(value)) as URL!, withName: key)
             }
             
-        }, to: mainUrl + url.rawValue, headers: HeaderClass.objHeaderClass.HeaderDictionary)
+        }, to: url, headers: HeaderClass.objHeaderClass.HeaderDictionary)
         { (result) in
             switch result {
             case .success(let upload, _, _):
@@ -335,7 +331,7 @@ class WebSerivceManager:NSObject {
     }
     
     //Success Response Handle
-    class func HandleResponse (apicallMethod: Web_Service, apiResponse : DataResponse<Any>, successHandler: ((Bool,WebServiceReponse?, Error?)->Void)) {
+    class func HandleResponse (apicallMethod: String, apiResponse : DataResponse<Any>, successHandler: ((Bool,WebServiceReponse?, Error?)->Void)) {
         
         AppUtils.hideLoader()
         if let JSON = apiResponse.result.value {

@@ -10,18 +10,22 @@ import UIKit
 import Fabric
 import Crashlytics
 
+//mobapp.at.foodandbeverage
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var arrayCart = [Cart]()
+    var arrayCategory = [Category]()
+    var strQRCodeValue: String = ""
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         //Crashlytics
         Fabric.with([Crashlytics.self])
-        
-        
+                
         return true
     }
 

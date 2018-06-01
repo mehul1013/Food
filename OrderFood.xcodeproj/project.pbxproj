@@ -40,6 +40,8 @@
 		0ECA5FC8209CA7410034AE81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA5FC6209CA7410034AE81 /* LaunchScreen.storyboard */; };
 		0ECA5FD3209CA7410034AE81 /* OrderFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FD2209CA7410034AE81 /* OrderFoodTests.swift */; };
 		0ECA5FDE209CA7410034AE81 /* OrderFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FDD209CA7410034AE81 /* OrderFoodUITests.swift */; };
+		2A648DA020C13C300059E75B /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A648D9F20C13C2F0059E75B /* Cart.swift */; };
+		2A648DA220C15B430059E75B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A648DA120C15B430059E75B /* Item.swift */; };
 		2A9CB46020C00F4900B749AD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43220C00F4900B749AD /* MBProgressHUD.m */; };
 		2A9CB46120C00F4900B749AD /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43520C00F4900B749AD /* MKAnnotationView+WebCache.m */; };
 		2A9CB46220C00F4900B749AD /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43720C00F4900B749AD /* NSData+ImageContentType.m */; };
@@ -60,11 +62,8 @@
 		2A9CB47120C00F4900B749AD /* HeaderClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45720C00F4900B749AD /* HeaderClass.swift */; };
 		2A9CB47220C00F4900B749AD /* WebSerivceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45820C00F4900B749AD /* WebSerivceManager.swift */; };
 		2A9CB47320C00F4900B749AD /* WebServiceReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45920C00F4900B749AD /* WebServiceReponse.swift */; };
-		2A9CB47420C00F4900B749AD /* CastDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45B20C00F4900B749AD /* CastDetailModel.swift */; };
-		2A9CB47520C00F4900B749AD /* CastScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45C20C00F4900B749AD /* CastScreenModel.swift */; };
 		2A9CB47620C00F4900B749AD /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45D20C00F4900B749AD /* CityModel.swift */; };
-		2A9CB47720C00F4900B749AD /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45E20C00F4900B749AD /* UserProfileModel.swift */; };
-		2A9CB47820C00F4900B749AD /* VersionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45F20C00F4900B749AD /* VersionControl.swift */; };
+		2A9CB47820C00F4900B749AD /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB45F20C00F4900B749AD /* Category.swift */; };
 		2ABB1B2A20A16CB00097B596 /* FunAsia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2ABB1B2920A16CB00097B596 /* FunAsia.jpg */; };
 		2ABB1B2F20A172F10097B596 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB1B2E20A172F10097B596 /* Checkout.swift */; };
 		2ABB1B3420A174470097B596 /* MyCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB1B3320A174470097B596 /* MyCart.swift */; };
@@ -130,6 +129,8 @@
 		0ECA5FDD209CA7410034AE81 /* OrderFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFoodUITests.swift; sourceTree = "<group>"; };
 		0ECA5FDF209CA7410034AE81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F757BEDC2925B660A2405CE /* Pods_OrderFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A648D9F20C13C2F0059E75B /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		2A648DA120C15B430059E75B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2A9CB43120C00F4900B749AD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		2A9CB43220C00F4900B749AD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		2A9CB43420C00F4900B749AD /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -168,11 +169,8 @@
 		2A9CB45720C00F4900B749AD /* HeaderClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderClass.swift; sourceTree = "<group>"; };
 		2A9CB45820C00F4900B749AD /* WebSerivceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSerivceManager.swift; sourceTree = "<group>"; };
 		2A9CB45920C00F4900B749AD /* WebServiceReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceReponse.swift; sourceTree = "<group>"; };
-		2A9CB45B20C00F4900B749AD /* CastDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastDetailModel.swift; sourceTree = "<group>"; };
-		2A9CB45C20C00F4900B749AD /* CastScreenModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastScreenModel.swift; sourceTree = "<group>"; };
 		2A9CB45D20C00F4900B749AD /* CityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
-		2A9CB45E20C00F4900B749AD /* UserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
-		2A9CB45F20C00F4900B749AD /* VersionControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionControl.swift; sourceTree = "<group>"; };
+		2A9CB45F20C00F4900B749AD /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2A9CB47920C00FAA00B749AD /* OrderFood_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderFood_Bridging_Header.h; sourceTree = "<group>"; };
 		2ABB1B2920A16CB00097B596 /* FunAsia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FunAsia.jpg; sourceTree = "<group>"; };
 		2ABB1B2E20A172F10097B596 /* Checkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
@@ -407,6 +405,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2A648D9E20C13C2F0059E75B /* CartHandler */ = {
+			isa = PBXGroup;
+			children = (
+				2A648D9F20C13C2F0059E75B /* Cart.swift */,
+			);
+			path = CartHandler;
+			sourceTree = "<group>";
+		};
 		2A9CB42F20C00F4900B749AD /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +474,7 @@
 		2A9CB45520C00F4900B749AD /* ModelManager */ = {
 			isa = PBXGroup;
 			children = (
+				2A648D9E20C13C2F0059E75B /* CartHandler */,
 				2A9CB45620C00F4900B749AD /* ServiceHandler */,
 				2A9CB45A20C00F4900B749AD /* WebserviceModels */,
 			);
@@ -487,11 +494,9 @@
 		2A9CB45A20C00F4900B749AD /* WebserviceModels */ = {
 			isa = PBXGroup;
 			children = (
-				2A9CB45B20C00F4900B749AD /* CastDetailModel.swift */,
-				2A9CB45C20C00F4900B749AD /* CastScreenModel.swift */,
 				2A9CB45D20C00F4900B749AD /* CityModel.swift */,
-				2A9CB45E20C00F4900B749AD /* UserProfileModel.swift */,
-				2A9CB45F20C00F4900B749AD /* VersionControl.swift */,
+				2A9CB45F20C00F4900B749AD /* Category.swift */,
+				2A648DA120C15B430059E75B /* Item.swift */,
 			);
 			path = WebserviceModels;
 			sourceTree = "<group>";
@@ -606,7 +611,7 @@
 				TargetAttributes = {
 					0ECA5FB9209CA7410034AE81 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = JEDFVGAD9T;
+						DevelopmentTeam = 7ASFD3T53D;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 					};
@@ -809,24 +814,23 @@
 				2A9CB47620C00F4900B749AD /* CityModel.swift in Sources */,
 				0ECA5FBE209CA7410034AE81 /* AppDelegate.swift in Sources */,
 				0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */,
+				2A648DA220C15B430059E75B /* Item.swift in Sources */,
 				0E311C6C209D8FE1008F7DD1 /* SuperViewController.swift in Sources */,
 				0E311C69209D8FE1008F7DD1 /* UIView+constraints.swift in Sources */,
 				2A9CB46220C00F4900B749AD /* NSData+ImageContentType.m in Sources */,
 				0E311C6E209D8FE1008F7DD1 /* Constants.swift in Sources */,
 				2ABB1B2F20A172F10097B596 /* Checkout.swift in Sources */,
-				2A9CB47420C00F4900B749AD /* CastDetailModel.swift in Sources */,
 				2A9CB46820C00F4900B749AD /* SDWebImageManager.m in Sources */,
 				2A9CB46520C00F4900B749AD /* SDWebImageDecoder.m in Sources */,
 				2A9CB46720C00F4900B749AD /* SDWebImageDownloaderOperation.m in Sources */,
 				2ABB1B3420A174470097B596 /* MyCart.swift in Sources */,
 				0E6B100C20ADF250007F3EFA /* Search.swift in Sources */,
+				2A648DA020C13C300059E75B /* Cart.swift in Sources */,
 				2A9CB46120C00F4900B749AD /* MKAnnotationView+WebCache.m in Sources */,
 				2A9CB46420C00F4900B749AD /* SDWebImageCompat.m in Sources */,
 				2A9CB47220C00F4900B749AD /* WebSerivceManager.swift in Sources */,
-				2A9CB47720C00F4900B749AD /* UserProfileModel.swift in Sources */,
 				2A9CB46A20C00F4900B749AD /* UIButton+WebCache.m in Sources */,
-				2A9CB47520C00F4900B749AD /* CastScreenModel.swift in Sources */,
-				2A9CB47820C00F4900B749AD /* VersionControl.swift in Sources */,
+				2A9CB47820C00F4900B749AD /* Category.swift in Sources */,
 				2A9CB46E20C00F4900B749AD /* UIImageView+HighlightedWebCache.m in Sources */,
 				2A9CB46B20C00F4900B749AD /* UIImage+GIF.m in Sources */,
 				2A9CB46320C00F4900B749AD /* SDImageCache.m in Sources */,
@@ -906,8 +910,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sonal  Pathak (TP52YXN85D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sonal  Pathak (TP52YXN85D)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = JEDFVGAD9T;
@@ -930,7 +934,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "95bb44ac-070d-4215-aa41-1c4830dc810e";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -959,8 +963,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sonal  Pathak (TP52YXN85D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sonal  Pathak (TP52YXN85D)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JEDFVGAD9T;
@@ -976,7 +980,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "95bb44ac-070d-4215-aa41-1c4830dc810e";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -988,15 +992,15 @@
 			baseConfigurationReference = EC2906ADEAC089CB47FF1A0C /* Pods-OrderFood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
-				DEVELOPMENT_TEAM = JEDFVGAD9T;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sonal  Pathak (TP52YXN85D)";
+				DEVELOPMENT_TEAM = 7ASFD3T53D;
 				INFOPLIST_FILE = OrderFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mobapp.at.foodandbeverage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datacube.peovas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "95bb44ac-070d-4215-aa41-1c4830dc810e";
+				PROVISIONING_PROFILE_SPECIFIER = PEOVAS_Development_May_2018;
 				SWIFT_OBJC_BRIDGING_HEADER = OrderFood/OrderFood_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1008,15 +1012,15 @@
 			baseConfigurationReference = FBEBD74F8E32EC6B68EC7FF9 /* Pods-OrderFood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
-				DEVELOPMENT_TEAM = JEDFVGAD9T;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sonal  Pathak (TP52YXN85D)";
+				DEVELOPMENT_TEAM = 7ASFD3T53D;
 				INFOPLIST_FILE = OrderFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mobapp.at.foodandbeverage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datacube.peovas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "95bb44ac-070d-4215-aa41-1c4830dc810e";
+				PROVISIONING_PROFILE_SPECIFIER = PEOVAS_Development_May_2018;
 				SWIFT_OBJC_BRIDGING_HEADER = OrderFood/OrderFood_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

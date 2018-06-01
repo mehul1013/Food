@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,6 +53,33 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ir-eh-Rhl">
+                        <rect key="frame" x="312" y="46" width="8.5" height="18"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQE-nS-o5S">
+                        <rect key="frame" x="330" y="40" width="30" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="0jB-Cv-2L2"/>
+                            <constraint firstAttribute="width" constant="30" id="MK6-AE-Zdu"/>
+                        </constraints>
+                        <state key="normal" image="AddItem">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Hr-qA-1MU">
+                        <rect key="frame" x="271" y="40" width="30" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="K6E-eg-kAx"/>
+                            <constraint firstAttribute="width" constant="30" id="ahy-uL-6ZT"/>
+                        </constraints>
+                        <state key="normal" image="RemoveItem">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share An Appetizer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGx-M4-A0M">
                         <rect key="frame" x="115" y="12" width="245" height="20"/>
                         <constraints>
@@ -62,8 +89,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$25" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oA-UO-vOz">
-                        <rect key="frame" x="95" y="38" width="197" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$25" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oA-UO-vOz">
+                        <rect key="frame" x="96" y="38" width="197" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="ZMG-L1-QKZ"/>
                         </constraints>
@@ -81,7 +108,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edamame, Pretzel Bites, Spinach Dip, Chips, Salsa, Theater popcorn, a Half Cheese Fries or Chicken Nachos" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cu0-2y-K34">
-                        <rect key="frame" x="95" y="85" width="265" height="30"/>
+                        <rect key="frame" x="95" y="85" width="265" height="27.5"/>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -96,14 +123,20 @@
                     <constraint firstAttribute="trailing" secondItem="Cu0-2y-K34" secondAttribute="trailing" constant="15" id="Acc-az-pSk"/>
                     <constraint firstItem="PGx-M4-A0M" firstAttribute="leading" secondItem="65g-kp-lsk" secondAttribute="trailing" constant="5" id="AoK-0l-5Z6"/>
                     <constraint firstAttribute="trailing" secondItem="RWI-1o-uJZ" secondAttribute="trailing" constant="15" id="Bnf-wr-Pdc"/>
+                    <constraint firstAttribute="trailing" secondItem="tQE-nS-o5S" secondAttribute="trailing" constant="15" id="GEM-Wg-KEx"/>
+                    <constraint firstItem="8Ir-eh-Rhl" firstAttribute="centerY" secondItem="tQE-nS-o5S" secondAttribute="centerY" id="GVY-tD-HYl"/>
                     <constraint firstItem="6oA-UO-vOz" firstAttribute="top" secondItem="65g-kp-lsk" secondAttribute="bottom" constant="9" id="Jjj-y4-LXe"/>
                     <constraint firstItem="RWI-1o-uJZ" firstAttribute="leading" secondItem="JYt-Pk-zM6" secondAttribute="trailing" constant="8" id="KDf-rz-MXy"/>
                     <constraint firstItem="6oA-UO-vOz" firstAttribute="leading" secondItem="eBy-dj-KbL" secondAttribute="trailing" constant="10" id="KNG-49-ub1"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Cu0-2y-K34" secondAttribute="bottom" constant="6.5" id="KOK-1q-DAW"/>
+                    <constraint firstItem="8Ir-eh-Rhl" firstAttribute="leading" secondItem="4Hr-qA-1MU" secondAttribute="trailing" constant="11" id="LjD-Vh-RRO"/>
+                    <constraint firstItem="tQE-nS-o5S" firstAttribute="leading" secondItem="8Ir-eh-Rhl" secondAttribute="trailing" constant="9.5" id="Mcz-xQ-Z3g"/>
                     <constraint firstItem="RWI-1o-uJZ" firstAttribute="centerY" secondItem="m59-rk-hih" secondAttribute="centerY" constant="-9.8000000000000007" id="ORT-kA-BRW"/>
                     <constraint firstItem="eBy-dj-KbL" firstAttribute="leading" secondItem="m59-rk-hih" secondAttribute="leading" constant="15" id="XvB-NA-fl4"/>
                     <constraint firstItem="65g-kp-lsk" firstAttribute="top" secondItem="eBy-dj-KbL" secondAttribute="top" constant="4" id="e9j-Nb-pdT"/>
+                    <constraint firstItem="4Hr-qA-1MU" firstAttribute="centerY" secondItem="tQE-nS-o5S" secondAttribute="centerY" id="fh2-Eb-FRc"/>
                     <constraint firstItem="RWI-1o-uJZ" firstAttribute="leading" secondItem="6oA-UO-vOz" secondAttribute="trailing" constant="8" id="iDs-1p-qWv"/>
+                    <constraint firstItem="tQE-nS-o5S" firstAttribute="centerY" secondItem="m59-rk-hih" secondAttribute="centerY" constant="-9.8000000000000007" id="jy4-Hd-UMT"/>
                     <constraint firstItem="JYt-Pk-zM6" firstAttribute="leading" secondItem="eBy-dj-KbL" secondAttribute="trailing" constant="10" id="n8G-hb-402"/>
                     <constraint firstItem="PGx-M4-A0M" firstAttribute="centerY" secondItem="65g-kp-lsk" secondAttribute="centerY" id="qIH-an-SWo"/>
                 </constraints>
@@ -111,18 +144,23 @@
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="btnAdd" destination="RWI-1o-uJZ" id="YSS-KJ-23y"/>
+                <outlet property="btnMinus" destination="4Hr-qA-1MU" id="Qgf-aU-Cyh"/>
+                <outlet property="btnPlus" destination="tQE-nS-o5S" id="Sak-8j-WG7"/>
                 <outlet property="imageViewItem" destination="eBy-dj-KbL" id="6Ty-HD-Vpl"/>
                 <outlet property="imageViewVeg" destination="65g-kp-lsk" id="UYi-aN-orH"/>
                 <outlet property="lblCustomizationAvailable" destination="JYt-Pk-zM6" id="n3H-na-jVb"/>
                 <outlet property="lblItemInfo" destination="Cu0-2y-K34" id="bjd-Dy-R3z"/>
                 <outlet property="lblName" destination="PGx-M4-A0M" id="XI6-WO-b1m"/>
+                <outlet property="lblNumberOfItem" destination="8Ir-eh-Rhl" id="kUr-GU-9wG"/>
                 <outlet property="lblPrice" destination="6oA-UO-vOz" id="C3l-zY-6Mt"/>
             </connections>
             <point key="canvasLocation" x="-269.5" y="-96"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="AddItem" width="24" height="24"/>
         <image name="FoodItem.png" width="300" height="188"/>
+        <image name="RemoveItem" width="24" height="24"/>
         <image name="Veg" width="16" height="16"/>
     </resources>
 </document>

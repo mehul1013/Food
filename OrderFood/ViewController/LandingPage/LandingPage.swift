@@ -57,10 +57,33 @@ class LandingPage: SuperViewController {
         self.initialiseCamera()
         
         //Temp
-        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(navigate(_:)), userInfo: nil, repeats: false)
+        //Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(navigate(_:)), userInfo: nil, repeats: false)
+        
+        //Temp
+        let barTemp = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(LandingPage.navigateSkip))
+        barTemp.tintColor = UIColor.white
+        self.navigationItem.rightBarButtonItem = barTemp
     }
     
-    func navigate(_ timer: Timer) -> Void {
+    override func viewWillAppear(_ animated: Bool) {
+        //When user returns back to this screens, Camera should be running again
+        if AppUtils.APPDELEGATE().strQRCodeValue == "" {
+            //Do Nothing
+        }else {
+            self.captureSession.startRunning()
+        }
+    }
+    
+    func navigateSkip() -> Void {
+        //QRCode Default Value
+        AppUtils.APPDELEGATE().strQRCodeValue = "KkPuRiWFfn"
+        
+        //Navigate To Venue Details
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.VENUE_DETAIL) as! VenueDetail
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
+    
+    func navigate() -> Void {
         //Navigate To Venue Details
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.VENUE_DETAIL) as! VenueDetail
         self.navigationController?.pushViewController(viewCTR, animated: true)
@@ -128,6 +151,41 @@ class LandingPage: SuperViewController {
 
 //MARK: - QRCode Delegates
 extension LandingPage: AVCaptureMetadataOutputObjectsDelegate {
+    func captureOutput(_ output: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+        
+        // Check if the metadataObjects array is not nil and it contains at least one object.
+        if metadataObjects.count == 0 {
+            qrCodeFrameView?.frame = CGRect.zero
+            //messageLabel.text = "No QR code is detected"
+            print("No QR code is detected")
+            return
+        }
+        
+        // Get the metadata object.
+        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        
+        if metadataObj.type == AVMetadataObjectTypeQRCode {
+            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
+            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+            qrCodeFrameView?.frame = barCodeObject!.bounds
+            
+            if metadataObj.stringValue != nil {
+                //messageLabel.text = metadataObj.stringValue
+                print("QRCode : \(metadataObj.stringValue)")
+                
+                self.captureSession.stopRunning()
+                
+                //Navigate to Next Screen
+                //QRCode Default Value
+                if let strQRCode = metadataObj.stringValue {
+                    AppUtils.APPDELEGATE().strQRCodeValue = strQRCode
+                    
+                    self.navigate()
+                }
+            }
+        }
+    }
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects.count == 0 {

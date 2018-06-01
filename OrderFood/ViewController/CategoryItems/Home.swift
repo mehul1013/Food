@@ -11,6 +11,9 @@ import Parchment
 
 class Home: SuperViewController {
 
+    @IBOutlet weak var switchVegNonVeg: UISwitch!
+    @IBOutlet weak var viewCart: UIView!
+    
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -21,6 +24,24 @@ class Home: SuperViewController {
         //Navigation Title
         self.navigationItem.title = "Home"
         
+        //Firstly hide cart view
+        self.showCartView()
+        
+        //Get All Categories
+        self.getAllCategories()
+        
+        //Add Observer to Show/Hide Cart View
+        NotificationCenter.default.addObserver(self, selector: #selector(Home.manageCartView), name: NSNotification.Name(rawValue: "ManageCartView"), object: nil)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    //MARK: - Set Up Page View Controller
+    func setUpPageViewControllers() -> Void {
         //Right Bar Button
         let rightBarWhistle = UIBarButtonItem(image: UIImage(named: "Whistle")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(whistleClicked))
         
@@ -29,27 +50,44 @@ class Home: SuperViewController {
         self.navigationItem.rightBarButtonItems = [rightBarWhistle, rightBarSearch]
         
         //Category wise controller
-        let viewControllers = (0...10).map { CategoryViewController(index: $0) }
+        let count = AppUtils.APPDELEGATE().arrayCategory.count - 1
+        let viewControllers = (0...count).map { CategoryViewController(index: $0) }
         
         /*var arrayViewCTR = [CategoryViewController]()
-        for index in 0...10 {
-            let viewCTR = CategoryViewController(index: index)
-            arrayViewCTR.append(viewCTR)
-        }*/
+         for index in 0...10 {
+         let viewCTR = CategoryViewController(index: index)
+         arrayViewCTR.append(viewCTR)
+         }*/
         
         let pagingViewController = FixedPagingViewController(viewControllers: viewControllers)
-                
+        
         // Make sure you add the PagingViewController as a child view
         // controller and constrain it to the edges of the view.
         addChildViewController(pagingViewController)
         view.addSubview(pagingViewController.view)
         view.constrainToEdges(pagingViewController.view)
         pagingViewController.didMove(toParentViewController: self)
+        
+        
+        //Bring controls to front
+        self.view.bringSubview(toFront: switchVegNonVeg)
+        self.view.bringSubview(toFront: viewCart)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    //MARK: - Observer
+    func manageCartView(_ notification: Notification) -> Void {
+        self.showCartView()
+    }
+    
+    func showCartView() -> Void {
+        if AppUtils.APPDELEGATE().arrayCart.count > 0 {
+            //Show Cart View
+            self.viewCart.isHidden = false
+        }else {
+            //Hide Cart View
+            self.viewCart.isHidden = true
+        }
     }
 
 
@@ -62,6 +100,30 @@ class Home: SuperViewController {
     //MARK: - Whistle
     func whistleClicked() -> Void {
         AppUtils.showAlertWithTitle(title: "", message: "Do you want to call waiter?", viewController: self)
+    }
+}
+
+
+//MARK: - Web Services
+extension Home {
+    //MARK: - Get All Categories
+    func getAllCategories() -> Void {
+        
+        Category.getcategories(strQRCode: "KkPuRiWFfn", showLoader: true) { (isSuccess, response, error) in
+            
+            if error == nil {
+                //Get Data
+                AppUtils.APPDELEGATE().arrayCategory = response?.formattedData as! [Category]
+                print("Category Count = \(AppUtils.APPDELEGATE().arrayCategory.count)")
+                
+                if AppUtils.APPDELEGATE().arrayCategory.count > 0 {
+                    
+                    //Get Page View Controller
+                    self.setUpPageViewControllers()
+                }
+            }else {
+            }
+        }
     }
 }
 

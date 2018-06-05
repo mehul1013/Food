@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,7 +27,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoodItem.png" translatesAutoresizingMaskIntoConstraints="NO" id="eBy-dj-KbL">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FoodPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="eBy-dj-KbL">
                         <rect key="frame" x="15" y="10" width="70" height="90"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="90" id="OwK-GT-RwR"/>
@@ -159,7 +159,7 @@
     </objects>
     <resources>
         <image name="AddItem" width="24" height="24"/>
-        <image name="FoodItem.png" width="300" height="188"/>
+        <image name="FoodPlaceHolder" width="105" height="135"/>
         <image name="RemoveItem" width="24" height="24"/>
         <image name="Veg" width="16" height="16"/>
     </resources>

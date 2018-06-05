@@ -18,7 +18,7 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - ActionSheetPicker-3.0
     - Alamofire
     - Crashlytics
@@ -38,4 +38,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 20cf820d3deb86fb5dc3337ef6b99d072e239b89
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

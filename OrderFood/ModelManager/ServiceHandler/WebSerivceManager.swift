@@ -112,6 +112,7 @@ let WS_BASE_URL: String = "http://fnb-admin.azurewebsites.net/apiapp/"
 //MARK: WS REquest Constant
 let WS_GET_CATEGORY     = WS_BASE_URL + "GetQrCategory?QrString="
 let WS_GET_ITEM         = WS_BASE_URL + "getappfooditem?categoryid="
+let WS_SEARCH_ITEM      = WS_BASE_URL + "SearchFoodItem?prefix="
 
 
 class WebSerivceManager:NSObject {
@@ -250,7 +251,6 @@ class WebSerivceManager:NSObject {
         if(showLoader) {
             AppUtils.showLoader()
         }
-        print(HeaderClass.objHeaderClass.HeaderDictionary!)
         
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HeaderClass.objHeaderClass.HeaderDictionary).responseJSON { (response:DataResponse<Any>) in
             

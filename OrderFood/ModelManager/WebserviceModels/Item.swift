@@ -19,6 +19,7 @@ class Item: Mappable {
     internal var CategoryId:    Int = 0
     internal var Image:         String = ""
     internal var IsVeg:         Int = 0
+    internal var numberOfItem:  Int = 0
     
     
     init() {

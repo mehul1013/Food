@@ -13,6 +13,7 @@ class Home: SuperViewController {
 
     @IBOutlet weak var switchVegNonVeg: UISwitch!
     @IBOutlet weak var viewCart: UIView!
+    @IBOutlet weak var lblCartInfo: UILabel!
     
     
     //MARK: - View Life Cycle
@@ -32,6 +33,7 @@ class Home: SuperViewController {
         
         //Add Observer to Show/Hide Cart View
         NotificationCenter.default.addObserver(self, selector: #selector(Home.manageCartView), name: NSNotification.Name(rawValue: "ManageCartView"), object: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +86,18 @@ class Home: SuperViewController {
         if AppUtils.APPDELEGATE().arrayCart.count > 0 {
             //Show Cart View
             self.viewCart.isHidden = false
+            
+            //Get Total number of Item and Price
+            var total = 0
+            var totalItem = 0
+            for item in AppUtils.APPDELEGATE().arrayCart {
+                totalItem = totalItem + item.numberOfItem!
+                total = total + (item.numberOfItem! * item.price!)
+            }
+            
+            //Set Data
+            self.lblCartInfo.text = "\(totalItem) ITEMS : $ \(total).0"
+            
         }else {
             //Hide Cart View
             self.viewCart.isHidden = true
@@ -101,6 +115,13 @@ class Home: SuperViewController {
     func whistleClicked() -> Void {
         AppUtils.showAlertWithTitle(title: "", message: "Do you want to call waiter?", viewController: self)
     }
+    
+    //MARK: - View Cart
+    @IBAction func btnViewCartClicked(_ sender: Any) {
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.MY_CART) as! MyCart
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
+    
 }
 
 

@@ -10,10 +10,10 @@ import UIKit
 
 class Cart: NSObject {
     
-    var itemID: String?
+    var itemID: Int?
     var itemName: String?
     var numberOfItem: Int?
-    var price: Double?
+    var price: Int?
     
     override init() {
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="25c-6x-dML">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="25c-6x-dML">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -78,6 +78,9 @@
                                         <state key="normal" title="View Cart">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnViewCartClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8KH-l8-hvi"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 ITEMS : $ 50.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4AD-wP-S7z">
                                         <rect key="frame" x="15" y="0.0" width="202" height="50"/>
@@ -120,6 +123,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lblCartInfo" destination="4AD-wP-S7z" id="6Od-Oo-Dfs"/>
                         <outlet property="switchVegNonVeg" destination="bHD-VE-FS2" id="BxG-di-hzN"/>
                         <outlet property="viewCart" destination="CoZ-wY-ziw" id="uU2-kq-HNX"/>
                     </connections>
@@ -163,7 +167,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.63222175839999994" green="0.21603497860000001" blue="0.1527839899" alpha="0.098111087328767124" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="XVd-HS-Q5H" firstAttribute="leading" secondItem="gU8-L0-Ghn" secondAttribute="leading" constant="20" id="6Ac-ZY-e6X"/>
                                     <constraint firstAttribute="bottom" secondItem="XVd-HS-Q5H" secondAttribute="bottom" constant="5" id="6ug-bk-bkX"/>
@@ -175,11 +179,23 @@
                                     <constraint firstAttribute="height" constant="50" id="tKt-dK-1T7"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XaO-L9-C9Q">
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OgN-xA-dBo" id="veO-uz-K3u"/>
+                                    <outlet property="delegate" destination="OgN-xA-dBo" id="0Vv-tM-YHn"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XaO-L9-C9Q" secondAttribute="trailing" id="9f2-xz-7Y3"/>
+                            <constraint firstItem="XaO-L9-C9Q" firstAttribute="leading" secondItem="iaw-q8-WNE" secondAttribute="leading" id="DGQ-a9-4mC"/>
+                            <constraint firstItem="XaO-L9-C9Q" firstAttribute="top" secondItem="gU8-L0-Ghn" secondAttribute="bottom" id="RUp-g1-EDX"/>
                             <constraint firstItem="gU8-L0-Ghn" firstAttribute="top" secondItem="iaw-q8-WNE" secondAttribute="top" id="SY2-Ec-Efb"/>
                             <constraint firstAttribute="trailing" secondItem="gU8-L0-Ghn" secondAttribute="trailing" id="T1B-qZ-oIs"/>
+                            <constraint firstItem="Puo-JM-BTc" firstAttribute="top" secondItem="XaO-L9-C9Q" secondAttribute="bottom" id="sCc-EO-3Sr"/>
                             <constraint firstItem="gU8-L0-Ghn" firstAttribute="leading" secondItem="iaw-q8-WNE" secondAttribute="leading" id="wHA-rX-DyC"/>
                         </constraints>
                     </view>
@@ -192,12 +208,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="constraintBottom_TableView" destination="sCc-EO-3Sr" id="XMV-Va-DY3"/>
+                        <outlet property="tableViewItems" destination="XaO-L9-C9Q" id="93e-qC-e04"/>
                         <outlet property="txtSearch" destination="XVd-HS-Q5H" id="dTK-lX-AJ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mv-JI-27I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2196" y="112.89355322338831"/>
+            <point key="canvasLocation" x="2196" y="140"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="Y5Z-Im-74m">
@@ -1345,7 +1363,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblGrandTotal" destination="ZiN-Ak-ypX" id="YYC-ov-yTD"/>
+                                            <outlet property="lblGrandTotal" destination="Q8l-Cq-LMq" id="bnh-Ck-wdL"/>
                                             <outlet property="lblSubTotal" destination="6Wb-Ha-qw9" id="Xmc-cw-ag2"/>
                                             <outlet property="lblTaxes" destination="gCF-L6-byN" id="Voz-4S-gUm"/>
                                         </connections>

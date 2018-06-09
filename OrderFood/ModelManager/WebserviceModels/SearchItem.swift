@@ -12,7 +12,7 @@ import ObjectMapper
 class SearchItem: Mappable {
     
     internal var itemname:  String = ""
-    internal var itemprice: Int = 0
+    internal var itemprice: Double = 0.0
     internal var image:     String = ""
     internal var itemId:    Int = 0
     internal var categoryid:Int = 0

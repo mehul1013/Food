@@ -13,7 +13,7 @@ class Cart: NSObject {
     var itemID: Int?
     var itemName: String?
     var numberOfItem: Int?
-    var price: Int?
+    var price: Double?
     
     override init() {
     }

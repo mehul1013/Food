@@ -9,12 +9,12 @@
 import UIKit
 
 class MyCart: SuperViewController {
-
+    
     @IBOutlet weak var tableViewMyCart: UITableView!
     @IBOutlet weak var btnCheckout: UIButton!
     
     let count = AppUtils.APPDELEGATE().arrayCart.count
-    var total = 0
+    var total = 0.00
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -29,11 +29,12 @@ class MyCart: SuperViewController {
         
         //Get Total and Sub-totle
         for item in AppUtils.APPDELEGATE().arrayCart {
-            total = total + (item.numberOfItem! * item.price!)
+            let numberOfItemDouble = Double(item.numberOfItem!)
+            total = total + (numberOfItemDouble * item.price!)
         }
         
         //Checkout Button
-        self.btnCheckout.setTitle("Checkout ($\(total).0)", for: .normal)
+        self.btnCheckout.setTitle("Checkout ($\(total))", for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +80,10 @@ extension MyCart: UITableViewDelegate, UITableViewDataSource {
             //Set Data
             cell.lblItemName.text = model.itemName
             cell.lblNumberOfItem.text = "\(model.numberOfItem!)"
-            cell.lblPrice.text = "$\(model.numberOfItem! * model.price!)"
+            
+            let numberOfItemDouble = Double(model.numberOfItem!)
+            cell.lblPrice.text = "$\((numberOfItemDouble * model.price!))"
+            //cell.lblPrice.text = "$\(model.numberOfItem! * model.price!)"
             
         }else if indexPath.row == count {
             cell = tableView.dequeueReusableCell(withIdentifier: "CellTotal") as! CellMyCart

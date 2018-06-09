@@ -62,8 +62,11 @@
                                 <color key="textColor" red="0.63137254899999995" green="0.2156862745" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHD-VE-FS2">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bHD-VE-FS2">
                                 <rect key="frame" x="311" y="9" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchVegNonValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="KOT-Qc-V7d"/>
+                                </connections>
                             </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CoZ-wY-ziw">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
@@ -1197,43 +1200,48 @@
                                                         <constraint firstAttribute="width" constant="15" id="dwh-Nw-owo"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Share An Appetizer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epp-0q-uqs">
-                                                    <rect key="frame" x="33" y="11" width="171" height="48"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share An Appetizer" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epp-0q-uqs">
+                                                    <rect key="frame" x="33" y="11" width="161.5" height="48"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$50.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkH-RL-R9N">
-                                                    <rect key="frame" x="327" y="25" width="38" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$50.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkH-RL-R9N">
+                                                    <rect key="frame" x="315" y="25" width="50" height="18"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="nj2-8g-71A"/>
                                                         <constraint firstAttribute="height" constant="18" id="xNg-WI-7XG"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fad-fo-v2L">
-                                                    <rect key="frame" x="258.5" y="26" width="8.5" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fad-fo-v2L">
+                                                    <rect key="frame" x="240" y="19" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="O0S-tp-jiK"/>
+                                                        <constraint firstAttribute="width" constant="30" id="WWf-nG-nzb"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcJ-Bu-ajb">
-                                                    <rect key="frame" x="277" y="20" width="30" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcJ-Bu-ajb">
+                                                    <rect key="frame" x="270" y="19" width="30" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="Jbn-15-oY2"/>
-                                                        <constraint firstAttribute="height" constant="30" id="XOx-ES-r8o"/>
+                                                        <constraint firstAttribute="width" constant="30" id="f23-WX-2hc"/>
+                                                        <constraint firstAttribute="height" constant="30" id="wqW-zU-lbw"/>
                                                     </constraints>
                                                     <state key="normal" image="AddItem">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnA-ln-ALc">
-                                                    <rect key="frame" x="218.5" y="20" width="30" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnA-ln-ALc">
+                                                    <rect key="frame" x="209.5" y="19" width="30" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="SKD-a6-Ksu"/>
-                                                        <constraint firstAttribute="width" constant="30" id="U4l-Iy-EAZ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="GDt-ob-fiO"/>
+                                                        <constraint firstAttribute="width" constant="30" id="YCc-O0-qQI"/>
                                                     </constraints>
                                                     <state key="normal" image="RemoveItem">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1242,19 +1250,20 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="fkH-RL-R9N" secondAttribute="trailing" constant="10" id="0hS-iw-kml"/>
+                                                <constraint firstItem="fad-fo-v2L" firstAttribute="centerY" secondItem="CcJ-Bu-ajb" secondAttribute="centerY" id="6Cm-wj-Z62"/>
+                                                <constraint firstItem="Epp-0q-uqs" firstAttribute="centerY" secondItem="2my-3P-yEr" secondAttribute="centerY" id="6PD-Im-i1p"/>
+                                                <constraint firstItem="fad-fo-v2L" firstAttribute="leading" secondItem="tnA-ln-ALc" secondAttribute="trailing" constant="0.5" id="7eZ-HE-A2y"/>
                                                 <constraint firstItem="Epp-0q-uqs" firstAttribute="leading" secondItem="NQ7-Kg-aKq" secondAttribute="trailing" constant="8" id="7iT-z8-g7K"/>
                                                 <constraint firstItem="Epp-0q-uqs" firstAttribute="top" secondItem="2my-3P-yEr" secondAttribute="top" constant="11" id="9xp-Td-vb4"/>
-                                                <constraint firstItem="fad-fo-v2L" firstAttribute="leading" secondItem="tnA-ln-ALc" secondAttribute="trailing" constant="10" id="B0L-vV-D0N"/>
+                                                <constraint firstItem="fkH-RL-R9N" firstAttribute="leading" secondItem="CcJ-Bu-ajb" secondAttribute="trailing" constant="15" id="G5t-34-ScN"/>
                                                 <constraint firstItem="NQ7-Kg-aKq" firstAttribute="leading" secondItem="2my-3P-yEr" secondAttribute="leading" constant="10" id="GSK-EE-zVB"/>
-                                                <constraint firstItem="tnA-ln-ALc" firstAttribute="leading" secondItem="Epp-0q-uqs" secondAttribute="trailing" constant="15" id="TW3-cu-Qfx"/>
-                                                <constraint firstItem="CcJ-Bu-ajb" firstAttribute="centerY" secondItem="2my-3P-yEr" secondAttribute="centerY" id="UPf-N0-Xg2"/>
+                                                <constraint firstItem="tnA-ln-ALc" firstAttribute="leading" secondItem="Epp-0q-uqs" secondAttribute="trailing" constant="15" id="Klo-Iw-kNx"/>
+                                                <constraint firstItem="CcJ-Bu-ajb" firstAttribute="centerY" secondItem="fkH-RL-R9N" secondAttribute="centerY" id="LQj-xu-9go"/>
                                                 <constraint firstItem="fkH-RL-R9N" firstAttribute="centerY" secondItem="2my-3P-yEr" secondAttribute="centerY" id="UZP-q7-qx2"/>
-                                                <constraint firstItem="tnA-ln-ALc" firstAttribute="centerY" secondItem="2my-3P-yEr" secondAttribute="centerY" id="aTg-l0-rp1"/>
-                                                <constraint firstItem="fkH-RL-R9N" firstAttribute="leading" secondItem="CcJ-Bu-ajb" secondAttribute="trailing" constant="20" id="bzF-Df-EhG"/>
-                                                <constraint firstItem="fad-fo-v2L" firstAttribute="centerY" secondItem="2my-3P-yEr" secondAttribute="centerY" id="hig-KW-gXC"/>
                                                 <constraint firstAttribute="bottom" secondItem="Epp-0q-uqs" secondAttribute="bottom" constant="10.5" id="ib3-51-Q9G"/>
-                                                <constraint firstItem="CcJ-Bu-ajb" firstAttribute="leading" secondItem="fad-fo-v2L" secondAttribute="trailing" constant="10" id="jA3-4E-ONm"/>
                                                 <constraint firstItem="NQ7-Kg-aKq" firstAttribute="centerY" secondItem="2my-3P-yEr" secondAttribute="centerY" id="nCH-Bn-2Yy"/>
+                                                <constraint firstItem="CcJ-Bu-ajb" firstAttribute="leading" secondItem="fad-fo-v2L" secondAttribute="trailing" id="obs-Z8-tJA"/>
+                                                <constraint firstItem="tnA-ln-ALc" firstAttribute="centerY" secondItem="CcJ-Bu-ajb" secondAttribute="centerY" id="wKm-K6-dPW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

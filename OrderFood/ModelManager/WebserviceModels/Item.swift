@@ -14,7 +14,7 @@ class Item: Mappable {
     internal var FoodItemId:    Int = 0
     internal var FoodItemName:  String = ""
     internal var FoodItemDesc:  String = ""
-    internal var Amount:        Int = 0
+    internal var Amount:        Double = 0.0
     internal var TaxAmount:     Int = 0
     internal var CategoryId:    Int = 0
     internal var Image:         String = ""

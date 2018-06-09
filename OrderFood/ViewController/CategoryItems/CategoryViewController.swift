@@ -13,6 +13,7 @@ class CategoryViewController: UIViewController {
     var tableViewItems: UITableView!
     var arrayCartItem = [Int]()
     var arrayItems = [Item]()
+    var arrayItemsFiltered = [Item]()
     
     var indexOfCategory: Int = 0
     
@@ -68,10 +69,14 @@ class CategoryViewController: UIViewController {
             
             NotificationCenter.default.addObserver(self, selector: #selector(CategoryViewController.UpdateModelRegardingCart), name: NSNotification.Name(rawValue: "UpdateModelRegardingCart"), object: nil)
         }
+        
+        
+        //Add Observer for Veg / Non-Veg Filter
+        NotificationCenter.default.addObserver(self, selector: #selector(CategoryViewController.FilterItemsForVeg), name: NSNotification.Name(rawValue: "FilterItemsForVeg"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if self.arrayItems.count <= 0 {
+        if self.arrayItemsFiltered.count <= 0 {
             //Call Web Service
             self.getItemForCategory(self.indexOfCategory, isNeedToShowLoader: true)
         }
@@ -80,6 +85,36 @@ class CategoryViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: - Observer
+    func FilterItemsForVeg(_ notification: Notification) -> Void {
+        //Filter Data on Veg / Non-Veg condition
+        self.filterItems(AppUtils.APPDELEGATE().isNeedToShowVegItemsOnly)
+    }
+    
+    //MARK: - Filter Items Array on Veg / Non-Veg
+    func filterItems(_ isVegOnly: Bool) -> Void {
+        //First Remove All Array Objects
+        self.arrayItemsFiltered.removeAll()
+        
+        //Filter
+        if isVegOnly == true {
+            for item in self.arrayItems {
+                if item.IsVeg == 0 {
+                    //Non-Veg, Do Nothing
+                }else {
+                    self.arrayItemsFiltered.append(item)
+                }
+            }
+        }else {
+            for item in self.arrayItems {
+                self.arrayItemsFiltered.append(item)
+            }
+        }
+        
+        //Reload UITableView
+        self.tableViewItems.reloadData()
     }
     
     //MARK: - Observer
@@ -108,7 +143,7 @@ class CategoryViewController: UIViewController {
             
             //Add item to Cart
             //Get Model
-            let model = self.arrayItems[sender.tag]
+            let model = self.arrayItemsFiltered[sender.tag]
             model.numberOfItem = 1
             
             //Add New Cart
@@ -137,7 +172,7 @@ class CategoryViewController: UIViewController {
     //MARK: - Plus Item to Cart
     func btnPlusItemClicked(_ sender: UIButton) -> Void {
         //Get Model
-        let model = self.arrayItems[sender.tag]
+        let model = self.arrayItemsFiltered[sender.tag]
         
         //Get number of items
         var numberOfItems = model.numberOfItem
@@ -165,7 +200,7 @@ class CategoryViewController: UIViewController {
     //MARK: - Minus Item to Cart
     func btnMinusItemClicked(_ sender: UIButton) -> Void {
         //Get Model
-        let model = self.arrayItems[sender.tag]
+        let model = self.arrayItemsFiltered[sender.tag]
         
         //Get number of items
         var numberOfItems = model.numberOfItem
@@ -212,7 +247,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.arrayItems.count
+        return self.arrayItemsFiltered.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -224,7 +259,7 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellTemp") as! CellItem
         
         //Get Model
-        let model = self.arrayItems[indexPath.row]
+        let model = self.arrayItemsFiltered[indexPath.row]
         
         //Set Data
         cell.lblName.text = model.FoodItemName
@@ -330,7 +365,10 @@ extension CategoryViewController {
                     }
                     
                     //Reload Table View
-                    self.tableViewItems.reloadData()
+                    //self.tableViewItems.reloadData()
+                    
+                    //Filter Data on Veg / Non-Veg condition
+                    self.filterItems(AppUtils.APPDELEGATE().isNeedToShowVegItemsOnly)
                 }
             }else {
             }

@@ -41,6 +41,21 @@ class Home: SuperViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - Veg / Non-Veg
+    @IBAction func switchVegNonValueChanged(_ sender: Any) {
+        if self.switchVegNonVeg.isOn == true {
+            self.switchVegNonVeg.isOn = true
+            AppUtils.APPDELEGATE().isNeedToShowVegItemsOnly = true
+        }else {
+            self.switchVegNonVeg.isOn = false
+            AppUtils.APPDELEGATE().isNeedToShowVegItemsOnly = false
+        }
+        
+        //Post Observer for Filter Items on Veg / Non-Veg
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "FilterItemsForVeg"), object: nil)
+    }
+    
+    
     
     //MARK: - Set Up Page View Controller
     func setUpPageViewControllers() -> Void {
@@ -88,15 +103,17 @@ class Home: SuperViewController {
             self.viewCart.isHidden = false
             
             //Get Total number of Item and Price
-            var total = 0
+            var total = 0.00
             var totalItem = 0
             for item in AppUtils.APPDELEGATE().arrayCart {
                 totalItem = totalItem + item.numberOfItem!
-                total = total + (item.numberOfItem! * item.price!)
+                
+                let numberOfItemDouble = Double(item.numberOfItem!)
+                total = total + (numberOfItemDouble * item.price!)
             }
             
             //Set Data
-            self.lblCartInfo.text = "\(totalItem) ITEMS : $ \(total).0"
+            self.lblCartInfo.text = "\(totalItem) ITEMS : $ \(total)"
             
         }else {
             //Hide Cart View

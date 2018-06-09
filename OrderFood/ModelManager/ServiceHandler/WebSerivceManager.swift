@@ -11,6 +11,7 @@ import UIKit
 import Alamofire
 import ObjectMapper
 import SwiftyJSON
+import SystemConfiguration
 
 enum Web_Service : String {
     case key = "key"
@@ -115,6 +116,28 @@ let WS_GET_ITEM         = WS_BASE_URL + "getappfooditem?categoryid="
 let WS_SEARCH_ITEM      = WS_BASE_URL + "SearchFoodItem?prefix="
 
 
+
+//MARK: - Check Internet Connection
+func isInternetAvailable() -> Bool {
+    var zeroAddress = sockaddr_in()
+    zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+    zeroAddress.sin_family = sa_family_t(AF_INET)
+    
+    let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+        $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+            SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+        }
+    }
+    
+    var flags = SCNetworkReachabilityFlags()
+    if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+        return false
+    }
+    let isReachable = flags.contains(.reachable)
+    let needsConnection = flags.contains(.connectionRequired)
+    return (isReachable && !needsConnection)
+}
+
 class WebSerivceManager:NSObject {
     
     let alamofireManager : Alamofire.SessionManager
@@ -132,6 +155,20 @@ class WebSerivceManager:NSObject {
     //Post method
     class func POSTRequest(url: String, showLoader : Bool, Parameter:[String : AnyObject]?, success:((Bool,WebServiceReponse?, Error?) -> Void)?)
     {
+        
+        //Check Internet Connection
+        if isInternetAvailable() == false {
+            //Show Alert
+            let viewCTR = AppUtils.APPDELEGATE().getCurrentViewController()
+            
+            DispatchQueue.main.async {
+                AppUtils.showAlertWithTitle(title: "No Internet Connection", message: "There is an issue with the network connection. Please check your setting and try again.", viewController: viewCTR)
+            }
+            
+            return
+        }
+        
+        
         if(showLoader) {
             //Run on main thread
             DispatchQueue.main.async {
@@ -248,6 +285,20 @@ class WebSerivceManager:NSObject {
     //GET method
     class func GETRequest(url: String, showLoader : Bool, success:((Bool,WebServiceReponse?, Error?) -> Void)?)
     {
+        
+        //Check Internet Connection
+        if isInternetAvailable() == false {
+            //Show Alert
+            let viewCTR = AppUtils.APPDELEGATE().getCurrentViewController()
+            
+            DispatchQueue.main.async {
+                AppUtils.showAlertWithTitle(title: "No Internet Connection", message: "There is an issue with the network connection. Please check your setting and try again.", viewController: viewCTR)
+            }
+            
+            return
+        }
+        
+        
         if(showLoader) {
             AppUtils.showLoader()
         }

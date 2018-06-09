@@ -46,7 +46,13 @@ class Checkout: SuperViewController {
     //MARK: - UIButton Actions
     //MARK: - Online
     @IBAction func btnOnlineClicked(_ sender: Any) {
+        /*
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.ORDER_CONFIRMATION) as! OrderConfirmation
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+         */
+        
+        //Navigate to get Card Details
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.CARD_INFORMATION) as! CardInformation
         self.navigationController?.pushViewController(viewCTR, animated: true)
     }
     

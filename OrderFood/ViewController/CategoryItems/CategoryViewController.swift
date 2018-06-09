@@ -73,6 +73,9 @@ class CategoryViewController: UIViewController {
         
         //Add Observer for Veg / Non-Veg Filter
         NotificationCenter.default.addObserver(self, selector: #selector(CategoryViewController.FilterItemsForVeg), name: NSNotification.Name(rawValue: "FilterItemsForVeg"), object: nil)
+        
+        //Call Web Service
+        self.getItemForCategory(self.indexOfCategory, isNeedToShowLoader: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -11,6 +11,7 @@ import Parchment
 
 class Home: SuperViewController {
 
+    @IBOutlet weak var lblShowVegDishesStatic: UILabel!
     @IBOutlet weak var switchVegNonVeg: UISwitch!
     @IBOutlet weak var viewCart: UIView!
     @IBOutlet weak var lblCartInfo: UILabel!
@@ -24,6 +25,10 @@ class Home: SuperViewController {
         
         //Navigation Title
         self.navigationItem.title = "Home"
+        
+        //Hide Other Controls
+        self.lblShowVegDishesStatic.isHidden = true
+        self.switchVegNonVeg.isHidden = true
         
         //Firstly hide cart view
         self.showCartView()
@@ -59,6 +64,10 @@ class Home: SuperViewController {
     
     //MARK: - Set Up Page View Controller
     func setUpPageViewControllers() -> Void {
+        //Show Other Controls
+        self.lblShowVegDishesStatic.isHidden = false
+        self.switchVegNonVeg.isHidden = false
+        
         //Right Bar Button
         let rightBarWhistle = UIBarButtonItem(image: UIImage(named: "Whistle")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(whistleClicked))
         

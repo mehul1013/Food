@@ -1,6 +1,7 @@
 PODS:
   - ActionSheetPicker-3.0 (2.3.0)
   - Alamofire (4.7.2)
+  - CCValidator (1.0.2)
   - Crashlytics (3.10.2):
     - Fabric (~> 1.7.7)
   - Fabric (1.7.7)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - Alamofire (~> 4.7)
+  - CCValidator
   - Crashlytics
   - Fabric
   - ObjectMapper (~> 3.2)
@@ -21,6 +23,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ActionSheetPicker-3.0
     - Alamofire
+    - CCValidator
     - Crashlytics
     - Fabric
     - ObjectMapper
@@ -30,12 +33,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  CCValidator: 49175409dcd9da1a1bd8d7cc6db31d44a301da84
   Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
   ObjectMapper: 5cccd2de6f253eda859df8116a5a554d9769e859
   Parchment: 21e6c47488427cc96044c279187624287a10524f
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 20cf820d3deb86fb5dc3337ef6b99d072e239b89
+PODFILE CHECKSUM: 4cb1a942dc3da8ad6fd099aea766906170106e17
 
 COCOAPODS: 1.5.3

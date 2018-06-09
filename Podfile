@@ -14,6 +14,8 @@ pod 'ActionSheetPicker-3.0'
 pod 'Fabric'
 pod 'Crashlytics'
 
+pod 'CCValidator'
+
   target 'OrderFoodTests' do
     inherit! :search_paths
     # Pods for testing

@@ -221,4 +221,11 @@ struct ScreenStatus {
     static let Pending   = "pending"
 }
 
+//Card Type
+struct CardType {
+    static let Visa         = "Visa"
+    static let MasterCard   = "MasterCard"
+    static let Unknown      = "card"
+}
+
 

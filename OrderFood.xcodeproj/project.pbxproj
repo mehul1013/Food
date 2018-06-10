@@ -36,6 +36,7 @@
 		0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */; };
 		0E6B100C20ADF250007F3EFA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B100B20ADF250007F3EFA /* Search.swift */; };
 		0E735F3F20CBDC85006D2DC9 /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */; };
+		0EC267BB20CD6BA7008257E2 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC267BA20CD6BA7008257E2 /* CartModel.swift */; };
 		0ECA5FBE209CA7410034AE81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FBD209CA7410034AE81 /* AppDelegate.swift */; };
 		0ECA5FC3209CA7410034AE81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA5FC1209CA7410034AE81 /* Main.storyboard */; };
 		0ECA5FC5209CA7410034AE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA5FC4209CA7410034AE81 /* Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetail.swift; sourceTree = "<group>"; };
 		0E6B100B20ADF250007F3EFA /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
+		0EC267BA20CD6BA7008257E2 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		0ECA5FBA209CA7410034AE81 /* OrderFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECA5FBD209CA7410034AE81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ECA5FC2209CA7410034AE81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 				2A9CB45F20C00F4900B749AD /* Category.swift */,
 				2A648DA120C15B430059E75B /* Item.swift */,
 				0E2B3E5320C3D6220087ECA6 /* SearchItem.swift */,
+				0EC267BA20CD6BA7008257E2 /* CartModel.swift */,
 			);
 			path = WebserviceModels;
 			sourceTree = "<group>";
@@ -815,6 +818,7 @@
 				2AC9CB0A20AC6537005AD6A9 /* CellMyCart.swift in Sources */,
 				2A9CB46920C00F4900B749AD /* SDWebImagePrefetcher.m in Sources */,
 				2A9CB47020C00F4900B749AD /* UIView+WebCacheOperation.m in Sources */,
+				0EC267BB20CD6BA7008257E2 /* CartModel.swift in Sources */,
 				0E311C65209D8FE1008F7DD1 /* CellItem.swift in Sources */,
 				0E311C6B209D8FE1008F7DD1 /* LandingPage.swift in Sources */,
 				2A9CB46C20C00F4900B749AD /* UIImage+MultiFormat.m in Sources */,

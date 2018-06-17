@@ -34,6 +34,7 @@
 		0E311C85209DB15E008F7DD1 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C79209DB15E008F7DD1 /* Roboto-Thin.ttf */; };
 		0E311C86209DB15E008F7DD1 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */; };
 		0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */; };
+		0E4D54E320D689A1001F181C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4D54E220D689A0001F181C /* GoogleService-Info.plist */; };
 		0E6B100C20ADF250007F3EFA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B100B20ADF250007F3EFA /* Search.swift */; };
 		0E735F3F20CBDC85006D2DC9 /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */; };
 		0EC267BB20CD6BA7008257E2 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC267BA20CD6BA7008257E2 /* CartModel.swift */; };
@@ -119,6 +120,8 @@
 		0E311C79209DB15E008F7DD1 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetail.swift; sourceTree = "<group>"; };
+		0E4D54E220D689A0001F181C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E4D54E420D68DF8001F181C /* OrderFood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderFood.entitlements; sourceTree = "<group>"; };
 		0E6B100B20ADF250007F3EFA /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
 		0EC267BA20CD6BA7008257E2 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
@@ -376,11 +379,13 @@
 		0ECA5FBC209CA7410034AE81 /* OrderFood */ = {
 			isa = PBXGroup;
 			children = (
+				0E4D54E420D68DF8001F181C /* OrderFood.entitlements */,
 				0ECA5FBD209CA7410034AE81 /* AppDelegate.swift */,
 				0ECA5FC1209CA7410034AE81 /* Main.storyboard */,
 				0ECA5FC4209CA7410034AE81 /* Assets.xcassets */,
 				0ECA5FC6209CA7410034AE81 /* LaunchScreen.storyboard */,
 				0ECA5FC9209CA7410034AE81 /* Info.plist */,
+				0E4D54E220D689A0001F181C /* GoogleService-Info.plist */,
 				2A9CB47920C00FAA00B749AD /* OrderFood_Bridging_Header.h */,
 				0E311C4F209D8FE1008F7DD1 /* CustomClasses */,
 				0E311C52209D8FE1008F7DD1 /* AppResources */,
@@ -568,6 +573,7 @@
 				0ECA5FB8209CA7410034AE81 /* Resources */,
 				46D1559C7725653DA4D919D7 /* [CP] Embed Pods Frameworks */,
 				2A9CB47A20C015B300B749AD /* ShellScript */,
+				3489E72F1429C730C7FFD8D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -631,6 +637,11 @@
 						DevelopmentTeam = JEDFVGAD9T;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					0ECA5FCD209CA7410034AE81 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -684,6 +695,7 @@
 				0E311C80209DB15E008F7DD1 /* Roboto-Light.ttf in Resources */,
 				0E311C67209D8FE1008F7DD1 /* FoodItem.png in Resources */,
 				0E311C7C209DB15E008F7DD1 /* Roboto-BlackItalic.ttf in Resources */,
+				0E4D54E320D689A1001F181C /* GoogleService-Info.plist in Resources */,
 				0E311C86209DB15E008F7DD1 /* Roboto-ThinItalic.ttf in Resources */,
 				0ECA5FC5209CA7410034AE81 /* Assets.xcassets in Resources */,
 				0ECA5FC3209CA7410034AE81 /* Main.storyboard in Resources */,
@@ -742,6 +754,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1df032e07bde55ae92ac68cafa27574ba48ef083 87a3ef54da31614abbdb616a760f1950daf5f4f7c4b3fd219d7ca54715770a0a";
 		};
+		3489E72F1429C730C7FFD8D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OrderFood/Pods-OrderFood-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OrderFood/Pods-OrderFood-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		46D1559C7725653DA4D919D7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -752,18 +784,26 @@
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CCValidator/CCValidator.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCValidator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -956,7 +996,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8fdc165f-02cd-4252-812b-8d2c845d9a4a";
+				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1002,7 +1042,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "8fdc165f-02cd-4252-812b-8d2c845d9a4a";
+				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -1014,6 +1054,7 @@
 			baseConfigurationReference = EC2906ADEAC089CB47FF1A0C /* Pods-OrderFood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OrderFood/OrderFood.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
 				DEVELOPMENT_TEAM = JEDFVGAD9T;
 				INFOPLIST_FILE = OrderFood/Info.plist;
@@ -1021,8 +1062,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mobapp.at.foodandbeverage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8fdc165f-02cd-4252-812b-8d2c845d9a4a";
-				PROVISIONING_PROFILE_SPECIFIER = "Food and Beverage Development";
+				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
+				PROVISIONING_PROFILE_SPECIFIER = EZFnB_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = OrderFood/OrderFood_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1034,6 +1075,7 @@
 			baseConfigurationReference = FBEBD74F8E32EC6B68EC7FF9 /* Pods-OrderFood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OrderFood/OrderFood.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
 				DEVELOPMENT_TEAM = JEDFVGAD9T;
 				INFOPLIST_FILE = OrderFood/Info.plist;
@@ -1041,8 +1083,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mobapp.at.foodandbeverage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8fdc165f-02cd-4252-812b-8d2c845d9a4a";
-				PROVISIONING_PROFILE_SPECIFIER = "Food and Beverage Development";
+				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
+				PROVISIONING_PROFILE_SPECIFIER = EZFnB_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = OrderFood/OrderFood_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

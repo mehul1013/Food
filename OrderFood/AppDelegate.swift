@@ -10,6 +10,11 @@ import UIKit
 import Fabric
 import Crashlytics
 
+import UserNotifications
+import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
+
 //mobapp.at.foodandbeverage
 
 @UIApplicationMain
@@ -28,6 +33,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Crashlytics
         Fabric.with([Crashlytics.self])
+        
+        //Push Notification
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+            // For iOS 10 data message (sent via FCM
+            //Messaging.messaging().remoteMessageDelegate = self
+            Messaging.messaging().delegate = self
+            
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        
+        FirebaseApp.configure()
                 
         return true
     }
@@ -64,5 +91,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+
+//MARK: - Push Notification
+extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
+    // The callback to handle data message received via FCM for devices running iOS 10 or above.
+    func applicationReceivedRemoteMessage(_ remoteMessage: MessagingDelegate) {
+        print(remoteMessage)
+    }
 }
 

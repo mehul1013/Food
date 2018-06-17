@@ -16,6 +16,11 @@ pod 'Crashlytics'
 
 pod 'CCValidator'
 
+pod 'Firebase/Core'
+pod 'Firebase/Messaging'
+# Only pull in Phone Auth login features
+pod 'FirebaseUI/Phone', '~> 5.0'
+
   target 'OrderFoodTests' do
     inherit! :search_paths
     # Pods for testing

@@ -14,6 +14,7 @@ class Cart: NSObject {
     var itemName: String?
     var numberOfItem: Int?
     var price: Double?
+    var isItemModified: Bool = false
     
     override init() {
     }

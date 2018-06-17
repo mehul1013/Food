@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OrderFood/ViewController/Checkout/Checkout.swift"
-            timestampString = "550236413.457428"
+            timestampString = "550921888.8524539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -26,12 +26,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OrderFood/ViewController/CategoryItems/CategoryViewController.swift"
-            timestampString = "550234833.439348"
+            timestampString = "550921888.852518"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
+            landmarkName = "removeItemFromCart(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderFood/ViewController/CategoryItems/Home.swift"
+            timestampString = "550921888.853439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "212"
             endingLineNumber = "212"
-            landmarkName = "btnMinusItemClicked(_:)"
+            landmarkName = "updateCart()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrderFood.Home.updateCart() -&gt; ()"
+                  moduleName = "OrderFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MehulS/Desktop/Desktop/WorkSpace/meraTicket.com/FoodAndBeverage/GitHub%202/Food/OrderFood/ViewController/CategoryItems/Home.swift"
+                  timestampString = "550921936.325845"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "1587">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;OrderFood.WebServiceReponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in OrderFood.Home.updateCart() -&gt; ()"
+                  moduleName = "OrderFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MehulS/Desktop/Desktop/WorkSpace/meraTicket.com/FoodAndBeverage/GitHub%202/Food/OrderFood/ViewController/CategoryItems/Home.swift"
+                  timestampString = "550921936.328177"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "214"
+                  endingLineNumber = "214"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderFood/ViewController/MyCart/MyCart.swift"
+            timestampString = "550921888.8537821"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
+            landmarkName = "updateCart()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OrderFood.MyCart.updateCart() -&gt; ()"
+                  moduleName = "OrderFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MehulS/Desktop/Desktop/WorkSpace/meraTicket.com/FoodAndBeverage/GitHub%202/Food/OrderFood/ViewController/MyCart/MyCart.swift"
+                  timestampString = "550921888.989848"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "256"
+                  endingLineNumber = "256"
+                  offsetFromSymbolStart = "1587">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;OrderFood.WebServiceReponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in OrderFood.MyCart.updateCart() -&gt; ()"
+                  moduleName = "OrderFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MehulS/Desktop/Desktop/WorkSpace/meraTicket.com/FoodAndBeverage/GitHub%202/Food/OrderFood/ViewController/MyCart/MyCart.swift"
+                  timestampString = "550921888.9926521"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderFood/ViewController/CategoryItems/Home.swift"
+            timestampString = "550921918.959132"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "updateCart()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

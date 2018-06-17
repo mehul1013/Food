@@ -16,6 +16,9 @@ class VenueDetail: SuperViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //Get Cart, if available
+        self.getCart()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,5 +41,39 @@ class VenueDetail: SuperViewController {
     @IBAction func btnViewMenuClicked(_ sender: Any) {
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.HOME) as! Home
         self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
+}
+
+//MARK: - Web Services
+extension VenueDetail {
+    //MARK: - Get All Categories
+    func getCart() -> Void {
+        
+        CartModel.getCart(showLoader: true) { (isSuccess, response, error) in
+            
+            if isSuccess == true {
+                //Get Data
+                let array = response?.formattedData as! [CartModel]
+                print("Cart from Web = \(array)")
+                
+                //First clear cart
+                AppUtils.APPDELEGATE().arrayCart.removeAll()
+                
+                //Get Cart value into local object of Cart
+                for item in array {
+                    let cart = Cart()
+                    
+                    cart.itemID = item.ItemID
+                    cart.itemName = item.ItemName
+                    cart.numberOfItem = item.Qty
+                    cart.price = item.ItemPrice
+                    cart.isItemModified = false
+                    
+                    AppUtils.APPDELEGATE().arrayCart.append(cart)
+                }
+                
+            }else {
+            }
+        }
     }
 }

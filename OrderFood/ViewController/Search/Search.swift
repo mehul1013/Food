@@ -107,6 +107,7 @@ class Search: SuperViewController {
             cart.itemName = model.itemname
             cart.numberOfItem = 1
             cart.price = model.itemprice
+            cart.isItemModified = true
             
             AppUtils.APPDELEGATE().arrayCart.append(cart)
             
@@ -121,6 +122,9 @@ class Search: SuperViewController {
             
             //Update Flag
             self.isCartModified = true
+            
+            //Update Flag
+            AppUtils.APPDELEGATE().isAnyChangeInCart = true
             
             //Reload Cell
             self.tableViewItems.reloadData()
@@ -142,6 +146,7 @@ class Search: SuperViewController {
                 
                 //Assign new value to cart
                 item.numberOfItem = numberOfItems
+                item.isItemModified = true
                 
                 //Assign new value to model
                 model.numberOfItem = numberOfItems
@@ -153,6 +158,9 @@ class Search: SuperViewController {
                 self.tableViewItems.reloadData()
             }
         }
+        
+        //Update Flag
+        AppUtils.APPDELEGATE().isAnyChangeInCart = true
         
         //Post Observer
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ManageCartView"), object: nil)
@@ -174,10 +182,14 @@ class Search: SuperViewController {
                 //If it is getting 0 or less, make it 0
                 if numberOfItems <= 0 {
                     numberOfItems = 0
+                    
+                    //Remove item from Cart with web service
+                    self.removeItemFromCart(item.itemID!)
                 }
                 
                 //Assign new value to cart
                 item.numberOfItem = numberOfItems
+                item.isItemModified = true
                 
                 //Assign new value to model
                 model.numberOfItem = numberOfItems
@@ -189,6 +201,10 @@ class Search: SuperViewController {
                     
                     //Get Items from CART, if any
                     self.getItemsFromCart()
+                }else {
+                    //In else closure because no need to make flag true when it comes to delete item from cart from local as well as API
+                    //Update Flag
+                    AppUtils.APPDELEGATE().isAnyChangeInCart = true
                 }
                 
                 //Update Flag
@@ -198,6 +214,9 @@ class Search: SuperViewController {
                 self.tableViewItems.reloadData()
             }
         }
+        
+        //Update Flag
+        AppUtils.APPDELEGATE().isAnyChangeInCart = true
         
         //Post Observer
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ManageCartView"), object: nil)
@@ -351,6 +370,17 @@ extension Search {
             
             //Reload Table View
             self.tableViewItems.reloadData()
+        }
+    }
+    
+    //MARK: - Remove Item from Cart
+    func removeItemFromCart(_ itemID: Int) -> Void {
+        
+        CartModel.deleteItemCart(itemID: itemID, showLoader: true) { (isSuccess, response, error) in
+            if isSuccess == true {
+                //Success, there is no data getting in response
+            }else {
+            }
         }
     }
 }

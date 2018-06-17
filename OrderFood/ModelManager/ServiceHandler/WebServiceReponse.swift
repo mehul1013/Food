@@ -26,6 +26,8 @@ class WebServiceReponse : Mappable {
     internal var Errors : String?
     internal var AggregateResults : String?
     internal var Total : String?
+    internal var GrandTotal : Int?
+    internal var Count : Int?
    
     
     init() {
@@ -46,6 +48,9 @@ class WebServiceReponse : Mappable {
         AggregateResults <- map["AggregateResults"]
         Total <- map["Total"]
         
+        GrandTotal <- map["Total"]
+        Count <- map["Total"]
+        
         status <- map["STATUS"]
         message <- map["MESSAGE"]
         //data <- map["DATA"]
@@ -62,7 +67,7 @@ class WebServiceReponse : Mappable {
         
 
         do {
-            if try map.value("SUCCESS") == 1 {
+            if try map.value("success") == 1 {
                 success = true
             }else {
                 success = false

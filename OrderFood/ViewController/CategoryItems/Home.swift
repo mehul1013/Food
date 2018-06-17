@@ -144,10 +144,20 @@ class Home: SuperViewController {
     
     //MARK: - View Cart
     @IBAction func btnViewCartClicked(_ sender: Any) {
+        
+        //If any item added or deleted to cart, update through web service
+        if AppUtils.APPDELEGATE().isAnyChangeInCart == true {
+            //Call Web Service to Update Cart
+            self.updateCart()
+        }else {
+            self.navigateToViewCart()
+        }
+    }
+    
+    func navigateToViewCart() -> Void {
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.MY_CART) as! MyCart
         self.navigationController?.pushViewController(viewCTR, animated: true)
     }
-    
 }
 
 
@@ -156,7 +166,7 @@ extension Home {
     //MARK: - Get All Categories
     func getAllCategories() -> Void {
         
-        Category.getcategories(strQRCode: "KkPuRiWFfn", showLoader: true) { (isSuccess, response, error) in
+        Category.getcategories(strQRCode: AppUtils.APPDELEGATE().strQRCodeValue, showLoader: true) { (isSuccess, response, error) in
             
             if error == nil {
                 //Get Data
@@ -169,6 +179,59 @@ extension Home {
                     self.setUpPageViewControllers()
                 }
             }else {
+            }
+        }
+    }
+    
+    //MARK: - Update Cart
+    func updateCart() -> Void {
+        
+        //Initialise Array
+        let arrayModifiedCart = NSMutableArray()
+        
+        //Get Modified Array
+        for cart in AppUtils.APPDELEGATE().arrayCart {
+            //If item modified then only update through web service
+            if cart.isItemModified == true {
+                var dictTemp = [String : AnyObject]()
+                
+                dictTemp["ItemID"]      = cart.itemID as AnyObject
+                dictTemp["LevelId"]     = 0 as AnyObject
+                dictTemp["Qty"]         = cart.numberOfItem as AnyObject
+                dictTemp["RowId"]       = 0 as AnyObject
+                dictTemp["SeatId"]      = 0 as AnyObject
+                dictTemp["SectionId"]   = 0 as AnyObject
+                
+                arrayModifiedCart.add(dictTemp)
+                
+                //Update Global Cart Modified value, so next time if there is no change, it will not call web service
+                cart.isItemModified = false
+            }
+        }
+        
+        //If there is nothing to update in ARRAY, no need to call WS
+        if arrayModifiedCart.count <= 0 {
+            //Update Flag
+            AppUtils.APPDELEGATE().isAnyChangeInCart = false
+            
+            //Navigate to next screen
+            self.navigateToViewCart()
+            
+        }else {
+            
+            CartModel.createCart(arrayItems: arrayModifiedCart, showLoader: true) { (isSuccess, response, error) in
+                
+                if isSuccess == true {
+                    //Success, there is no data getting in response
+                    
+                    //Update Flag
+                    AppUtils.APPDELEGATE().isAnyChangeInCart = false
+                    
+                    //Navigate to next screen
+                    self.navigateToViewCart()
+                    
+                }else {
+                }
             }
         }
     }

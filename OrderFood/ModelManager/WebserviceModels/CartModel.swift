@@ -11,10 +11,14 @@ import ObjectMapper
 
 class CartModel: Mappable {
     
-    internal var itemname:  String = ""
-    internal var itemprice: Double = 0.0
-    internal var image:     String = ""
-    internal var itemId:    Int = 0
+    internal var GuestCartId    : Int = 0
+    internal var NumberOfItem   : Int = 0
+    internal var ItemID         : Int = 0
+    internal var ItemName       : String = ""
+    internal var ItemPrice      : Double = 0.0
+    internal var Qty            : Int = 0
+    internal var GuestCartItemDetailID  : Int = 0
+    internal var Total          : Double = 0.0
     
     init() {
     }
@@ -29,20 +33,63 @@ class CartModel: Mappable {
     }
     
     func mapping(map: Map) {
-        itemname    <- map["itemname"]
-        itemprice   <- map["itemprice"]
-        image       <- map["image"]
-        itemId      <- map["itemId"]
+        GuestCartId             <- map["GuestCartId"]
+        NumberOfItem            <- map["NumberOfItem"]
+        ItemID                  <- map["ItemID"]
+        ItemName                <- map["ItemName"]
+        ItemPrice               <- map["ItemPrice"]
+        Qty                     <- map["Qty"]
+        GuestCartItemDetailID   <- map["GuestCartItemDetailID"]
+        Total                   <- map["Total"]
     }
     
     
-    //MARK: - Get Categories
-    class func createCart(arrayItems: [[String: AnyObject]], showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
+    //MARK: - Get Cart
+    class func getCart(showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
+        
+        let uuid = UIDevice.current.identifierForVendor
+        
+        //Make URL
+        let strURL = WS_GET_CART_DETAIL + (uuid?.uuidString)!
+        
+        WebSerivceManager.POSTRequest(url: strURL, showLoader: showLoader, Parameter: nil) { (isSuccess, response, error) in
+            if response?.data == nil {
+                completionHandler(isSuccess, nil, error)
+            }else {
+                (response?.data as! [[String : Any]])
+                let array = self.mapperObj.mapArray(JSONArray: response?.data as! [[String : Any]])
+                response?.formattedData = array as AnyObject?
+                
+                completionHandler(isSuccess, response, error)
+            }
+        }
+    }
+    
+    
+    //MARK: - Delete Cart Item
+    class func deleteItemCart(itemID: Int, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
+        
+        let uuid = UIDevice.current.identifierForVendor
+        
+        //Make URL
+        let strURL = WS_DELETE_CART + (uuid?.uuidString)! + "&ItemId=\(itemID)"
+        
+        WebSerivceManager.POSTRequest(url: strURL, showLoader: showLoader, Parameter: nil) { (isSuccess, response, error) in
+            if response?.success == false {
+                completionHandler(isSuccess, nil, error)
+            }else {
+                completionHandler(true, nil, error)
+            }
+        }
+    }
+    
+    //MARK: - Create Cart
+    class func createCart(arrayItems: NSMutableArray, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
         
         //GuestCartCreate
         let uuid = UIDevice.current.identifierForVendor
         let param1 : [String: AnyObject] = ["CustomerID"    : "0" as AnyObject,
-                                            "GUID"          : uuid as AnyObject,
+                                            "GUID"          : uuid?.uuidString as AnyObject,
                                             "UserID"        : "0" as AnyObject]
         
         //GuestCartDetailCreate
@@ -57,18 +104,20 @@ class CartModel: Mappable {
                                                "GuestCartDetailCreate"      : param2 as AnyObject,
                                                "GuestCartItemDetailCreate"  : arrayItems as AnyObject]
         
+        print("Dictionary : \(finalDict)")
+        
         //Make URL
         let strURL = WS_CREATE_GUEST_CART
         
          WebSerivceManager.POSTRequest(url: strURL, showLoader: showLoader, Parameter: finalDict) { (isSuccess, response, error) in
-            if response?.data == nil {
+            if response?.success == false {
                 completionHandler(isSuccess, nil, error)
             }else {
-                print(response?.data as! [[String : Any]])
-                let array = self.mapperObj.mapArray(JSONArray: response?.data as! [[String : Any]])
-                response?.formattedData = array as AnyObject?
+                //print(response?.data as! [[String : Any]])
+                //let array = self.mapperObj.mapArray(JSONArray: response?.data as! [[String : Any]])
+                //response?.formattedData = array as AnyObject?
                 
-                completionHandler(isSuccess, response, error)
+                completionHandler(true, nil, error)
             }
          }
     }

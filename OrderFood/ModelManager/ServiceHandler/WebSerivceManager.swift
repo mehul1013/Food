@@ -397,11 +397,18 @@ class WebSerivceManager:NSObject {
             
             //successHandler(true, dataObject, nil)
             //If block added by MeHuLa on 18 May 2017
-            if dataObject.success == true {
+            /*if dataObject.success == true {
                 successHandler(true, dataObject, nil)
             }else {
                 successHandler(false, dataObject, nil)
+            }*/
+            
+            if dataObject.data == nil {
+                successHandler(false, dataObject, nil)
+            }else {
+                successHandler(true, dataObject, nil)
             }
+            
         }else {
             successHandler(false, nil, apiResponse.result.error)
         }

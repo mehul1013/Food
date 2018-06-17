@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var strQRCodeValue: String = ""
     var isCategoryClassObserverAdded: Bool = false
     var isNeedToShowVegItemsOnly: Bool = false
+    var isAnyChangeInCart: Bool = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

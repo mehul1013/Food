@@ -42,6 +42,10 @@ open class FixedPagingViewController: PagingViewController<ViewControllerItem> {
 extension FixedPagingViewController: PagingViewControllerDataSource {
   
   public func pagingViewController<T>(_ pagingViewController: PagingViewController<T>, viewControllerForPagingItem pagingItem: T) -> UIViewController {
+    
+    //Post Observer for Refresh Cart
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "RefreshCart"), object: nil)
+    
     let index = items.index(of: pagingItem as! ViewControllerItem)!
     return items[index].viewController
   }

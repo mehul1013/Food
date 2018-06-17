@@ -74,14 +74,26 @@ class CategoryViewController: UIViewController {
         //Add Observer for Veg / Non-Veg Filter
         NotificationCenter.default.addObserver(self, selector: #selector(CategoryViewController.FilterItemsForVeg), name: NSNotification.Name(rawValue: "FilterItemsForVeg"), object: nil)
         
+        //Add Observer for CART Values Refresh and Reload UITableView
+        NotificationCenter.default.addObserver(self, selector: #selector(CategoryViewController.RefreshCart), name: NSNotification.Name(rawValue: "RefreshCart"), object: nil)
+        
         //Call Web Service
         self.getItemForCategory(self.indexOfCategory, isNeedToShowLoader: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //Get Items from CART, if any
+        self.getItemsFromCart()
+        
         if self.arrayItemsFiltered.count <= 0 {
             //Call Web Service
             self.getItemForCategory(self.indexOfCategory, isNeedToShowLoader: true)
+        }
+        
+        //Show Cart View if items in cart available
+        if AppUtils.APPDELEGATE().arrayCart.count > 0 {
+            //Post Observer
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ManageCartView"), object: nil)
         }
     }
 
@@ -94,6 +106,25 @@ class CategoryViewController: UIViewController {
     func FilterItemsForVeg(_ notification: Notification) -> Void {
         //Filter Data on Veg / Non-Veg condition
         self.filterItems(AppUtils.APPDELEGATE().isNeedToShowVegItemsOnly)
+    }
+    
+    func RefreshCart() -> Void {
+        //If any ITEM added to CART from SEARCH screen, then assign NUMBER OF ITEM to related MODEL
+        if AppUtils.APPDELEGATE().arrayCart.count > 0 {
+            for item in AppUtils.APPDELEGATE().arrayCart {
+                for model in self.arrayItems {
+                    if model.FoodItemId == item.itemID {
+                        model.numberOfItem = item.numberOfItem!
+                    }
+                }
+            }
+            
+            //Get Selected Item
+            self.getItemsFromCart()
+        }
+        
+        //Reload UITableView
+        self.tableViewItems.reloadData()
     }
     
     //MARK: - Filter Items Array on Veg / Non-Veg
@@ -129,7 +160,7 @@ class CategoryViewController: UIViewController {
     
     //MARK: - Get Items from Cart
     func getItemsFromCart() -> Void {
-        //First remove selected items from ARRAy
+        //First remove selected items from ARRAY
         self.arrayCartItem.removeAll()
         
         if AppUtils.APPDELEGATE().arrayCart.count > 0 {
@@ -155,6 +186,7 @@ class CategoryViewController: UIViewController {
             cart.itemName = model.FoodItemName
             cart.numberOfItem = 1
             cart.price = model.Amount
+            cart.isItemModified = true
             
             AppUtils.APPDELEGATE().arrayCart.append(cart)
             
@@ -166,6 +198,9 @@ class CategoryViewController: UIViewController {
                 //Post Observer
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ManageCartView"), object: nil)
             }
+            
+            //Update Flag
+            AppUtils.APPDELEGATE().isAnyChangeInCart = true
             
             //Reload Cell
             self.tableViewItems.reloadData()
@@ -187,6 +222,7 @@ class CategoryViewController: UIViewController {
                 
                 //Assign new value to cart
                 item.numberOfItem = numberOfItems
+                item.isItemModified = true
                 
                 //Assign new value to model
                 model.numberOfItem = numberOfItems
@@ -195,6 +231,9 @@ class CategoryViewController: UIViewController {
                 self.tableViewItems.reloadData()
             }
         }
+        
+        //Update Flag
+        AppUtils.APPDELEGATE().isAnyChangeInCart = true
         
         //Post Observer
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ManageCartView"), object: nil)
@@ -216,10 +255,14 @@ class CategoryViewController: UIViewController {
                 //If it is getting 0 or less, make it 0
                 if numberOfItems <= 0 {
                     numberOfItems = 0
+                    
+                    //Remove item from Cart with web service
+                    self.removeItemFromCart(item.itemID!)
                 }
                 
                 //Assign new value to cart
                 item.numberOfItem = numberOfItems
+                item.isItemModified = true
                 
                 //Assign new value to model
                 model.numberOfItem = numberOfItems
@@ -231,12 +274,19 @@ class CategoryViewController: UIViewController {
                     
                     //Get Items from CART, if any
                     self.getItemsFromCart()
+                }else {
+                    //In else closure because no need to make flag true when it comes to delete item from cart from local as well as API
+                    //Update Flag
+                    AppUtils.APPDELEGATE().isAnyChangeInCart = true
                 }
                 
                 //Reload UITableView
                 self.tableViewItems.reloadData()
             }
         }
+        
+        //Update Flag
+        AppUtils.APPDELEGATE().isAnyChangeInCart = true
         
         //Post Observer
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ManageCartView"), object: nil)
@@ -373,6 +423,17 @@ extension CategoryViewController {
                     //Filter Data on Veg / Non-Veg condition
                     self.filterItems(AppUtils.APPDELEGATE().isNeedToShowVegItemsOnly)
                 }
+            }else {
+            }
+        }
+    }
+    
+    //MARK: - Remove Item from Cart
+    func removeItemFromCart(_ itemID: Int) -> Void {
+        
+        CartModel.deleteItemCart(itemID: itemID, showLoader: true) { (isSuccess, response, error) in
+            if isSuccess == true {
+                //Success, there is no data getting in response
             }else {
             }
         }

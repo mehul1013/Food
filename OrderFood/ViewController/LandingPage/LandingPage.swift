@@ -9,6 +9,9 @@
 import UIKit
 import AVFoundation
 
+import FirebaseAuth
+import FirebaseUI
+
 class LandingPage: SuperViewController {
 
     var captureSession = AVCaptureSession()
@@ -53,8 +56,7 @@ class LandingPage: SuperViewController {
         //Navigation Title
         self.navigationItem.title = "Scan Code"
         
-        //Initialise Camera
-        self.initialiseCamera()
+        
         
         //Temp
         //Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(navigate(_:)), userInfo: nil, repeats: false)
@@ -63,6 +65,23 @@ class LandingPage: SuperViewController {
         let barTemp = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(LandingPage.navigateSkip))
         barTemp.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = barTemp
+        
+        
+        //Check is phone number is already stored, if not get it
+        if let phone = UserDefaults.standard.value(forKey: "phoneNumber") {
+            //Print Phone Number
+            print("Phone Number : \(phone)")
+            
+            //Initialise Camera
+            self.initialiseCamera()
+        }else {
+            //Not Available, get it
+            let auth = FUIAuth.defaultAuthUI()
+            auth?.delegate = self
+            let phoneAuth = FUIPhoneAuth(authUI: auth!)
+            auth?.providers = [phoneAuth]
+            phoneAuth.signIn(withPresenting: self, phoneNumber: "")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -208,5 +227,33 @@ extension LandingPage: AVCaptureMetadataOutputObjectsDelegate {
                 print("QRCode : \(metadataObj.stringValue)")
             }
         }
+    }
+}
+
+
+//MARK: - Firebase Delegates
+extension LandingPage: FUIAuthDelegate {
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        if error == nil {
+            //Success
+            //print("Result : \(authDataResult?.additionalUserInfo?.providerID)") //Phone
+            //print("Result : \(authDataResult?.additionalUserInfo?.isNewUser)") //False
+            //print("Result : \(authDataResult?.user.phoneNumber)")
+            //print("Result : \(authDataResult?.user.uid)")
+            //print("Result : \(authDataResult?.user.providerID)") //Firebase
+            
+            //Get Mobile Number
+            if let phoneNumber = authDataResult?.user.phoneNumber {
+                UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
+                UserDefaults.standard.synchronize()
+            }
+            
+        }else {
+            //Fail
+            print("Error : \(error?.localizedDescription)")
+        }
+        
+        //Initialise Camera
+        self.initialiseCamera()
     }
 }

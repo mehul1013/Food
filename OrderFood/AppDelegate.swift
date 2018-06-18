@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         
         FirebaseApp.configure()
-                
+                        
         return true
     }
 

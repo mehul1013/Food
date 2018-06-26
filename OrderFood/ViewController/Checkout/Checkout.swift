@@ -52,8 +52,37 @@ class Checkout: SuperViewController {
          */
         
         //Navigate to get Card Details
-        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.CARD_INFORMATION) as! CardInformation
-        self.navigationController?.pushViewController(viewCTR, animated: true)
+        //let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.CARD_INFORMATION) as! CardInformation
+        //self.navigationController?.pushViewController(viewCTR, animated: true)
+        
+        
+        self.openActionSheet()
+    }
+    
+    func openActionSheet() {
+        // Create the AlertController
+        let actionSheetController = UIAlertController(title: "Online Payment", message: "", preferredStyle: .actionSheet)
+
+        // Create and add first option action
+        let p1Action = UIAlertAction(title: "Authorise.net", style: .default) { action -> Void in
+            
+        }
+        actionSheetController.addAction(p1Action)
+        
+        // Create and add second option action
+        let p2Action = UIAlertAction(title: "RazorPay", style: .default) { action -> Void in
+            
+        }
+        actionSheetController.addAction(p2Action)
+        
+        // Create and add the Cancel action
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+            // Just dismiss the action sheet
+        }
+        actionSheetController.addAction(cancelAction)
+        
+        // Present the AlertController
+        self.present(actionSheetController, animated: true, completion: nil)
     }
     
     //MARK: - Cash

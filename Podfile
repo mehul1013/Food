@@ -21,6 +21,12 @@ pod 'Firebase/Messaging'
 # Only pull in Phone Auth login features
 pod 'FirebaseUI/Phone', '~> 5.0'
 
+#PazorPay
+pod 'razorpay-pod', '1.0.18'
+
+
+
+
   target 'OrderFoodTests' do
     inherit! :search_paths
     # Pods for testing

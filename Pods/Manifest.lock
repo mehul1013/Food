@@ -1,45 +1,122 @@
 PODS:
   - ActionSheetPicker-3.0 (2.3.0)
   - Alamofire (4.7.2)
+  - AuthorizeNetAccept (0.3.0)
   - CCValidator (1.0.2)
   - Crashlytics (3.10.2):
     - Fabric (~> 1.7.7)
   - Fabric (1.7.7)
+  - Firebase/Auth (5.1.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (= 5.0.0)
+  - Firebase/Core (5.1.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 5.0.1)
+  - Firebase/CoreOnly (5.1.0):
+    - FirebaseCore (= 5.0.2)
+  - Firebase/Messaging (5.1.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (= 3.0.1)
+  - FirebaseAnalytics (5.0.1):
+    - FirebaseCore (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - nanopb (~> 0.3)
+  - FirebaseAuth (5.0.0):
+    - FirebaseCore (~> 5.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (5.0.2):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseInstanceID (3.0.0):
+    - FirebaseCore (~> 5.0)
+  - FirebaseMessaging (3.0.1):
+    - FirebaseCore (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
+  - FirebaseUI/Auth (5.0.0):
+    - Firebase/Auth (~> 5.0)
+  - FirebaseUI/Phone (5.0.0):
+    - FirebaseUI/Auth
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - GoogleToolboxForMac/Logger (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - GTMSessionFetcher/Core (1.1.15)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - ObjectMapper (3.2.0)
   - Parchment (0.1.2)
+  - Protobuf (3.5.0)
+  - razorpay-pod (1.0.18)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - Alamofire (~> 4.7)
+  - AuthorizeNetAccept
   - CCValidator
   - Crashlytics
   - Fabric
+  - Firebase/Core
+  - Firebase/Messaging
+  - FirebaseUI/Phone (~> 5.0)
   - ObjectMapper (~> 3.2)
   - Parchment
+  - razorpay-pod (= 1.0.18)
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ActionSheetPicker-3.0
     - Alamofire
+    - AuthorizeNetAccept
     - CCValidator
     - Crashlytics
     - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseInstanceID
+    - FirebaseMessaging
+    - FirebaseUI
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - nanopb
     - ObjectMapper
     - Parchment
+    - Protobuf
+    - razorpay-pod
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AuthorizeNetAccept: 77963526f1e15d2be30b771f1049ca09c6d11524
   CCValidator: 49175409dcd9da1a1bd8d7cc6db31d44a301da84
   Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
+  Firebase: e08fb0795f35707aeb1d8a715c731c45bdf6fd56
+  FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
+  FirebaseAuth: acbeef02fe7c3a26624e309849f3fe30c84115af
+  FirebaseCore: b81044df1044c0857a0737c6324678b72d4f7f00
+  FirebaseInstanceID: 83e0040351565df711a5db3d8ebe5ea21aca998a
+  FirebaseMessaging: ec6fde5a77824c6da0218f9ca220feb251aa17d5
+  FirebaseUI: 0e9ab15e00073e421890c755b6f2bd757605601f
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: 5cccd2de6f253eda859df8116a5a554d9769e859
   Parchment: 21e6c47488427cc96044c279187624287a10524f
+  Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  razorpay-pod: 6303688cc069f872a1250b600dcade5a0f11de3a
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 4cb1a942dc3da8ad6fd099aea766906170106e17
+PODFILE CHECKSUM: 65e7b464478856bf44eb5e6db5a7dcdfe6f5ce67
 
 COCOAPODS: 1.5.3

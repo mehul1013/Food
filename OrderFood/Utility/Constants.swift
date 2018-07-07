@@ -10,6 +10,18 @@ import UIKit
 
 class Constants: NSObject {
     
+    //RazorPay - MeHuLa Account
+    //https://dashboard.razorpay.com/#/app/keys
+    //https://razorpay.com/docs/ios/
+    //https://cocoapods.org/pods/razorpay-pod
+    static let KEY_ID_RAZORPAY_SANDBOX = "rzp_test_N5gzG5i6KfIps5"
+    static let KEY_SECRET_RAZORPAY_SANDBOX = "Rf6ETPvwtvz3JV0Kn6waJMdb"
+    
+    //Authorised.Net - Testing from GitHub Sample
+    static let kClientName_AUTHORISE_SANDBOX = "5KP3u95bQpv"
+    static let kClientKey_AUTHORISE_SANDBOX  = "5FcB6WrfHGS76gHW3v7btBCE3HuuBuke9Pj96Ztfn5R32G5ep42vne7MCWZtAucY"
+    
+    
     //Static Pages
     static let TERMS_CONDITIONS     = "https://www.controlcastapp.com/terms-conditions/"
     static let PRIVACY_POLICY       = "https://www.controlcastapp.com/privacy-policy/"

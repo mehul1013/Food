@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Razorpay
 
 class Checkout: SuperViewController {
 
     @IBOutlet weak var viewName: UIView!
     @IBOutlet weak var viewEmail: UIView!
     @IBOutlet weak var viewMobile: UIView!
+    
+    //RazorPay
+    var razorpay: Razorpay!
     
     
     //MARK: - View Life Cycle
@@ -35,6 +39,9 @@ class Checkout: SuperViewController {
         viewMobile.layer.cornerRadius = 5.0
         viewMobile.layer.borderColor = UIColor.lightGray.cgColor
         viewMobile.layer.borderWidth = 1.0
+        
+        //RazorPay Initialisation
+        razorpay = Razorpay.initWithKey(Constants.KEY_ID_RAZORPAY_SANDBOX, andDelegate: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,13 +72,13 @@ class Checkout: SuperViewController {
 
         // Create and add first option action
         let p1Action = UIAlertAction(title: "Authorise.net", style: .default) { action -> Void in
-            
+            self.navigateToCardInformation()
         }
         actionSheetController.addAction(p1Action)
         
         // Create and add second option action
         let p2Action = UIAlertAction(title: "RazorPay", style: .default) { action -> Void in
-            
+            self.proceedRazorPayTransaction()
         }
         actionSheetController.addAction(p2Action)
         
@@ -85,12 +92,19 @@ class Checkout: SuperViewController {
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
+    
     //MARK: - Cash
     @IBAction func btnCashClicked(_ sender: Any) {
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.ORDER_CONFIRMATION) as! OrderConfirmation
         self.navigationController?.pushViewController(viewCTR, animated: true)
     }
     
+    
+    //MARK: - Navigate To Card Information
+    func navigateToCardInformation() -> Void {
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.CARD_INFORMATION) as! CardInformation
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
 }
 
 
@@ -98,5 +112,41 @@ class Checkout: SuperViewController {
 extension Checkout: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return resignFirstResponder()
+    }
+}
+
+
+//MARK: - RazorPay
+extension Checkout: RazorpayPaymentCompletionProtocol {
+    
+    func proceedRazorPayTransaction() -> Void {
+        let options: [String:Any] = [
+            "amount" : "100", //mandatory in paise
+            "description": "purchase description",
+            "image": "https://url-to-image.png",
+            "name": "business or product name",
+            "prefill": [
+            "contact": "9797979797",
+            "email": "foo@bar.com"
+            ],
+            "theme": [
+                "color": "#F37254"
+            ]
+        ]
+        razorpay.open(options)
+    }
+    
+    func onPaymentError(_ code: Int32, description str: String) {
+        let alertController = UIAlertController(title: "FAILURE", message: str, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.view.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    func onPaymentSuccess(_ payment_id: String) {
+        let alertController = UIAlertController(title: "SUCCESS", message: "Payment Id \(payment_id)", preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.view.window?.rootViewController?.present(alertController, animated: true, completion: nil)
     }
 }

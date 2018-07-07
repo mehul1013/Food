@@ -24,6 +24,9 @@ pod 'FirebaseUI/Phone', '~> 5.0'
 #PazorPay
 pod 'razorpay-pod', '1.0.18'
 
+#Authorised.Net
+pod 'AuthorizeNetAccept'
+
 
 
 

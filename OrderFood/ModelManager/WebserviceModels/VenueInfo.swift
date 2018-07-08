@@ -59,20 +59,21 @@ class VenueInfo: Mappable {
     
     
     //MARK: - Get Cart
-    class func getCart(showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
+    class func getVenueInfo(showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
         
         let uuid = UIDevice.current.identifierForVendor
         
         //Make URL
-        let strURL = WS_GET_CART_DETAIL + (uuid?.uuidString)!
+        var strURL = WS_GET_VENUE_INFO// + (uuid?.uuidString)!
+        strURL = strURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        print(strURL)
         
         WebSerivceManager.POSTRequest(url: strURL, showLoader: showLoader, Parameter: nil) { (isSuccess, response, error) in
             if response?.data == nil {
                 completionHandler(isSuccess, nil, error)
             }else {
-                (response?.data as! [[String : Any]])
-                let array = self.mapperObj.mapArray(JSONArray: response?.data as! [[String : Any]])
-                response?.formattedData = array as AnyObject?
+                let dictionary = self.mapperObj.mapArray(JSONArray: [response?.data as! [String : Any]])
+                response?.formattedData = dictionary as AnyObject?
                 
                 completionHandler(isSuccess, response, error)
             }

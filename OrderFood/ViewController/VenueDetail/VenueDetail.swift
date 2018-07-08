@@ -63,7 +63,14 @@ extension VenueDetail {
     
     //MARK: - Get Venue Information
     func getVenueInformation() -> Void {
-        
+        VenueInfo.getVenueInfo(showLoader: true) { (isSuccess, response, error) in
+            if isSuccess == true {
+                //Get Data
+                let dict = response?.formattedData as! VenueInfo
+                print("Cart from Web = \(dict)")
+            }else {
+            }
+        }
     }
     
     

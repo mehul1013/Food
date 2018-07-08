@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OrderFood/AppDelegate.swift"
-            timestampString = "552749341.573305"
+            timestampString = "552758253.579136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
@@ -128,6 +128,134 @@
             startingLineNumber = "139"
             endingLineNumber = "139"
             landmarkName = "proceedToAuthorisePayment()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderFood/ViewController/VenueDetail/VenueDetail.swift"
+            timestampString = "552758253.579623"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "getVenueInformation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderFood/ModelManager/WebserviceModels/VenueInfo.swift"
+            timestampString = "552758253.580182"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "getVenueInfo(showLoader:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static OrderFood.VenueInfo.getVenueInfo(showLoader: Swift.Bool, completionHandler: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;OrderFood.WebServiceReponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "OrderFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MehulS/Desktop/Desktop/WorkSpace/meraTicket.com/FoodAndBeverage/GitHub%202/Food/OrderFood/ModelManager/WebserviceModels/VenueInfo.swift"
+                  timestampString = "552758253.93885"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1323">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;OrderFood.WebServiceReponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static OrderFood.VenueInfo.getVenueInfo(showLoader: Swift.Bool, completionHandler: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;OrderFood.WebServiceReponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "OrderFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MehulS/Desktop/Desktop/WorkSpace/meraTicket.com/FoodAndBeverage/GitHub%202/Food/OrderFood/ModelManager/WebserviceModels/VenueInfo.swift"
+                  timestampString = "552758253.9404989"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderFood/ModelManager/WebserviceModels/VenueInfo.swift"
+            timestampString = "552758253.580472"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getVenueInfo(showLoader:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;OrderFood.WebServiceReponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static OrderFood.VenueInfo.getVenueInfo(showLoader: Swift.Bool, completionHandler: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;OrderFood.WebServiceReponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "OrderFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MehulS/Desktop/Desktop/WorkSpace/meraTicket.com/FoodAndBeverage/GitHub%202/Food/OrderFood/ModelManager/WebserviceModels/VenueInfo.swift"
+                  timestampString = "552758253.944811"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "395">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;OrderFood.WebServiceReponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static OrderFood.VenueInfo.getVenueInfo(showLoader: Swift.Bool, completionHandler: (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;OrderFood.WebServiceReponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "OrderFood"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MehulS/Desktop/Desktop/WorkSpace/meraTicket.com/FoodAndBeverage/GitHub%202/Food/OrderFood/ModelManager/WebserviceModels/VenueInfo.swift"
+                  timestampString = "552758253.946637"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "1239">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OrderFood/ModelManager/ServiceHandler/WebSerivceManager.swift"
+            timestampString = "552758253.580698"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "POSTRequest(url:showLoader:Parameter:success:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

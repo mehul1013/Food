@@ -184,6 +184,9 @@ class WebSerivceManager:NSObject {
         }
         
         print(Parameter as Any)
+        
+        //Header
+        HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 6aeb3973-e5af-4585-840f-14dca848f05a"]
         print(HeaderClass.objHeaderClass.HeaderDictionary)
         
         //Set Request Time

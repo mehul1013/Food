@@ -1100,6 +1100,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k95-HA-egc"/>
+                    <connections>
+                        <outlet property="imageViewVenue" destination="aZA-Tx-W8G" id="pak-aC-cAk"/>
+                        <outlet property="lblAvgTimeToDeliver" destination="pw2-Vc-1rD" id="LAm-5Y-fia"/>
+                        <outlet property="lblMinOrder" destination="178-CK-L73" id="ZC4-46-zGg"/>
+                        <outlet property="lblMinOrderStatic" destination="3im-kw-tqP" id="bGb-no-yp3"/>
+                        <outlet property="lblScreenID" destination="hbW-Xv-bUg" id="GWh-R0-p2s"/>
+                        <outlet property="lblSeatID" destination="ydh-rP-rD8" id="xD9-Oh-GPw"/>
+                        <outlet property="lblVenueAddress" destination="Z3N-AK-9wH" id="OdJ-Ij-DcK"/>
+                        <outlet property="lblVenueName" destination="7H6-eD-nhI" id="8Na-4Z-oQV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9b8-XT-1gJ" sceneMemberID="firstResponder"/>
             </objects>

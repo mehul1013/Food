@@ -108,7 +108,8 @@ enum Web_Service : String {
 }
 
 //MARK: base url
-let WS_BASE_URL: String = "http://fnb-admin.azurewebsites.net/apiapp/"
+//let WS_BASE_URL: String = "http://fnb-admin.azurewebsites.net/apiapp/"
+let WS_BASE_URL: String = "https://ezfnb-staging-api.azurewebsites.net/"
 
 //MARK: WS REquest Constant
 let WS_GET_CATEGORY     = WS_BASE_URL + "GetQrCategory?QrString="
@@ -117,6 +118,8 @@ let WS_SEARCH_ITEM      = WS_BASE_URL + "SearchFoodItem?prefix="
 let WS_CREATE_GUEST_CART = WS_BASE_URL + "CreateGuestcart"
 let WS_GET_CART_DETAIL  = WS_BASE_URL + "GetCartDetails?Guid="
 let WS_DELETE_CART      = WS_BASE_URL + "DeleteGuestCartItem?Guid="
+
+let WS_GET_VENUE_INFO   = WS_BASE_URL + "venues/scan/1|4|1|1|1|2.json"
 
 
 

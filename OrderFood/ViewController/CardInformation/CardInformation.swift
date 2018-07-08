@@ -42,16 +42,16 @@ class CardInformation: SuperViewController {
         txtName.layer.borderWidth = 1.0
         
         //Add Padding
-        txtName.leftView = viewPadding
-        txtName.leftViewMode = .always
+        //txtName.leftView = viewPadding
+        //txtName.leftViewMode = .always
         
         txtCardNumber.layer.cornerRadius = 5.0
         txtCardNumber.layer.borderColor = UIColor.lightGray.cgColor
         txtCardNumber.layer.borderWidth = 1.0
         
         //Add Padding
-        txtCardNumber.leftView = viewPadding
-        txtCardNumber.leftViewMode = .always
+        //txtCardNumber.leftView = viewPadding
+        //txtCardNumber.leftViewMode = .always
         
         txtMonth.layer.cornerRadius = 5.0
         txtMonth.layer.borderColor = UIColor.lightGray.cgColor
@@ -65,17 +65,22 @@ class CardInformation: SuperViewController {
         txtCVV.layer.borderColor = UIColor.lightGray.cgColor
         txtCVV.layer.borderWidth = 1.0
         
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.initialiseAuthorise(_:)), userInfo: nil, repeats: false)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func initialiseAuthorise(_ timer: Any) -> Void {
         //Initialise Handler and Request object
         handler = AcceptSDKHandler(environment: AcceptSDKEnvironment.ENV_TEST)
         
         request = AcceptSDKRequest()
         request.merchantAuthentication.name = Constants.kClientName_AUTHORISE_SANDBOX
         request.merchantAuthentication.clientKey = Constants.kClientKey_AUTHORISE_SANDBOX
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //MARK: - UIButton Actions

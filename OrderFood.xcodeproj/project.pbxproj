@@ -35,6 +35,7 @@
 		0E311C86209DB15E008F7DD1 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */; };
 		0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */; };
 		0E4D54E320D689A1001F181C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4D54E220D689A0001F181C /* GoogleService-Info.plist */; };
+		0E52208820F246B800572A17 /* VenueInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E52208720F246B800572A17 /* VenueInfo.swift */; };
 		0E6B100C20ADF250007F3EFA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B100B20ADF250007F3EFA /* Search.swift */; };
 		0E735F3F20CBDC85006D2DC9 /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */; };
 		0EC267BB20CD6BA7008257E2 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC267BA20CD6BA7008257E2 /* CartModel.swift */; };
@@ -122,6 +123,7 @@
 		0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetail.swift; sourceTree = "<group>"; };
 		0E4D54E220D689A0001F181C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E4D54E420D68DF8001F181C /* OrderFood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderFood.entitlements; sourceTree = "<group>"; };
+		0E52208720F246B800572A17 /* VenueInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueInfo.swift; sourceTree = "<group>"; };
 		0E6B100B20ADF250007F3EFA /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
 		0EC267BA20CD6BA7008257E2 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 				2A648DA120C15B430059E75B /* Item.swift */,
 				0E2B3E5320C3D6220087ECA6 /* SearchItem.swift */,
 				0EC267BA20CD6BA7008257E2 /* CartModel.swift */,
+				0E52208720F246B800572A17 /* VenueInfo.swift */,
 			);
 			path = WebserviceModels;
 			sourceTree = "<group>";
@@ -862,6 +865,7 @@
 				2AC9CB0A20AC6537005AD6A9 /* CellMyCart.swift in Sources */,
 				2A9CB46920C00F4900B749AD /* SDWebImagePrefetcher.m in Sources */,
 				2A9CB47020C00F4900B749AD /* UIView+WebCacheOperation.m in Sources */,
+				0E52208820F246B800572A17 /* VenueInfo.swift in Sources */,
 				0EC267BB20CD6BA7008257E2 /* CartModel.swift in Sources */,
 				0E311C65209D8FE1008F7DD1 /* CellItem.swift in Sources */,
 				0E311C6B209D8FE1008F7DD1 /* LandingPage.swift in Sources */,

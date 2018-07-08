@@ -10,15 +10,29 @@ import UIKit
 
 class VenueDetail: SuperViewController {
     
+    @IBOutlet weak var imageViewVenue: UIImageView!
+    @IBOutlet weak var lblVenueName: UILabel!
+    @IBOutlet weak var lblVenueAddress: UILabel!
     
+    @IBOutlet weak var lblAvgTimeToDeliver: UILabel!
+    @IBOutlet weak var lblMinOrder: UILabel!
+    //@IBOutlet weak var lblAvgTimeToDeliver: UILabel!
+    
+    @IBOutlet weak var lblScreenID: UILabel!
+    @IBOutlet weak var lblSeatID: UILabel!
+    
+    @IBOutlet weak var lblMinOrderStatic: UILabel!
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //Get Venue Information
+        self.getVenueInformation()
+        
         //Get Cart, if available
-        self.getCart()
+        //self.getCart()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +60,13 @@ class VenueDetail: SuperViewController {
 
 //MARK: - Web Services
 extension VenueDetail {
+    
+    //MARK: - Get Venue Information
+    func getVenueInformation() -> Void {
+        
+    }
+    
+    
     //MARK: - Get All Categories
     func getCart() -> Void {
         

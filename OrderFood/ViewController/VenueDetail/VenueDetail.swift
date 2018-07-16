@@ -23,6 +23,8 @@ class VenueDetail: SuperViewController {
     
     @IBOutlet weak var lblMinOrderStatic: UILabel!
     
+    var venue: VenueInfo!
+    
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +53,38 @@ class VenueDetail: SuperViewController {
     }
     
     
+    //MARK: - Set Venue Information
+    func setVenueInformation() -> Void {
+        //Set Image
+        if venue.imageUrl.contains("https") {
+            let url = URL(string: venue.imageUrl)
+            self.imageViewVenue.sd_setImage(with: url, placeholderImage: UIImage(named: "NoImage"))
+        }else {
+            let url = URL(string: "https:" + venue.imageUrl)
+            self.imageViewVenue.sd_setImage(with: url, placeholderImage: UIImage(named: "NoImage"))
+        }
+        
+        lblVenueName.text = venue.name
+        lblVenueAddress.text = venue.address
+        
+        lblAvgTimeToDeliver.text = "\(venue.avgMinsToDeliver) Min"
+        lblMinOrder.text = "\(venue.minOrder)"
+        
+        lblScreenID.text = "Screen - \(venue.seatId)"
+        lblSeatID.text = venue.seatName
+        
+        lblMinOrderStatic.text = "Minimum order for this seat is \(venue.minOrder)"
+    }
+ 
+    
     //MARK: - View Online Menu
     @IBAction func btnViewMenuClicked(_ sender: Any) {
-        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.HOME) as! Home
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.RESTAURANTS) as! Restaurants
+        
+        //Pass Data
+        viewCTR.strTitle = venue.name
+        viewCTR.strVenueID = "\(venue.venueId)"
+        
         self.navigationController?.pushViewController(viewCTR, animated: true)
     }
 }
@@ -66,8 +97,14 @@ extension VenueDetail {
         VenueInfo.getVenueInfo(showLoader: true) { (isSuccess, response, error) in
             if isSuccess == true {
                 //Get Data
-                let dict = response?.formattedData as! VenueInfo
-                print("Cart from Web = \(dict)")
+                self.venue = response?.formattedData as! VenueInfo
+                print("Cart from Web = \(self.venue)")
+                
+                //Set Data
+                DispatchQueue.main.async {
+                    self.setVenueInformation()
+                }
+                
             }else {
             }
         }

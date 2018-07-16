@@ -38,7 +38,7 @@ class CityModel: Mappable {
         WebSerivceManager.POSTRequest(url: "", showLoader: showLoader, Parameter: params) { (isSuccess, response, error) in
             
             if isSuccess == true {
-                if response?.success == true {
+                if response?.success == 1 {
                     let array = self.mapperObj.mapArray(JSONArray: (response?.data)! as! [[String : Any]])
                     response?.formattedData = array as AnyObject?
                 }else {
@@ -82,7 +82,7 @@ class AreaModel: Mappable {
         WebSerivceManager.POSTRequest(url: "", showLoader: showLoader, Parameter: params) { (isSuccess, response, error) in
             
             if isSuccess == true {
-                if response?.success == true {
+                if response?.success == 1 {
                     let array = self.mapperObj.mapArray(JSONArray: (response?.data)! as! [[String : Any]])
                     response?.formattedData = array as AnyObject?
                 }else {

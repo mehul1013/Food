@@ -120,6 +120,7 @@ let WS_GET_CART_DETAIL  = WS_BASE_URL + "GetCartDetails?Guid="
 let WS_DELETE_CART      = WS_BASE_URL + "DeleteGuestCartItem?Guid="
 
 let WS_GET_VENUE_INFO   = WS_BASE_URL + "venues/scan/1|4|1|1|1|2.json"
+let WS_GET_RESTAURANT   = WS_BASE_URL + "kitchens/list/"
 
 
 
@@ -312,6 +313,10 @@ class WebSerivceManager:NSObject {
         if(showLoader) {
             AppUtils.showLoader()
         }
+        
+        //Header
+        HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 6aeb3973-e5af-4585-840f-14dca848f05a"]
+        print(HeaderClass.objHeaderClass.HeaderDictionary)
         
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HeaderClass.objHeaderClass.HeaderDictionary).responseJSON { (response:DataResponse<Any>) in
             

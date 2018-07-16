@@ -15,7 +15,8 @@ class WebServiceReponse : Mappable {
     internal var message : String?
     internal var data: AnyObject?
     internal var key : String?
-    internal var success : Bool?
+    //internal var success : Bool?
+    internal var success : Int?
     internal var isMore : Bool?
     internal var formattedData: AnyObject?
     internal var iCastID : String?
@@ -54,7 +55,7 @@ class WebServiceReponse : Mappable {
         status <- map["STATUS"]
         message <- map["MESSAGE"]
         //data <- map["DATA"]
-        data <- map["Data"]
+        data <- map["data"]
         key <- map["key"]
         
         //iCastID
@@ -65,8 +66,9 @@ class WebServiceReponse : Mappable {
         totalApprov  <- map["totalApprov"]
         totalPending <- map["totalPending"]
         
-
-        do {
+        success <- map["success"]
+        
+        /*do {
             if try map.value("success") == 1 {
                 success = true
             }else {
@@ -74,7 +76,7 @@ class WebServiceReponse : Mappable {
             }
         }catch {
             success = false
-        }
+        }*/
         
         
         do {

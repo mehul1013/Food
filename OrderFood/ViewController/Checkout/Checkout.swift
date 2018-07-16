@@ -95,6 +95,11 @@ class Checkout: SuperViewController {
     
     //MARK: - Cash
     @IBAction func btnCashClicked(_ sender: Any) {
+        //Navigate To Order Confirmation
+        self.navigateToOrderConfirmation()
+    }
+    
+    func navigateToOrderConfirmation() -> Void {
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.ORDER_CONFIRMATION) as! OrderConfirmation
         self.navigationController?.pushViewController(viewCTR, animated: true)
     }
@@ -145,8 +150,14 @@ extension Checkout: RazorpayPaymentCompletionProtocol {
     
     func onPaymentSuccess(_ payment_id: String) {
         let alertController = UIAlertController(title: "SUCCESS", message: "Payment Id \(payment_id)", preferredStyle: UIAlertControllerStyle.alert)
-        let cancelAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
-        alertController.addAction(cancelAction)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (alert) in
+            //Navigate To Order Confirmation
+            self.navigateToOrderConfirmation()
+        }
+        
+        alertController.addAction(okAction)
+        
         self.view.window?.rootViewController?.present(alertController, animated: true, completion: nil)
     }
 }

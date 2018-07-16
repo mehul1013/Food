@@ -109,6 +109,13 @@ class CardInformation: SuperViewController {
             self.proceedToAuthorisePayment()
         }
     }
+    
+    
+    //MARK: - Navigate To Order Confirmation
+    func navigateToOrderConfirmation() -> Void {
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.ORDER_CONFIRMATION) as! OrderConfirmation
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
 }
 
 //MARK: - Authorise Payment
@@ -137,6 +144,18 @@ extension CardInformation {
                 output = output + String(format: "\nMessage Code: %@\nMessage Text: %@", inResponse.getMessages().getMessages()[0].getCode(), inResponse.getMessages().getMessages()[0].getText())
                 
                 print("Success Output : \(output)")
+                
+                let alertController = UIAlertController(title: "SUCCESS", message: output, preferredStyle: UIAlertControllerStyle.alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: .default) { (alert) in
+                    //Navigate To Order Confirmation
+                    self.navigateToOrderConfirmation()
+                }
+                
+                alertController.addAction(okAction)
+                
+                self.view.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+                
             }
         }) { (inError:AcceptSDKErrorResponse) -> () in
             //Stop Loading

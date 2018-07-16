@@ -75,7 +75,7 @@ class CartModel: Mappable {
         let strURL = WS_DELETE_CART + (uuid?.uuidString)! + "&ItemId=\(itemID)"
         
         WebSerivceManager.POSTRequest(url: strURL, showLoader: showLoader, Parameter: nil) { (isSuccess, response, error) in
-            if response?.success == false {
+            if response?.success == 1 {
                 completionHandler(isSuccess, nil, error)
             }else {
                 completionHandler(true, nil, error)
@@ -110,7 +110,7 @@ class CartModel: Mappable {
         let strURL = WS_CREATE_GUEST_CART
         
          WebSerivceManager.POSTRequest(url: strURL, showLoader: showLoader, Parameter: finalDict) { (isSuccess, response, error) in
-            if response?.success == false {
+            if response?.success == 0 {
                 completionHandler(isSuccess, nil, error)
             }else {
                 //print(response?.data as! [[String : Any]])

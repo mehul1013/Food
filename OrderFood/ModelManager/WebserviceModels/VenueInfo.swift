@@ -68,11 +68,12 @@ class VenueInfo: Mappable {
         strURL = strURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         print(strURL)
         
-        WebSerivceManager.POSTRequest(url: strURL, showLoader: showLoader, Parameter: nil) { (isSuccess, response, error) in
+        WebSerivceManager.GETRequest(url: strURL, showLoader: showLoader) { (isSuccess, response, error) in
             if response?.data == nil {
                 completionHandler(isSuccess, nil, error)
             }else {
-                let dictionary = self.mapperObj.mapArray(JSONArray: [response?.data as! [String : Any]])
+                
+                let dictionary = self.mapperObj.map(JSON: response?.data as! [String : Any]) //self.mapperObj.mapArray(JSONArray: [response?.data as! [String : Any]])
                 response?.formattedData = dictionary as AnyObject?
                 
                 completionHandler(isSuccess, response, error)

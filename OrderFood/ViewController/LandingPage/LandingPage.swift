@@ -82,6 +82,9 @@ class LandingPage: SuperViewController {
             auth?.providers = [phoneAuth]
             phoneAuth.signIn(withPresenting: self, phoneNumber: "")
         }
+        
+        //Temp
+        self.registerCustomer("9558822309")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -246,6 +249,9 @@ extension LandingPage: FUIAuthDelegate {
             if let phoneNumber = authDataResult?.user.phoneNumber {
                 UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
                 UserDefaults.standard.synchronize()
+                
+                //Register Customer
+                self.registerCustomer(phoneNumber)
             }
             
         }else {
@@ -255,5 +261,22 @@ extension LandingPage: FUIAuthDelegate {
         
         //Initialise Camera
         self.initialiseCamera()
+    }
+}
+
+
+//MARK: - Web Services
+extension LandingPage {
+    //MARK: - Register Customer
+    func registerCustomer(_ mobileNumber: String) -> Void {
+        UserModel.registerUser(mobileNumber: mobileNumber, showLoader: true) { (isSuccess, response, error) in
+            if isSuccess == true {
+                //Get Data
+                if let guid = response?.data as? String {
+                    print("GUID : \(guid)")
+                }
+            }else {
+            }
+        }
     }
 }

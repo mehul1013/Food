@@ -114,6 +114,41 @@ extension Restaurants {
                 //Set Data
                 DispatchQueue.main.async {
                     self.collectionViewRestaurant.reloadData()
+                    
+                    //Get Cart, if available
+                    self.getCart()
+                }
+                
+            }else {
+            }
+        }
+    }
+    
+    
+    //MARK: - Get All Categories
+    func getCart() -> Void {
+        
+        CartModel.getCart(showLoader: true) { (isSuccess, response, error) in
+            
+            if isSuccess == true {
+                //Get Data
+                let array = response?.formattedData as! [CartModel]
+                print("Cart from Web = \(array)")
+                
+                //First clear cart
+                AppUtils.APPDELEGATE().arrayCart.removeAll()
+                
+                //Get Cart value into local object of Cart
+                for item in array {
+                    let cart = Cart()
+                    
+                    cart.itemID = item.ItemID
+                    cart.itemName = item.ItemName
+                    cart.numberOfItem = item.Qty
+                    cart.price = item.ItemPrice
+                    cart.isItemModified = false
+                    
+                    AppUtils.APPDELEGATE().arrayCart.append(cart)
                 }
                 
             }else {

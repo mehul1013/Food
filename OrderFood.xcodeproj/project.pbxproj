@@ -37,7 +37,6 @@
 		0E311C85209DB15E008F7DD1 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C79209DB15E008F7DD1 /* Roboto-Thin.ttf */; };
 		0E311C86209DB15E008F7DD1 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */; };
 		0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */; };
-		0E4D54E320D689A1001F181C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E4D54E220D689A0001F181C /* GoogleService-Info.plist */; };
 		0E52208820F246B800572A17 /* VenueInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E52208720F246B800572A17 /* VenueInfo.swift */; };
 		0E6B100C20ADF250007F3EFA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B100B20ADF250007F3EFA /* Search.swift */; };
 		0E735F3F20CBDC85006D2DC9 /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */; };
@@ -78,6 +77,8 @@
 		2AC9CB0A20AC6537005AD6A9 /* CellMyCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9CB0920AC6537005AD6A9 /* CellMyCart.swift */; };
 		643D2027C924032FDE32F317 /* Pods_OrderFoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48C80487B6966BA787AFFED /* Pods_OrderFoodUITests.framework */; };
 		F5D11CB08D13932A37859BEA /* Pods_OrderFoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDFE6774D0BD07827899BC1 /* Pods_OrderFoodTests.framework */; };
+		FF6826B820FDB7E6001E74E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF6826B720FDB7E5001E74E6 /* GoogleService-Info.plist */; };
+		FF6826BA20FE0687001E74E6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6826B920FE0687001E74E6 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,7 +128,6 @@
 		0E311C79209DB15E008F7DD1 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetail.swift; sourceTree = "<group>"; };
-		0E4D54E220D689A0001F181C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E4D54E420D68DF8001F181C /* OrderFood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderFood.entitlements; sourceTree = "<group>"; };
 		0E52208720F246B800572A17 /* VenueInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueInfo.swift; sourceTree = "<group>"; };
 		0E6B100B20ADF250007F3EFA /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -201,6 +201,8 @@
 		E48C80487B6966BA787AFFED /* Pods_OrderFoodUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderFoodUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC2906ADEAC089CB47FF1A0C /* Pods-OrderFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderFood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderFood/Pods-OrderFood.debug.xcconfig"; sourceTree = "<group>"; };
 		FBEBD74F8E32EC6B68EC7FF9 /* Pods-OrderFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderFood.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderFood/Pods-OrderFood.release.xcconfig"; sourceTree = "<group>"; };
+		FF6826B720FDB7E5001E74E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF6826B920FE0687001E74E6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,7 +405,7 @@
 				0ECA5FC4209CA7410034AE81 /* Assets.xcassets */,
 				0ECA5FC6209CA7410034AE81 /* LaunchScreen.storyboard */,
 				0ECA5FC9209CA7410034AE81 /* Info.plist */,
-				0E4D54E220D689A0001F181C /* GoogleService-Info.plist */,
+				FF6826B720FDB7E5001E74E6 /* GoogleService-Info.plist */,
 				2A9CB47920C00FAA00B749AD /* OrderFood_Bridging_Header.h */,
 				0E311C4F209D8FE1008F7DD1 /* CustomClasses */,
 				0E311C52209D8FE1008F7DD1 /* AppResources */,
@@ -539,6 +541,7 @@
 				0EC267BA20CD6BA7008257E2 /* CartModel.swift */,
 				0E52208720F246B800572A17 /* VenueInfo.swift */,
 				0E0D030120FB7854008E980A /* RestaurantModel.swift */,
+				FF6826B920FE0687001E74E6 /* UserModel.swift */,
 			);
 			path = WebserviceModels;
 			sourceTree = "<group>";
@@ -654,7 +657,7 @@
 				TargetAttributes = {
 					0ECA5FB9209CA7410034AE81 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = JEDFVGAD9T;
+						DevelopmentTeam = 2FYBA6R753;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -665,14 +668,14 @@
 					};
 					0ECA5FCD209CA7410034AE81 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = JEDFVGAD9T;
+						DevelopmentTeam = 2FYBA6R753;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0ECA5FB9209CA7410034AE81;
 					};
 					0ECA5FD8209CA7410034AE81 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = JEDFVGAD9T;
+						DevelopmentTeam = 2FYBA6R753;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0ECA5FB9209CA7410034AE81;
@@ -715,12 +718,12 @@
 				0E311C80209DB15E008F7DD1 /* Roboto-Light.ttf in Resources */,
 				0E311C67209D8FE1008F7DD1 /* FoodItem.png in Resources */,
 				0E311C7C209DB15E008F7DD1 /* Roboto-BlackItalic.ttf in Resources */,
-				0E4D54E320D689A1001F181C /* GoogleService-Info.plist in Resources */,
 				0E311C86209DB15E008F7DD1 /* Roboto-ThinItalic.ttf in Resources */,
 				0ECA5FC5209CA7410034AE81 /* Assets.xcassets in Resources */,
 				0ECA5FC3209CA7410034AE81 /* Main.storyboard in Resources */,
 				0E311C7F209DB15E008F7DD1 /* Roboto-Italic.ttf in Resources */,
 				0E311C84209DB15E008F7DD1 /* Roboto-Regular.ttf in Resources */,
+				FF6826B820FDB7E6001E74E6 /* GoogleService-Info.plist in Resources */,
 				0E311C7D209DB15E008F7DD1 /* Roboto-Bold.ttf in Resources */,
 				0E311C7B209DB15E008F7DD1 /* Roboto-Black.ttf in Resources */,
 			);
@@ -887,6 +890,7 @@
 				0E311C65209D8FE1008F7DD1 /* CellItem.swift in Sources */,
 				0E311C6B209D8FE1008F7DD1 /* LandingPage.swift in Sources */,
 				2A9CB46C20C00F4900B749AD /* UIImage+MultiFormat.m in Sources */,
+				FF6826BA20FE0687001E74E6 /* UserModel.swift in Sources */,
 				2A9CB46D20C00F4900B749AD /* UIImage+WebP.m in Sources */,
 				0E0E69D920B346C100D98723 /* OrderConfirmation.swift in Sources */,
 				0E311C6D209D8FE1008F7DD1 /* AppUtils.swift in Sources */,
@@ -1000,11 +1004,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zach Campbell (2P7D4P5PU9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = JEDFVGAD9T;
+				DEVELOPMENT_TEAM = 2FYBA6R753;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1024,7 +1028,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
+				PROVISIONING_PROFILE = "693ab2b6-fed7-409d-a51b-0079f38e7637";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1053,11 +1057,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zach Campbell (2P7D4P5PU9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zach Campbell (2P7D4P5PU9)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = JEDFVGAD9T;
+				DEVELOPMENT_TEAM = 2FYBA6R753;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1070,7 +1074,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
+				PROVISIONING_PROFILE = "693ab2b6-fed7-409d-a51b-0079f38e7637";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -1083,15 +1087,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OrderFood/OrderFood.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
-				DEVELOPMENT_TEAM = JEDFVGAD9T;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zach Campbell (2P7D4P5PU9)";
+				DEVELOPMENT_TEAM = 2FYBA6R753;
 				INFOPLIST_FILE = OrderFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mobapp.at.foodandbeverage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strongfriends.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
-				PROVISIONING_PROFILE_SPECIFIER = EZFnB_Development;
+				PROVISIONING_PROFILE = "693ab2b6-fed7-409d-a51b-0079f38e7637";
+				PROVISIONING_PROFILE_SPECIFIER = StrongFriends_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = OrderFood/OrderFood_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1104,15 +1108,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OrderFood/OrderFood.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
-				DEVELOPMENT_TEAM = JEDFVGAD9T;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zach Campbell (2P7D4P5PU9)";
+				DEVELOPMENT_TEAM = 2FYBA6R753;
 				INFOPLIST_FILE = OrderFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mobapp.at.foodandbeverage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strongfriends.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
-				PROVISIONING_PROFILE_SPECIFIER = EZFnB_Development;
+				PROVISIONING_PROFILE = "693ab2b6-fed7-409d-a51b-0079f38e7637";
+				PROVISIONING_PROFILE_SPECIFIER = StrongFriends_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = OrderFood/OrderFood_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

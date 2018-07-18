@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var isCategoryClassObserverAdded: Bool = false
     var isNeedToShowVegItemsOnly: Bool = false
     var isAnyChangeInCart: Bool = false
+    var guid: String = ""
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -53,6 +54,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         application.registerForRemoteNotifications()
+        
+        //Get GUID if app have
+        if let guid = UserDefaults.standard.value(forKey: "guid") as? String {
+            self.guid = guid
+        }
         
         FirebaseApp.configure()
                         

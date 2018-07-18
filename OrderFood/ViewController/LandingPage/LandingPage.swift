@@ -274,6 +274,13 @@ extension LandingPage {
                 //Get Data
                 if let guid = response?.data as? String {
                     print("GUID : \(guid)")
+                    
+                    //Temp GUID stored
+                    UserDefaults.standard.set("c33e4e47-b2e2-435e-a7d1-100178733f65", forKey: "guid")
+                    UserDefaults.standard.synchronize()
+                    
+                    //Store GUID
+                    AppUtils.APPDELEGATE().guid = "c33e4e47-b2e2-435e-a7d1-100178733f65"
                 }
             }else {
             }

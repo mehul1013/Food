@@ -116,12 +116,13 @@ let WS_GET_CATEGORY     = WS_BASE_URL + "GetQrCategory?QrString="
 let WS_GET_ITEM         = WS_BASE_URL + "getappfooditem?categoryid="
 let WS_SEARCH_ITEM      = WS_BASE_URL + "SearchFoodItem?prefix="
 let WS_CREATE_GUEST_CART = WS_BASE_URL + "CreateGuestcart"
-let WS_GET_CART_DETAIL  = WS_BASE_URL + "GetCartDetails?Guid="
+//let WS_GET_CART_DETAIL  = WS_BASE_URL + "GetCartDetails?Guid="
 let WS_DELETE_CART      = WS_BASE_URL + "DeleteGuestCartItem?Guid="
 
 let WS_REGISTER_USER    = WS_BASE_URL + "register.json"
 let WS_GET_VENUE_INFO   = WS_BASE_URL + "venues/scan/1|4|1|1|1|2.json"
 let WS_GET_RESTAURANT   = WS_BASE_URL + "kitchens/list/"
+let WS_GET_CART_DETAIL  = WS_BASE_URL + "guestcarts/read/"
 
 
 
@@ -188,9 +189,9 @@ class WebSerivceManager:NSObject {
         print(Parameter as Any)
         
         //Header
-        /*HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 6aeb3973-e5af-4585-840f-14dca848f05a",
-                                                       "Content-Type" : "application/json"]*/
-        HeaderClass.objHeaderClass.HeaderDictionary = ["Content-Type" : "application/json"]
+        HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 6aeb3973-e5af-4585-840f-14dca848f05a",
+                                                       "Content-Type" : "application/json"]
+        //HeaderClass.objHeaderClass.HeaderDictionary = ["Content-Type" : "application/json"]
         print(HeaderClass.objHeaderClass.HeaderDictionary)
         
         //Set Request Time
@@ -318,7 +319,9 @@ class WebSerivceManager:NSObject {
         }
         
         //Header
-        HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 6aeb3973-e5af-4585-840f-14dca848f05a"]
+        //HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 6aeb3973-e5af-4585-840f-14dca848f05a"]
+        HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 6aeb3973-e5af-4585-840f-14dca848f05a",
+                                                       "Content-Type" : "application/json"]
         print(HeaderClass.objHeaderClass.HeaderDictionary)
         
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HeaderClass.objHeaderClass.HeaderDictionary).responseJSON { (response:DataResponse<Any>) in
@@ -417,7 +420,7 @@ class WebSerivceManager:NSObject {
                 successHandler(false, dataObject, nil)
             }*/
             
-            if dataObject.data == nil {
+            if dataObject.success == 0 {
                 successHandler(false, dataObject, nil)
             }else {
                 successHandler(true, dataObject, nil)

@@ -132,20 +132,20 @@ extension Restaurants {
             
             if isSuccess == true {
                 //Get Data
-                let array = response?.formattedData as! [CartModel]
+                let array = response?.formattedData as! CartModel
                 print("Cart from Web = \(array)")
                 
                 //First clear cart
                 AppUtils.APPDELEGATE().arrayCart.removeAll()
                 
                 //Get Cart value into local object of Cart
-                for item in array {
+                for item in array.cartItems! {
                     let cart = Cart()
                     
-                    cart.itemID = item.ItemID
-                    cart.itemName = item.ItemName
+                    cart.itemID = item.itemId
+                    cart.itemName = item.itemName
                     cart.numberOfItem = item.Qty
-                    cart.price = item.ItemPrice
+                    cart.price = item.itemPrice
                     cart.isItemModified = false
                     
                     AppUtils.APPDELEGATE().arrayCart.append(cart)

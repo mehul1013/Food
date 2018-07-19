@@ -198,10 +198,10 @@ class CartModel: Mappable {
     //MARK: - Delete Cart Item
     class func deleteItemCart(itemID: Int, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
         
-        let uuid = UIDevice.current.identifierForVendor
+        let uuid = AppUtils.APPDELEGATE().guid
         
         //Make URL
-        let strURL = WS_DELETE_CART + (uuid?.uuidString)! + "&ItemId=\(itemID)"
+        let strURL = WS_DELETE_CART + "\(uuid)/\(itemID).json"
         
         WebSerivceManager.POSTRequest(url: strURL, showLoader: showLoader, Parameter: nil) { (isSuccess, response, error) in
             if response?.success == 1 {
@@ -216,22 +216,29 @@ class CartModel: Mappable {
     class func createCart(arrayItems: NSMutableArray, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
         
         //GuestCartCreate
-        let uuid = UIDevice.current.identifierForVendor
-        let param1 : [String: AnyObject] = ["CustomerID"    : "0" as AnyObject,
-                                            "GUID"          : uuid?.uuidString as AnyObject,
-                                            "UserID"        : "0" as AnyObject]
+        let uuid = AppUtils.APPDELEGATE().guid
+        let param1 : [String: AnyObject] = ["GuId"          : uuid as AnyObject,
+                                            "customerId"    : "0" as AnyObject,
+                                            "discountId"    : "0" as AnyObject,
+                                            "ipAddress"     : "0" as AnyObject,
+                                            "userId"        : "0" as AnyObject]
         
         //GuestCartDetailCreate
-        let param2 : [String: AnyObject] = ["NumberOfItem"  : "\(arrayItems.count)" as AnyObject,
-                                            "ShowTimeId"    : "0" as AnyObject,
-                                            "VenueId"       : "0" as AnyObject]
+        let param2 : [String: AnyObject] = ["GuId"          : uuid as AnyObject,
+                                            "kitchenId"     : AppUtils.APPDELEGATE().CartDeliveryModel.kitchenId as AnyObject,
+                                            "levelId"       : AppUtils.APPDELEGATE().CartDeliveryModel.levelId as AnyObject,
+                                            "rowId"         : AppUtils.APPDELEGATE().CartDeliveryModel.rowId as AnyObject,
+                                            "seatId"        : AppUtils.APPDELEGATE().CartDeliveryModel.seatId as AnyObject,
+                                            "sectionId"     : AppUtils.APPDELEGATE().CartDeliveryModel.sectionId as AnyObject,
+                                            "theaterId"     : AppUtils.APPDELEGATE().CartDeliveryModel.theaterId as AnyObject,
+                                            "venueId"       : AppUtils.APPDELEGATE().CartDeliveryModel.venueId as AnyObject]
         
         //GuestCartItemDetailCreate
         
         //Final Dictionary
-        let finalDict : [String: AnyObject] = ["GuestCartCreate"            : param1 as AnyObject,
-                                               "GuestCartDetailCreate"      : param2 as AnyObject,
-                                               "GuestCartItemDetailCreate"  : arrayItems as AnyObject]
+        let finalDict : [String: AnyObject] = ["GuestCart"            : param1 as AnyObject,
+                                               "GuestCartDelivery"    : param2 as AnyObject,
+                                               "GuestCartItems"       : arrayItems as AnyObject]
         
         print("Dictionary : \(finalDict)")
         

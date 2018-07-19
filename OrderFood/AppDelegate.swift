@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var isNeedToShowVegItemsOnly: Bool = false
     var isAnyChangeInCart: Bool = false
     var guid: String = ""
+    var CartDeliveryModel: cartDeliveryDict!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

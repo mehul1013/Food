@@ -115,14 +115,16 @@ let WS_BASE_URL: String = "https://ezfnb-staging-api.azurewebsites.net/"
 let WS_GET_CATEGORY     = WS_BASE_URL + "GetQrCategory?QrString="
 let WS_GET_ITEM         = WS_BASE_URL + "getappfooditem?categoryid="
 let WS_SEARCH_ITEM      = WS_BASE_URL + "SearchFoodItem?prefix="
-let WS_CREATE_GUEST_CART = WS_BASE_URL + "CreateGuestcart"
+//let WS_CREATE_GUEST_CART = WS_BASE_URL + "CreateGuestcart"
 //let WS_GET_CART_DETAIL  = WS_BASE_URL + "GetCartDetails?Guid="
-let WS_DELETE_CART      = WS_BASE_URL + "DeleteGuestCartItem?Guid="
+//let WS_DELETE_CART      = WS_BASE_URL + "DeleteGuestCartItem?Guid="
 
-let WS_REGISTER_USER    = WS_BASE_URL + "register.json"
-let WS_GET_VENUE_INFO   = WS_BASE_URL + "venues/scan/1|4|1|1|1|2.json"
-let WS_GET_RESTAURANT   = WS_BASE_URL + "kitchens/list/"
-let WS_GET_CART_DETAIL  = WS_BASE_URL + "guestcarts/read/"
+let WS_REGISTER_USER        = WS_BASE_URL + "register.json"
+let WS_GET_VENUE_INFO       = WS_BASE_URL + "venues/scan/1|4|1|1|1|2.json"
+let WS_GET_RESTAURANT       = WS_BASE_URL + "kitchens/list/"
+let WS_GET_CART_DETAIL      = WS_BASE_URL + "guestcarts/read/"
+let WS_CREATE_GUEST_CART    = WS_BASE_URL + "guestcarts/create.json"
+let WS_DELETE_CART          = WS_BASE_URL + "guestcarts/items/delete/"
 
 
 

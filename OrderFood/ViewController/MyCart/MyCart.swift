@@ -233,18 +233,21 @@ extension MyCart {
         //Initialise Array
         let arrayModifiedCart = NSMutableArray()
         
+        let uuid = AppUtils.APPDELEGATE().guid
+        
         //Get Modified Array
         for cart in AppUtils.APPDELEGATE().arrayCart {
             //If item modified then only update through web service
             if cart.isItemModified == true {
                 var dictTemp = [String : AnyObject]()
                 
+                dictTemp["GuId"]        = uuid as AnyObject
+                dictTemp["discountId"]  = 0 as AnyObject
                 dictTemp["ItemID"]      = cart.itemID as AnyObject
-                dictTemp["LevelId"]     = 0 as AnyObject
+                dictTemp["itemName"]    = cart.itemName as AnyObject
+                dictTemp["itemPrice"]   = cart.price as AnyObject
                 dictTemp["Qty"]         = cart.numberOfItem as AnyObject
-                dictTemp["RowId"]       = 0 as AnyObject
-                dictTemp["SeatId"]      = 0 as AnyObject
-                dictTemp["SectionId"]   = 0 as AnyObject
+                dictTemp["tax"]         = 0 as AnyObject
                 
                 arrayModifiedCart.add(dictTemp)
                 

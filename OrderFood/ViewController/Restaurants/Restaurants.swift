@@ -41,18 +41,17 @@ class Restaurants: SuperViewController {
         //Get Model
         let model = self.restaurant[sender.tag]
         
-        //First Collect Data
-        AppUtils.APPDELEGATE().CartDeliveryModel = cartDeliveryDict()
-        
         AppUtils.APPDELEGATE().CartDeliveryModel.kitchenId  = model.kitchenId
         AppUtils.APPDELEGATE().CartDeliveryModel.venueId    = model.venueId
-        AppUtils.APPDELEGATE().CartDeliveryModel.levelId    = (self.cartInfo.cartDelivery?.levelId)!
-        AppUtils.APPDELEGATE().CartDeliveryModel.rowId      = (self.cartInfo.cartDelivery?.rowId)!
-        AppUtils.APPDELEGATE().CartDeliveryModel.seatId     = (self.cartInfo.cartDelivery?.seatId)!
-        AppUtils.APPDELEGATE().CartDeliveryModel.sectionId  = (self.cartInfo.cartDelivery?.sectionId)!
-        AppUtils.APPDELEGATE().CartDeliveryModel.theaterId  = (self.cartInfo.cartDelivery?.theaterId)!
+        //AppUtils.APPDELEGATE().CartDeliveryModel.levelId    = (self.cartInfo.cartDelivery?.levelId)!
+        //AppUtils.APPDELEGATE().CartDeliveryModel.rowId      = (self.cartInfo.cartDelivery?.rowId)!
+        //AppUtils.APPDELEGATE().CartDeliveryModel.seatId     = (self.cartInfo.cartDelivery?.seatId)!
+        //AppUtils.APPDELEGATE().CartDeliveryModel.sectionId  = (self.cartInfo.cartDelivery?.sectionId)!
+        //AppUtils.APPDELEGATE().CartDeliveryModel.theaterId  = (self.cartInfo.cartDelivery?.theaterId)!
         
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.HOME) as! Home
+        
+        viewCTR.strTitle = model.name
         
         self.navigationController?.pushViewController(viewCTR, animated: true)
     }
@@ -157,10 +156,11 @@ extension Restaurants {
                 for item in self.cartInfo.cartItems! {
                     let cart = Cart()
                     
-                    cart.itemID = item.itemId
-                    cart.itemName = item.itemName
-                    cart.numberOfItem = item.Qty
-                    cart.price = item.itemPrice
+                    cart.itemID         = item.itemId
+                    cart.itemName       = item.itemName
+                    cart.numberOfItem   = item.qty
+                    cart.price          = item.itemPrice
+                    cart.tax            = item.tax
                     cart.isItemModified = false
                     
                     AppUtils.APPDELEGATE().arrayCart.append(cart)

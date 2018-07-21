@@ -85,7 +85,7 @@ class cartItemsArray: Mappable {
     internal var subTotal       : Double = 0.0
     internal var tax            : Double = 0.0
     internal var total          : Double = 0.0
-    internal var Qty            : Int = 0
+    internal var qty            : Int = 0
     
     init() {}
     
@@ -106,7 +106,7 @@ class cartItemsArray: Mappable {
         subTotal                <- map["subTotal"]
         tax                     <- map["tax"]
         total                   <- map["total"]
-        Qty                     <- map["Qty"]
+        qty                     <- map["qty"]
     }
 }
 
@@ -174,7 +174,8 @@ class CartModel: Mappable {
         let guid = AppUtils.APPDELEGATE().guid
         
         //Make URL
-        let strURL = WS_GET_CART_DETAIL + "\(guid).json"
+        var strURL = WS_GET_CART_DETAIL + "\(guid).json"
+        strURL = strURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         WebSerivceManager.GETRequest(url: strURL, showLoader: showLoader) { (isSuccess, response, error) in
             if isSuccess == false {
@@ -216,7 +217,11 @@ class CartModel: Mappable {
     class func createCart(arrayItems: NSMutableArray, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
         
         //GuestCartCreate
-        let uuid = AppUtils.APPDELEGATE().guid
+        var uuid = AppUtils.APPDELEGATE().guid
+        if uuid == "" {
+            uuid = ""
+        }
+        
         let param1 : [String: AnyObject] = ["GuId"          : uuid as AnyObject,
                                             "customerId"    : "0" as AnyObject,
                                             "discountId"    : "0" as AnyObject,
@@ -253,7 +258,7 @@ class CartModel: Mappable {
                 //let array = self.mapperObj.mapArray(JSONArray: response?.data as! [[String : Any]])
                 //response?.formattedData = array as AnyObject?
                 
-                completionHandler(true, nil, error)
+                completionHandler(true, response, error)
             }
          }
     }

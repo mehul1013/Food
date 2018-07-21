@@ -85,6 +85,12 @@ class VenueDetail: SuperViewController {
         viewCTR.strTitle = venue.name
         viewCTR.strVenueID = "\(venue.venueId)"
         
+        AppUtils.APPDELEGATE().CartDeliveryModel.levelId    = venue.levelId
+        AppUtils.APPDELEGATE().CartDeliveryModel.rowId      = venue.rowId
+        AppUtils.APPDELEGATE().CartDeliveryModel.seatId     = venue.seatId
+        AppUtils.APPDELEGATE().CartDeliveryModel.sectionId  = venue.sectionId
+        AppUtils.APPDELEGATE().CartDeliveryModel.theaterId  = venue.theaterId
+        
         self.navigationController?.pushViewController(viewCTR, animated: true)
     }
 }
@@ -130,7 +136,7 @@ extension VenueDetail {
                     
                     cart.itemID = item.itemId
                     cart.itemName = item.itemName
-                    cart.numberOfItem = item.Qty
+                    cart.numberOfItem = item.qty
                     cart.price = item.itemPrice
                     cart.isItemModified = false
                     

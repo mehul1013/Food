@@ -103,16 +103,16 @@ class Search: SuperViewController {
             
             //Add New Cart
             let cart = Cart()
-            cart.itemID = model.itemId
-            cart.itemName = model.itemname
+            cart.itemID = model.id
+            cart.itemName = model.name
             cart.numberOfItem = 1
-            cart.price = model.itemprice
+            cart.price = model.amount
             cart.isItemModified = true
             
             AppUtils.APPDELEGATE().arrayCart.append(cart)
             
             //Update Selected ItemID
-            self.arrayCartItem.append(model.itemId)
+            self.arrayCartItem.append(model.id)
             
             //Check if need to show Cart View
             if AppUtils.APPDELEGATE().arrayCart.count <= 0 {
@@ -141,7 +141,7 @@ class Search: SuperViewController {
         
         //Check and increase NUMBER OF ITEMS in CART
         for item in AppUtils.APPDELEGATE().arrayCart {
-            if item.itemID == model.itemId {
+            if item.itemID == model.id {
                 numberOfItems = numberOfItems + 1
                 
                 //Assign new value to cart
@@ -176,7 +176,7 @@ class Search: SuperViewController {
         
         //Check and increase NUMBER OF ITEMS in CART
         for item in AppUtils.APPDELEGATE().arrayCart {
-            if item.itemID == model.itemId {
+            if item.itemID == model.id {
                 numberOfItems = numberOfItems - 1
                 
                 //If it is getting 0 or less, make it 0
@@ -270,8 +270,8 @@ extension Search: UITableViewDelegate, UITableViewDataSource {
         let model = self.arrayItems[indexPath.row]
         
         //Set Data
-        cell.lblName.text = model.itemname
-        cell.lblPrice.text = "$\(model.itemprice)"
+        cell.lblName.text = model.name
+        cell.lblPrice.text = "$\(model.amount)"
         cell.lblItemInfo.text = "-"
         
         //Get Item Image
@@ -294,7 +294,7 @@ extension Search: UITableViewDelegate, UITableViewDataSource {
             cell.imageViewVeg.image = UIImage(named: "NonVeg")
         }*/
         
-        if arrayCartItem.contains(model.itemId) {
+        if arrayCartItem.contains(model.id) {
             //Show few controlls
             cell.btnPlus.isHidden = false
             cell.btnMinus.isHidden = false
@@ -345,8 +345,8 @@ extension Search {
     //MARK: - Get All Categories
     func searchItem(_ strSearch: String) -> Void {
         
-        SearchItem.searchItem(strSearch: strSearch, showLoader: true) { (isSuccess, response, error) in
-            
+        SearchItem.searchItem(strKitchenID: "\(AppUtils.APPDELEGATE().CartDeliveryModel.kitchenId)", strSearch: strSearch, showLoader: true) { (isSuccess, response, error) in
+           
             //As it is searching on string, need to remove all objects before assigning new
             self.arrayItems.removeAll()
             
@@ -359,7 +359,7 @@ extension Search {
                 if AppUtils.APPDELEGATE().arrayCart.count > 0 {
                     for item in AppUtils.APPDELEGATE().arrayCart {
                         for model in self.arrayItems {
-                            if model.itemId == item.itemID {
+                            if model.id == item.itemID {
                                 model.numberOfItem = item.numberOfItem!
                             }
                         }

@@ -11,12 +11,18 @@ import ObjectMapper
 
 class SearchItem: Mappable {
     
-    internal var itemname:  String = ""
-    internal var itemprice: Double = 0.0
-    internal var image:     String = ""
-    internal var itemId:    Int = 0
-    internal var categoryid:Int = 0
-    internal var numberOfItem: Int = 0
+    internal var id:            Int = 0
+    internal var name:          String = ""
+    internal var categoryId:    Int = 0
+    internal var kitchenId:     Int = 0
+    internal var itemPriceId:   Int = 0
+    internal var maxTopings:    Int = 0
+    internal var isVeg:         Int = 0
+    internal var description:   String = ""
+    internal var image:         String = ""
+    internal var amount:        Double = 0.0
+    internal var numberOfItem:  Int = 0
+    
     
     init() {
     }
@@ -31,19 +37,24 @@ class SearchItem: Mappable {
     }
     
     func mapping(map: Map) {
-        itemname    <- map["itemname"]
-        itemprice   <- map["itemprice"]
+        id          <- map["id"]
+        name        <- map["name"]
+        categoryId  <- map["categoryId"]
+        kitchenId   <- map["kitchenId"]
+        itemPriceId <- map["itemPriceId"]
+        maxTopings  <- map["maxTopings"]
+        isVeg       <- map["isVeg"]
+        description <- map["description"]
         image       <- map["image"]
-        itemId      <- map["itemId"]
-        categoryid  <- map["categoryid"]
+        amount      <- map["amount"]
     }
     
     
     //MARK: - Get Categories
-    class func searchItem(strSearch: String, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
+    class func searchItem(strKitchenID: String, strSearch: String, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
         
         //Make URL
-        let strURL = WS_SEARCH_ITEM + strSearch
+        let strURL = WS_SEARCH_ITEM + "\(strSearch)\\\(strKitchenID).json"
         
         WebSerivceManager.GETRequest(url: strURL, showLoader: showLoader) { (isSuccess, response, error) in
             if response?.data == nil {

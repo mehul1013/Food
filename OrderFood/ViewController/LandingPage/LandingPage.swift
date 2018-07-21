@@ -66,14 +66,16 @@ class LandingPage: SuperViewController {
         barTemp.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = barTemp
         
+        //Initialise Camera
+        self.initialiseCamera()
         
+        /*
         //Check is phone number is already stored, if not get it
         if let phone = UserDefaults.standard.value(forKey: "phoneNumber") {
             //Print Phone Number
             print("Phone Number : \(phone)")
             
-            //Initialise Camera
-            self.initialiseCamera()
+            
         }else {
             //Not Available, get it
             let auth = FUIAuth.defaultAuthUI()
@@ -81,13 +83,18 @@ class LandingPage: SuperViewController {
             let phoneAuth = FUIPhoneAuth(authUI: auth!)
             auth?.providers = [phoneAuth]
             phoneAuth.signIn(withPresenting: self, phoneNumber: "")
-        }
-        
-        //Temp
-        self.registerCustomer("9558822309")
+        }*/
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //Show Navigation Bar
+        self.navigationController?.isNavigationBarHidden = false
+        
+        //Hide Back Button
+        self.navigationItem.backBarButtonItem = nil
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.navigationItem.hidesBackButton = true
+        
         //When user returns back to this screens, Camera should be running again
         if AppUtils.APPDELEGATE().strQRCodeValue == "" {
             //Do Nothing
@@ -276,11 +283,11 @@ extension LandingPage {
                     print("GUID : \(guid)")
                     
                     //Temp GUID stored
-                    UserDefaults.standard.set("c33e4e47-b2e2-435e-a7d1-100178733f65", forKey: "guid")
+                    UserDefaults.standard.set("8f1eff0a-1b4b-48d4-a624-6426a56e6005", forKey: "guid")
                     UserDefaults.standard.synchronize()
                     
                     //Store GUID
-                    AppUtils.APPDELEGATE().guid = "c33e4e47-b2e2-435e-a7d1-100178733f65"
+                    AppUtils.APPDELEGATE().guid = "8f1eff0a-1b4b-48d4-a624-6426a56e6005"
                 }
             }else {
             }

@@ -39,6 +39,8 @@
 		0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */; };
 		0E52208820F246B800572A17 /* VenueInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E52208720F246B800572A17 /* VenueInfo.swift */; };
 		0E6B100C20ADF250007F3EFA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B100B20ADF250007F3EFA /* Search.swift */; };
+		0E6E69D1210351C300870AF0 /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E69D0210351C200870AF0 /* Introduction.swift */; };
+		0E6E69D32103535F00870AF0 /* CellIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E69D22103535F00870AF0 /* CellIntro.swift */; };
 		0E735F3F20CBDC85006D2DC9 /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */; };
 		0EC267BB20CD6BA7008257E2 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC267BA20CD6BA7008257E2 /* CartModel.swift */; };
 		0ECA5FBE209CA7410034AE81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FBD209CA7410034AE81 /* AppDelegate.swift */; };
@@ -131,6 +133,8 @@
 		0E4D54E420D68DF8001F181C /* OrderFood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderFood.entitlements; sourceTree = "<group>"; };
 		0E52208720F246B800572A17 /* VenueInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueInfo.swift; sourceTree = "<group>"; };
 		0E6B100B20ADF250007F3EFA /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		0E6E69D0210351C200870AF0 /* Introduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
+		0E6E69D22103535F00870AF0 /* CellIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIntro.swift; sourceTree = "<group>"; };
 		0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
 		0EC267BA20CD6BA7008257E2 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		0ECA5FBA209CA7410034AE81 /* OrderFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +305,7 @@
 		0E311C57209D8FE1008F7DD1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0E6E69CF210351C200870AF0 /* Introduction */,
 				0E0D02FC20FB6E1F008E980A /* Restaurants */,
 				0E735F3D20CBDC84006D2DC9 /* CardInformation */,
 				0E0E69D720B346C100D98723 /* OrderConfirmation */,
@@ -364,6 +369,15 @@
 				0E6B100B20ADF250007F3EFA /* Search.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		0E6E69CF210351C200870AF0 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				0E6E69D0210351C200870AF0 /* Introduction.swift */,
+				0E6E69D22103535F00870AF0 /* CellIntro.swift */,
+			);
+			path = Introduction;
 			sourceTree = "<group>";
 		};
 		0E735F3D20CBDC84006D2DC9 /* CardInformation */ = {
@@ -882,6 +896,7 @@
 			files = (
 				2A9CB46620C00F4900B749AD /* SDWebImageDownloader.m in Sources */,
 				0E311C6A209D8FE1008F7DD1 /* Home.swift in Sources */,
+				0E6E69D32103535F00870AF0 /* CellIntro.swift in Sources */,
 				2AC9CB0A20AC6537005AD6A9 /* CellMyCart.swift in Sources */,
 				2A9CB46920C00F4900B749AD /* SDWebImagePrefetcher.m in Sources */,
 				2A9CB47020C00F4900B749AD /* UIView+WebCacheOperation.m in Sources */,
@@ -913,6 +928,7 @@
 				2A9CB46220C00F4900B749AD /* NSData+ImageContentType.m in Sources */,
 				0E311C6E209D8FE1008F7DD1 /* Constants.swift in Sources */,
 				2ABB1B2F20A172F10097B596 /* Checkout.swift in Sources */,
+				0E6E69D1210351C300870AF0 /* Introduction.swift in Sources */,
 				2A9CB46820C00F4900B749AD /* SDWebImageManager.m in Sources */,
 				2A9CB46520C00F4900B749AD /* SDWebImageDecoder.m in Sources */,
 				2A9CB46720C00F4900B749AD /* SDWebImageDownloaderOperation.m in Sources */,

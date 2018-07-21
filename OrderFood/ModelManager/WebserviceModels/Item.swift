@@ -11,7 +11,7 @@ import ObjectMapper
 
 class Item: Mappable {
 
-    internal var FoodItemId:    Int = 0
+    /*internal var FoodItemId:    Int = 0
     internal var FoodItemName:  String = ""
     internal var FoodItemDesc:  String = ""
     internal var Amount:        Double = 0.0
@@ -19,6 +19,16 @@ class Item: Mappable {
     internal var CategoryId:    Int = 0
     internal var Image:         String = ""
     internal var IsVeg:         Int = 0
+    internal var numberOfItem:  Int = 0*/
+    
+    internal var id:            Int = 0
+    internal var name:          String = ""
+    internal var categoryId:    Int = 0
+    internal var maxTopings:    Int = 0
+    internal var isVeg:         Int = 0
+    internal var description:   String = ""
+    internal var image:         String = ""
+    internal var amount:        Double = 0.0
     internal var numberOfItem:  Int = 0
     
     
@@ -35,14 +45,14 @@ class Item: Mappable {
     }
     
     func mapping(map: Map) {
-        FoodItemId      <- map["FoodItemId"]
-        FoodItemName    <- map["FoodItemName"]
-        FoodItemDesc    <- map["FoodItemDesc"]
-        Amount          <- map["Amount"]
-        TaxAmount       <- map["TaxAmount"]
-        CategoryId      <- map["CategoryId"]
-        Image           <- map["Image"]
-        IsVeg           <- map["IsVeg"]
+        id          <- map["id"]
+        name        <- map["name"]
+        categoryId  <- map["categoryId"]
+        maxTopings  <- map["maxTopings"]
+        isVeg       <- map["isVeg"]
+        description <- map["description"]
+        image       <- map["image"]
+        amount      <- map["amount"]
     }
     
     
@@ -50,7 +60,7 @@ class Item: Mappable {
     class func getItemForCategory(strCategoryID: String, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
         
         //Make URL
-        let strURL = WS_GET_ITEM + strCategoryID
+        let strURL = WS_GET_ITEM + "\(strCategoryID).json"
         
         WebSerivceManager.POSTRequest(url: strURL, showLoader: showLoader, Parameter: nil) { (isSuccess, response, error) in
             

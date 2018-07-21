@@ -26,7 +26,7 @@ class CategoryViewController: UIViewController {
         //self.title = "Category \(index)"
         
         let model = AppUtils.APPDELEGATE().arrayCategory[index]
-        self.title = model.CategoryName
+        self.title = model.name
         
         //Get Items from CART, if any
         self.getItemsFromCart()
@@ -113,7 +113,7 @@ class CategoryViewController: UIViewController {
         if AppUtils.APPDELEGATE().arrayCart.count > 0 {
             for item in AppUtils.APPDELEGATE().arrayCart {
                 for model in self.arrayItems {
-                    if model.FoodItemId == item.itemID {
+                    if model.id == item.itemID {
                         model.numberOfItem = item.numberOfItem!
                     }
                 }
@@ -135,7 +135,7 @@ class CategoryViewController: UIViewController {
         //Filter
         if isVegOnly == true {
             for item in self.arrayItems {
-                if item.IsVeg == 0 {
+                if item.isVeg == 0 {
                     //Non-Veg, Do Nothing
                 }else {
                     self.arrayItemsFiltered.append(item)
@@ -182,16 +182,16 @@ class CategoryViewController: UIViewController {
             
             //Add New Cart
             let cart = Cart()
-            cart.itemID = model.FoodItemId
-            cart.itemName = model.FoodItemName
+            cart.itemID = model.id
+            cart.itemName = model.name
             cart.numberOfItem = 1
-            cart.price = model.Amount
+            cart.price = model.amount
             cart.isItemModified = true
             
             AppUtils.APPDELEGATE().arrayCart.append(cart)
             
             //Update Selected ItemID
-            self.arrayCartItem.append(model.FoodItemId)
+            self.arrayCartItem.append(model.id)
             
             //Check if need to show Cart View
             if AppUtils.APPDELEGATE().arrayCart.count > 0 {
@@ -217,7 +217,7 @@ class CategoryViewController: UIViewController {
         
         //Check and increase NUMBER OF ITEMS in CART
         for item in AppUtils.APPDELEGATE().arrayCart {
-            if item.itemID == model.FoodItemId {
+            if item.itemID == model.id {
                 numberOfItems = numberOfItems + 1
                 
                 //Assign new value to cart
@@ -249,7 +249,7 @@ class CategoryViewController: UIViewController {
         
         //Check and increase NUMBER OF ITEMS in CART
         for item in AppUtils.APPDELEGATE().arrayCart {
-            if item.itemID == model.FoodItemId {
+            if item.itemID == model.id {
                 numberOfItems = numberOfItems - 1
                 
                 //If it is getting 0 or less, make it 0
@@ -315,30 +315,31 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
         let model = self.arrayItemsFiltered[indexPath.row]
         
         //Set Data
-        cell.lblName.text = model.FoodItemName
-        cell.lblPrice.text = "$\(model.Amount)"
-        cell.lblItemInfo.text = model.FoodItemDesc
+        cell.lblName.text = model.name
+        cell.lblPrice.text = "$\(model.amount)"
+        cell.lblItemInfo.text = model.description
         
         //Get Item Image
-        if model.Image != "" {
-            let strItemImage = model.Image.replacingOccurrences(of: "~", with: "").replacingOccurrences(of: "\\", with: "/")
-            let strImage = "http://fnb-admin.azurewebsites.net" + strItemImage
+        if model.image.contains("http") {
+            let strImage = model.image
             let imageURL = URL(string: strImage)
             cell.imageViewItem.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "FoodPlaceHolder"))
         }else {
-            cell.imageViewItem.image = UIImage(named: "FoodPlaceHolder")
+            let strImage = "https:\(model.image)"
+            let imageURL = URL(string: strImage)
+            cell.imageViewItem.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "FoodPlaceHolder"))
         }
         
         
         //Veg or Non-Veg
-        if model.IsVeg == 1 {
+        if model.isVeg == 1 {
             //Veg
             cell.imageViewVeg.image = UIImage(named: "Veg")
         }else {
             cell.imageViewVeg.image = UIImage(named: "NonVeg")
         }
         
-        if arrayCartItem.contains(model.FoodItemId) {
+        if arrayCartItem.contains(model.id) {
             //Show few controlls
             cell.btnPlus.isHidden = false
             cell.btnMinus.isHidden = false
@@ -391,7 +392,7 @@ extension CategoryViewController {
         
         let model = AppUtils.APPDELEGATE().arrayCategory[index]
         
-        Item.getItemForCategory(strCategoryID: "\(model.CategoryId)", showLoader: isNeedToShowLoader) { (isSuccess, response, error) in
+        Item.getItemForCategory(strCategoryID: "\(model.id)", showLoader: isNeedToShowLoader) { (isSuccess, response, error) in
             
             if error == nil {
                 //Remove Data if there is
@@ -407,7 +408,7 @@ extension CategoryViewController {
                     if AppUtils.APPDELEGATE().arrayCart.count > 0 {
                         for item in AppUtils.APPDELEGATE().arrayCart {
                             for model in self.arrayItems {
-                                if model.FoodItemId == item.itemID {
+                                if model.id == item.itemID {
                                     model.numberOfItem = item.numberOfItem!
                                 }
                             }

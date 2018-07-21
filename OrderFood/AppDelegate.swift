@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var isNeedToShowVegItemsOnly: Bool = false
     var isAnyChangeInCart: Bool = false
     var guid: String = ""
+    var token: String = ""
     var CartDeliveryModel: cartDeliveryDict!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -55,6 +56,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         application.registerForRemoteNotifications()
+        
+        
+        //Initialise Model
+        AppUtils.APPDELEGATE().CartDeliveryModel = cartDeliveryDict()
+        
+        //Get Authorise Token if app have
+        if let token = UserDefaults.standard.value(forKey: "token") as? String {
+            self.token = token
+        }
         
         //Get GUID if app have
         if let guid = UserDefaults.standard.value(forKey: "guid") as? String {

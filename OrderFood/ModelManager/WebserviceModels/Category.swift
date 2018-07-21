@@ -11,7 +11,7 @@ import ObjectMapper
 
 class Category: Mappable {
 
-    internal var CategoryId:            Int = 0
+    /*internal var CategoryId:            Int = 0
     internal var CategoryName:          String = ""
     internal var CategoryDescription:   String = ""
     internal var SeatId:                String = ""
@@ -23,7 +23,13 @@ class Category: Mappable {
     internal var FoodStallId:           String = ""
     internal var FoodStallName:         String = ""
     internal var TheaterId:             String = ""
-    internal var Name:                  String = ""
+    internal var Name:                  String = ""*/
+    
+    internal var id:            Int = 0
+    internal var name:          String = ""
+    internal var kitchenId:     Int = 0
+    internal var kitchenName:   String = ""
+    internal var description:   String = ""
     
     
     init() {
@@ -39,31 +45,22 @@ class Category: Mappable {
     }
     
     func mapping(map: Map) {
-        CategoryId          <- map["CategoryId"]
-        CategoryName        <- map["CategoryName"]
-        CategoryDescription <- map["CategoryDescription"]
-        SeatId              <- map["SeatId"]
-        SeatNo              <- map["SeatNo"]
-        RowId               <- map["RowId"]
-        RowName             <- map["RowName"]
-        AudiId              <- map["AudiId"]
-        AudiName            <- map["AudiName"]
-        FoodStallId         <- map["FoodStallId"]
-        FoodStallName       <- map["FoodStallName"]
-        TheaterId           <- map["TheaterId"]
-        Name                <- map["Name"]
+        id          <- map["id"]
+        name        <- map["name"]
+        kitchenId   <- map["kitchenId"]
+        kitchenName <- map["kitchenName"]
+        description <- map["description"]
     }
     
     
     //MARK: - Get Categories
-    class func getcategories(strQRCode:String, showLoader:Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
+    class func getcategories(strVenueID: String, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
         
         //Make URL
-        let strURL = WS_GET_CATEGORY + strQRCode
+        let strURL = WS_GET_CATEGORY + "\(strVenueID).json"
         
-        WebSerivceManager.POSTRequest(url: strURL, showLoader: showLoader, Parameter: nil) { (isSuccess, response, error) in
-            
-            if response?.data == nil {
+        WebSerivceManager.GETRequest(url: strURL, showLoader: showLoader) { (isSuccess, response, error) in
+            if isSuccess == false {
                 completionHandler(isSuccess, nil, error)
             }else {
                 print(response?.data as! [[String : Any]])

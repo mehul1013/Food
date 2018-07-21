@@ -15,6 +15,11 @@ class Checkout: SuperViewController {
     @IBOutlet weak var viewEmail: UIView!
     @IBOutlet weak var viewMobile: UIView!
     
+    @IBOutlet weak var lblTotalAmount: UILabel!
+    
+    
+    var strTotalAmount: Double = 0.00
+    
     //RazorPay
     var razorpay: Razorpay!
     
@@ -26,6 +31,9 @@ class Checkout: SuperViewController {
         
         //Navigation Bar Title
         self.navigationItem.title = "Checkout"
+        
+        //Set Total Amount
+        self.lblTotalAmount.text = "\(strTotalAmount)"
         
         //Layer Properties
         viewName.layer.cornerRadius = 5.0
@@ -126,7 +134,7 @@ extension Checkout: RazorpayPaymentCompletionProtocol {
     
     func proceedRazorPayTransaction() -> Void {
         let options: [String:Any] = [
-            "amount" : "100", //mandatory in paise
+            "amount" : "\(self.strTotalAmount * 100)", //mandatory in paise
             "description": "purchase description",
             "image": "https://url-to-image.png",
             "name": "business or product name",

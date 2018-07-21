@@ -112,9 +112,9 @@ enum Web_Service : String {
 let WS_BASE_URL: String = "https://ezfnb-staging-api.azurewebsites.net/"
 
 //MARK: WS REquest Constant
-let WS_GET_CATEGORY     = WS_BASE_URL + "GetQrCategory?QrString="
-let WS_GET_ITEM         = WS_BASE_URL + "getappfooditem?categoryid="
-let WS_SEARCH_ITEM      = WS_BASE_URL + "SearchFoodItem?prefix="
+//let WS_GET_CATEGORY     = WS_BASE_URL + "GetQrCategory?QrString="
+//let WS_GET_ITEM         = WS_BASE_URL + "getappfooditem?categoryid="
+//let WS_SEARCH_ITEM      = WS_BASE_URL + "SearchFoodItem?prefix="
 //let WS_CREATE_GUEST_CART = WS_BASE_URL + "CreateGuestcart"
 //let WS_GET_CART_DETAIL  = WS_BASE_URL + "GetCartDetails?Guid="
 //let WS_DELETE_CART      = WS_BASE_URL + "DeleteGuestCartItem?Guid="
@@ -125,6 +125,9 @@ let WS_GET_RESTAURANT       = WS_BASE_URL + "kitchens/list/"
 let WS_GET_CART_DETAIL      = WS_BASE_URL + "guestcarts/read/"
 let WS_CREATE_GUEST_CART    = WS_BASE_URL + "guestcarts/create.json"
 let WS_DELETE_CART          = WS_BASE_URL + "guestcarts/items/delete/"
+let WS_GET_CATEGORY         = WS_BASE_URL + "categories/list/"
+let WS_GET_ITEM             = WS_BASE_URL + "items/list/"
+let WS_SEARCH_ITEM          = WS_BASE_URL + "items/searchList/"
 
 
 

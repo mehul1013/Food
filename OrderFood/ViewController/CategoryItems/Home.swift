@@ -16,6 +16,8 @@ class Home: SuperViewController {
     @IBOutlet weak var viewCart: UIView!
     @IBOutlet weak var lblCartInfo: UILabel!
     
+    var strTitle : String = "Home"
+    
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -24,7 +26,7 @@ class Home: SuperViewController {
         
         
         //Navigation Title
-        self.navigationItem.title = "Home"
+        self.navigationItem.title = self.strTitle
         
         //Hide Other Controls
         self.lblShowVegDishesStatic.isHidden = true
@@ -119,6 +121,9 @@ class Home: SuperViewController {
                 
                 let numberOfItemDouble = Double(item.numberOfItem!)
                 total = total + (numberOfItemDouble * item.price!)
+                
+                //Tax
+                total = total + (numberOfItemDouble * item.tax!)
             }
             
             //Set Data
@@ -166,7 +171,9 @@ extension Home {
     //MARK: - Get All Categories
     func getAllCategories() -> Void {
         
-        Category.getcategories(strQRCode: AppUtils.APPDELEGATE().strQRCodeValue, showLoader: true) { (isSuccess, response, error) in
+        let strVenueID = "\(AppUtils.APPDELEGATE().CartDeliveryModel.venueId)"
+        
+        Category.getcategories(strVenueID: strVenueID, showLoader: true) { (isSuccess, response, error) in
             
             if error == nil {
                 //Get Data
@@ -189,7 +196,10 @@ extension Home {
         //Initialise Array
         let arrayModifiedCart = NSMutableArray()
         
-        let uuid = AppUtils.APPDELEGATE().guid
+        var uuid = AppUtils.APPDELEGATE().guid
+        if uuid == "" {
+            uuid = ""
+        }
         
         //Get Modified Array
         for cart in AppUtils.APPDELEGATE().arrayCart {
@@ -226,6 +236,16 @@ extension Home {
                 
                 if isSuccess == true {
                     //Success, there is no data getting in response
+                    
+                    //Get GUID
+                    if let strGuid = response?.data as? String {
+                        //Temp GUID stored
+                        UserDefaults.standard.set(strGuid, forKey: "guid")
+                        UserDefaults.standard.synchronize()
+                        
+                        //Store GUID
+                        AppUtils.APPDELEGATE().guid = strGuid
+                    }
                     
                     //Update Flag
                     AppUtils.APPDELEGATE().isAnyChangeInCart = false

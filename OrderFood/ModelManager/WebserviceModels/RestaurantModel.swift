@@ -83,7 +83,7 @@ class RestaurantModel: Mappable {
         do {
             let array : [String] = try map.value("cuisines")
             if array.count > 0 {
-                cuisineArray = array.joined(separator: ",")
+                cuisineArray = array.joined(separator: ", ")
             }
         }catch {
             

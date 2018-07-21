@@ -100,6 +100,7 @@ class Constants: NSObject {
     //MARK: - Storyboard Identifier
     struct StoryBoardIdentifier {
         //Caster
+        static let LANDING_PAGE             = "LandingPage"
         static let VENUE_DETAIL             = "VenueDetail"
         static let HOME                     = "Home"
         static let MY_CART                  = "MyCart"

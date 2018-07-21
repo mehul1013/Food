@@ -14,7 +14,9 @@ class MyCart: SuperViewController {
     @IBOutlet weak var btnCheckout: UIButton!
     
     var count = AppUtils.APPDELEGATE().arrayCart.count
+    var subTotal = 0.00
     var total = 0.00
+    var taxes = 0.00
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -41,11 +43,19 @@ class MyCart: SuperViewController {
     func getTotalOfAllItems() -> Void {
         //First assign 0 to TOTAL
         total = 0.0
+        subTotal = 0.0
+        taxes = 0.0
         
         for item in AppUtils.APPDELEGATE().arrayCart {
             let numberOfItemDouble = Double(item.numberOfItem!)
-            total = total + (numberOfItemDouble * item.price!)
+            subTotal = subTotal + (numberOfItemDouble * item.price!)
+            
+            //Tax
+            taxes = taxes + (numberOfItemDouble * item.tax!)
         }
+        
+        //Get Total
+        total = subTotal + taxes
         
         //Checkout Button
         self.btnCheckout.setTitle("Checkout ($\(total))", for: .normal)
@@ -150,6 +160,10 @@ class MyCart: SuperViewController {
     //MARK: - Navigate to next screen
     func navigateToCheckout() -> Void {
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.CHECKOUT) as! Checkout
+        
+        //Pass Data
+        viewCTR.strTotalAmount = total
+        
         self.navigationController?.pushViewController(viewCTR, animated: true)
     }
 }
@@ -200,7 +214,8 @@ extension MyCart: UITableViewDelegate, UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: "CellTotal") as! CellMyCart
             
             //Set Data
-            cell.lblSubTotal.text = "$\(total)"
+            cell.lblSubTotal.text   = "$\(subTotal)"
+            cell.lblTaxes.text      = "$\(taxes)"
             cell.lblGrandTotal.text = "$\(total)"
             
         }else {

@@ -86,7 +86,7 @@
                                             <constraint firstItem="L7S-5f-oHz" firstAttribute="leading" secondItem="pAX-Uj-0ni" secondAttribute="leading" id="Kkx-Nb-FY6"/>
                                             <constraint firstAttribute="trailing" secondItem="u4N-pD-v3U" secondAttribute="trailing" constant="20" id="NHw-8c-l45"/>
                                             <constraint firstItem="L7S-5f-oHz" firstAttribute="height" secondItem="pAX-Uj-0ni" secondAttribute="height" multiplier="400:667" id="OyE-Pz-dAm">
-                                                <variation key="heightClass=regular-widthClass=regular" constant="125"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                                             </constraint>
                                             <constraint firstItem="u4N-pD-v3U" firstAttribute="leading" secondItem="pAX-Uj-0ni" secondAttribute="leading" constant="20" id="PYh-gL-iim"/>
                                             <constraint firstItem="85j-tc-5kT" firstAttribute="leading" secondItem="pAX-Uj-0ni" secondAttribute="leading" constant="20" id="b8g-nA-TKh"/>

@@ -33,7 +33,7 @@ class Checkout: SuperViewController {
         self.navigationItem.title = "Checkout"
         
         //Set Total Amount
-        self.lblTotalAmount.text = "\(strTotalAmount)"
+        self.lblTotalAmount.text = "$\(strTotalAmount)"
         
         //Layer Properties
         viewName.layer.cornerRadius = 5.0
@@ -133,11 +133,20 @@ extension Checkout: UITextFieldDelegate {
 extension Checkout: RazorpayPaymentCompletionProtocol {
     
     func proceedRazorPayTransaction() -> Void {
+        
+        //Set Data
+        var strImageURL : String = ""
+        if AppUtils.APPDELEGATE().CartDeliveryModel.restaurantImage.contains("https") {
+            strImageURL = AppUtils.APPDELEGATE().CartDeliveryModel.restaurantImage
+        }else {
+            strImageURL = "https:" + AppUtils.APPDELEGATE().CartDeliveryModel.restaurantImage
+        }
+        
         let options: [String:Any] = [
             "amount" : "\(self.strTotalAmount * 100)", //mandatory in paise
-            "description": "purchase description",
-            "image": "https://url-to-image.png",
-            "name": "business or product name",
+            "description": AppUtils.APPDELEGATE().CartDeliveryModel.restaurantName,
+            "image": strImageURL,
+            "name": AppUtils.APPDELEGATE().CartDeliveryModel.restaurantName,
             "prefill": [
             "contact": "9797979797",
             "email": "foo@bar.com"

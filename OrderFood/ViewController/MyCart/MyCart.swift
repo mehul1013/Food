@@ -51,7 +51,9 @@ class MyCart: SuperViewController {
             subTotal = subTotal + (numberOfItemDouble * item.price!)
             
             //Tax
-            taxes = taxes + (numberOfItemDouble * item.tax!)
+            if let tax = item.tax {
+                total = total + (numberOfItemDouble * tax)
+            }
         }
         
         //Get Total

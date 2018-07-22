@@ -37,6 +37,14 @@ class Introduction: UIViewController {
         if UIDevice.current.userInterfaceIdiom == .pad {
             self.Constraint_Vertical_Space_MobileNumber.constant = 15
         }
+        
+        
+        //Check if user have already TOKEN
+        //Get Authorise Token if app have
+        if let token = UserDefaults.standard.value(forKey: "token") as? String {
+            //Navigate to next screen
+            self.navigateToLandingPage()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,8 +103,8 @@ extension Introduction : UICollectionViewDelegate, UICollectionViewDataSource, U
         
         //Check device is iPad
         if UIDevice.current.userInterfaceIdiom == .pad {
-            cell.constraint_Top_lblTitle.constant = 50
-            cell.constraint_Top_lblSubTitle.constant = 20
+            cell.constraint_Top_lblTitle.constant = 30
+            cell.constraint_Top_lblSubTitle.constant = 15
         }
         
         return cell
@@ -155,6 +163,12 @@ extension Introduction {
                     
                     //Store GUID
                     AppUtils.APPDELEGATE().token = token
+                    
+                    //Navigate To Landing Page
+                    DispatchQueue.main.async {
+                        self.navigateToLandingPage()
+                    }
+                    
                 }
             }else {
             }

@@ -68,12 +68,12 @@ class VenueDetail: SuperViewController {
         lblVenueAddress.text = venue.address
         
         lblAvgTimeToDeliver.text = "\(venue.avgMinsToDeliver) Min"
-        lblMinOrder.text = "\(venue.minOrder)"
+        lblMinOrder.text = "$\(venue.minOrder)"
         
         lblScreenID.text = "Screen - \(venue.seatId)"
         lblSeatID.text = venue.seatName
         
-        lblMinOrderStatic.text = "Minimum order for this seat is \(venue.minOrder)"
+        lblMinOrderStatic.text = "Minimum order for this seat is $\(venue.minOrder)"
     }
  
     
@@ -100,7 +100,7 @@ extension VenueDetail {
     
     //MARK: - Get Venue Information
     func getVenueInformation() -> Void {
-        VenueInfo.getVenueInfo(showLoader: true) { (isSuccess, response, error) in
+        VenueInfo.getVenueInfo(strQRCode: AppUtils.APPDELEGATE().strQRCodeValue, showLoader: true) { (isSuccess, response, error) in
             if isSuccess == true {
                 //Get Data
                 self.venue = response?.formattedData as! VenueInfo
@@ -112,6 +112,17 @@ extension VenueDetail {
                 }
                 
             }else {
+                //Prompt alert
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Invalid QRCode", message: "It seems like you have scanned wrong QRCode. Please scan right code.", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default , handler:{ (UIAlertAction)in
+                        //Pop
+                        _ = self.navigationController?.popViewController(animated: true)
+                    }))
+                    
+                    self.present(alert, animated: true, completion: {})
+                }
             }
         }
     }

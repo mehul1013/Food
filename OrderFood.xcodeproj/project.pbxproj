@@ -671,7 +671,7 @@
 				TargetAttributes = {
 					0ECA5FB9209CA7410034AE81 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 2FYBA6R753;
+						DevelopmentTeam = JEDFVGAD9T;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
@@ -682,14 +682,14 @@
 					};
 					0ECA5FCD209CA7410034AE81 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 2FYBA6R753;
+						DevelopmentTeam = 5K253QSHWM;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0ECA5FB9209CA7410034AE81;
 					};
 					0ECA5FD8209CA7410034AE81 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 2FYBA6R753;
+						DevelopmentTeam = 5K253QSHWM;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0ECA5FB9209CA7410034AE81;
@@ -1020,11 +1020,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zach Campbell (2P7D4P5PU9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 2FYBA6R753;
+				DEVELOPMENT_TEAM = 5K253QSHWM;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1044,7 +1044,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "693ab2b6-fed7-409d-a51b-0079f38e7637";
+				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1073,11 +1073,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zach Campbell (2P7D4P5PU9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zach Campbell (2P7D4P5PU9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2FYBA6R753;
+				DEVELOPMENT_TEAM = 5K253QSHWM;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1090,7 +1090,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "693ab2b6-fed7-409d-a51b-0079f38e7637";
+				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -1103,15 +1103,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OrderFood/OrderFood.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zach Campbell (2P7D4P5PU9)";
-				DEVELOPMENT_TEAM = 2FYBA6R753;
+				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
+				DEVELOPMENT_TEAM = JEDFVGAD9T;
 				INFOPLIST_FILE = OrderFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.strongfriends.app;
+				PRODUCT_BUNDLE_IDENTIFIER = mobapp.at.foodandbeverage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "693ab2b6-fed7-409d-a51b-0079f38e7637";
-				PROVISIONING_PROFILE_SPECIFIER = StrongFriends_Development;
+				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
+				PROVISIONING_PROFILE_SPECIFIER = EZFnB_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = OrderFood/OrderFood_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1124,15 +1124,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = OrderFood/OrderFood.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zach Campbell (2P7D4P5PU9)";
-				DEVELOPMENT_TEAM = 2FYBA6R753;
+				CODE_SIGN_IDENTITY = "iPhone Developer: MehulS Solanki (2U28KPSZDV)";
+				DEVELOPMENT_TEAM = JEDFVGAD9T;
 				INFOPLIST_FILE = OrderFood/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.strongfriends.app;
+				PRODUCT_BUNDLE_IDENTIFIER = mobapp.at.foodandbeverage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "693ab2b6-fed7-409d-a51b-0079f38e7637";
-				PROVISIONING_PROFILE_SPECIFIER = StrongFriends_Development;
+				PROVISIONING_PROFILE = "ce689b6a-0f27-443a-ad35-c23d1930c199";
+				PROVISIONING_PROFILE_SPECIFIER = EZFnB_Development;
 				SWIFT_OBJC_BRIDGING_HEADER = OrderFood/OrderFood_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

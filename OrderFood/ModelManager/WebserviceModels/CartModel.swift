@@ -55,6 +55,9 @@ class cartDeliveryDict: Mappable {
     internal var rowId      : Int = 0
     internal var seatId     : Int = 0
     
+    internal var restaurantName : String = ""
+    internal var restaurantImage : String = ""
+    
     init() {}
     
     class var mapperObj : Mapper<cartDeliveryDict>  {

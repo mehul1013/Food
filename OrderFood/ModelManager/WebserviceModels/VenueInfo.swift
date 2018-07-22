@@ -59,17 +59,15 @@ class VenueInfo: Mappable {
     
     
     //MARK: - Get Cart
-    class func getVenueInfo(showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
-        
-        let uuid = UIDevice.current.identifierForVendor
+    class func getVenueInfo(strQRCode: String, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
         
         //Make URL
-        var strURL = WS_GET_VENUE_INFO// + (uuid?.uuidString)!
+        var strURL = WS_GET_VENUE_INFO + "\(strQRCode).json" // + (uuid?.uuidString)!
         strURL = strURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         print(strURL)
         
         WebSerivceManager.GETRequest(url: strURL, showLoader: showLoader) { (isSuccess, response, error) in
-            if response?.data == nil {
+            if isSuccess == false {
                 completionHandler(isSuccess, nil, error)
             }else {
                 

@@ -120,7 +120,7 @@ let WS_BASE_URL: String = "https://ezfnb-staging-api.azurewebsites.net/"
 //let WS_DELETE_CART      = WS_BASE_URL + "DeleteGuestCartItem?Guid="
 
 let WS_REGISTER_USER        = WS_BASE_URL + "register.json"
-let WS_GET_VENUE_INFO       = WS_BASE_URL + "venues/scan/1|4|1|1|1|2.json"
+let WS_GET_VENUE_INFO       = WS_BASE_URL + "venues/scan/"
 let WS_GET_RESTAURANT       = WS_BASE_URL + "kitchens/list/"
 let WS_GET_CART_DETAIL      = WS_BASE_URL + "guestcarts/read/"
 let WS_CREATE_GUEST_CART    = WS_BASE_URL + "guestcarts/create.json"

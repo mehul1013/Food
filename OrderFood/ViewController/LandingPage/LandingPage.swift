@@ -61,10 +61,12 @@ class LandingPage: SuperViewController {
         //Temp
         //Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(navigate(_:)), userInfo: nil, repeats: false)
         
+        /*
         //Temp
         let barTemp = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(LandingPage.navigateSkip))
         barTemp.tintColor = UIColor.white
         self.navigationItem.rightBarButtonItem = barTemp
+        */
         
         //Initialise Camera
         self.initialiseCamera()

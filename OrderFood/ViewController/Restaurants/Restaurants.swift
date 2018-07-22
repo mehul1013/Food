@@ -41,6 +41,9 @@ class Restaurants: SuperViewController {
         //Get Model
         let model = self.restaurant[sender.tag]
         
+        AppUtils.APPDELEGATE().CartDeliveryModel.restaurantName = model.name
+        AppUtils.APPDELEGATE().CartDeliveryModel.restaurantImage = model.imageUrl
+        
         AppUtils.APPDELEGATE().CartDeliveryModel.kitchenId  = model.kitchenId
         AppUtils.APPDELEGATE().CartDeliveryModel.venueId    = model.venueId
         //AppUtils.APPDELEGATE().CartDeliveryModel.levelId    = (self.cartInfo.cartDelivery?.levelId)!
@@ -60,6 +63,10 @@ class Restaurants: SuperViewController {
 
 //MARK: - UICollectionView Delegates
 extension Restaurants: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 206)
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

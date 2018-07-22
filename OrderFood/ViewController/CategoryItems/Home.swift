@@ -123,7 +123,9 @@ class Home: SuperViewController {
                 total = total + (numberOfItemDouble * item.price!)
                 
                 //Tax
-                total = total + (numberOfItemDouble * item.tax!)
+                if let tax = item.tax {
+                    total = total + (numberOfItemDouble * tax)
+                }
             }
             
             //Set Data

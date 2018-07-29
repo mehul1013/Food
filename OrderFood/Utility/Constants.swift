@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class Constants: NSObject {
     
     //RazorPay - MeHuLa Account
@@ -69,6 +71,7 @@ class Constants: NSObject {
     static let POWERED_BY           = "Powered by Controlcast"
     
     
+    
     //MARK: - Fonts
     struct Fonts {
         static let Roboto_Light             = "Roboto-Light"
@@ -109,6 +112,7 @@ class Constants: NSObject {
         static let ORDER_CONFIRMATION       = "OrderConfirmation"
         static let CARD_INFORMATION         = "CardInformation"
         static let RESTAURANTS              = "Restaurants"
+        static let MY_ORDERS                = "MyOrders"
     }
     
     
@@ -219,6 +223,13 @@ class Constants: NSObject {
         static let userLoggedIn = "isLogin"
         static let userKey = "key"
 
+    }
+}
+
+//MARK: - Check device is SIMULATOR
+extension UIDevice {
+    static var isSimulator: Bool {
+        return ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil
     }
 }
 

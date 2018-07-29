@@ -42,6 +42,8 @@
 		0E6E69D1210351C300870AF0 /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E69D0210351C200870AF0 /* Introduction.swift */; };
 		0E6E69D32103535F00870AF0 /* CellIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E69D22103535F00870AF0 /* CellIntro.swift */; };
 		0E735F3F20CBDC85006D2DC9 /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */; };
+		0E7DFC69210DA584006AD910 /* CellMyOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7DFC68210DA584006AD910 /* CellMyOrder.swift */; };
+		0E9DEDA7210D884A00E8EE45 /* MyOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9DEDA6210D884A00E8EE45 /* MyOrders.swift */; };
 		0EC267BB20CD6BA7008257E2 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC267BA20CD6BA7008257E2 /* CartModel.swift */; };
 		0ECA5FBE209CA7410034AE81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FBD209CA7410034AE81 /* AppDelegate.swift */; };
 		0ECA5FC3209CA7410034AE81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA5FC1209CA7410034AE81 /* Main.storyboard */; };
@@ -136,6 +138,8 @@
 		0E6E69D0210351C200870AF0 /* Introduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
 		0E6E69D22103535F00870AF0 /* CellIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIntro.swift; sourceTree = "<group>"; };
 		0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
+		0E7DFC68210DA584006AD910 /* CellMyOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellMyOrder.swift; sourceTree = "<group>"; };
+		0E9DEDA6210D884A00E8EE45 /* MyOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrders.swift; sourceTree = "<group>"; };
 		0EC267BA20CD6BA7008257E2 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		0ECA5FBA209CA7410034AE81 /* OrderFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECA5FBD209CA7410034AE81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 		0E311C57209D8FE1008F7DD1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0E9DEDA5210D881A00E8EE45 /* MyOrders */,
 				0E6E69CF210351C200870AF0 /* Introduction */,
 				0E0D02FC20FB6E1F008E980A /* Restaurants */,
 				0E735F3D20CBDC84006D2DC9 /* CardInformation */,
@@ -386,6 +391,15 @@
 				0E735F3E20CBDC84006D2DC9 /* CardInformation.swift */,
 			);
 			path = CardInformation;
+			sourceTree = "<group>";
+		};
+		0E9DEDA5210D881A00E8EE45 /* MyOrders */ = {
+			isa = PBXGroup;
+			children = (
+				0E9DEDA6210D884A00E8EE45 /* MyOrders.swift */,
+				0E7DFC68210DA584006AD910 /* CellMyOrder.swift */,
+			);
+			path = MyOrders;
 			sourceTree = "<group>";
 		};
 		0ECA5FB1209CA7410034AE81 = {
@@ -920,6 +934,7 @@
 				0ECA5FBE209CA7410034AE81 /* AppDelegate.swift in Sources */,
 				0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */,
 				0E735F3F20CBDC85006D2DC9 /* CardInformation.swift in Sources */,
+				0E9DEDA7210D884A00E8EE45 /* MyOrders.swift in Sources */,
 				2A648DA220C15B430059E75B /* Item.swift in Sources */,
 				0E311C6C209D8FE1008F7DD1 /* SuperViewController.swift in Sources */,
 				0E0D02FE20FB6E20008E980A /* Restaurants.swift in Sources */,
@@ -939,6 +954,7 @@
 				2A9CB46420C00F4900B749AD /* SDWebImageCompat.m in Sources */,
 				2A9CB47220C00F4900B749AD /* WebSerivceManager.swift in Sources */,
 				2A9CB46A20C00F4900B749AD /* UIButton+WebCache.m in Sources */,
+				0E7DFC69210DA584006AD910 /* CellMyOrder.swift in Sources */,
 				2A9CB47820C00F4900B749AD /* Category.swift in Sources */,
 				2A9CB46E20C00F4900B749AD /* UIImageView+HighlightedWebCache.m in Sources */,
 				2A9CB46B20C00F4900B749AD /* UIImage+GIF.m in Sources */,

@@ -77,6 +77,13 @@ class VenueDetail: SuperViewController {
     }
  
     
+    //MARK: - My Orders
+    @IBAction func btnMyOrdersClicked(_ sender: Any) {
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.MY_ORDERS) as! MyOrders
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
+    
+    
     //MARK: - View Online Menu
     @IBAction func btnViewMenuClicked(_ sender: Any) {
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.RESTAURANTS) as! Restaurants

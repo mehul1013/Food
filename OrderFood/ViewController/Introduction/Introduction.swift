@@ -141,8 +141,11 @@ extension Introduction: FUIAuthDelegate {
         }else {
             //Fail
             print("Error : \(error?.localizedDescription)")
-            //self.navigateToLandingPage()
             
+            //If it is Simulator
+            if UIDevice.isSimulator {
+                self.navigateToLandingPage()
+            }
         }
     }
 }

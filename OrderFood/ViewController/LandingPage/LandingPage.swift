@@ -61,12 +61,13 @@ class LandingPage: SuperViewController {
         //Temp
         //Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(navigate(_:)), userInfo: nil, repeats: false)
         
-        /*
-        //Temp
-        let barTemp = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(LandingPage.navigateSkip))
-        barTemp.tintColor = UIColor.white
-        self.navigationItem.rightBarButtonItem = barTemp
-        */
+        //If it is Simulator
+        if UIDevice.isSimulator == true {
+            //Temp
+            let barTemp = UIBarButtonItem(title: "Skip", style: .plain, target: self, action: #selector(LandingPage.navigateSkip))
+            barTemp.tintColor = UIColor.white
+            self.navigationItem.rightBarButtonItem = barTemp
+        }
         
         //Initialise Camera
         self.initialiseCamera()
@@ -107,7 +108,8 @@ class LandingPage: SuperViewController {
     
     func navigateSkip() -> Void {
         //QRCode Default Value
-        AppUtils.APPDELEGATE().strQRCodeValue = "KkPuRiWFfn"
+        //AppUtils.APPDELEGATE().strQRCodeValue = "KkPuRiWFfn"
+        AppUtils.APPDELEGATE().strQRCodeValue = "1|4|1|1|1|2"
         
         //Navigate To Venue Details
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.VENUE_DETAIL) as! VenueDetail

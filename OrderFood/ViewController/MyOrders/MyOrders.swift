@@ -10,11 +10,15 @@ import UIKit
 
 class MyOrders: SuperViewController {
 
+    @IBOutlet weak var collectionViewMyOrders: UICollectionView!
+    
     @IBOutlet weak var btnCurrentOrder: UIButton!
     @IBOutlet weak var btnPastOrder: UIButton!
     @IBOutlet weak var lblSeparator: UILabel!
     @IBOutlet weak var constraintLeading_Separator: NSLayoutConstraint!
     
+    var arrayCurrentOrders = [MyOrderModel]()
+    var arrayPastOrders = [MyOrderModel]()
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -23,6 +27,9 @@ class MyOrders: SuperViewController {
         
         //Navigation Bar Title
         self.navigationItem.title = "My Orders"
+        
+        //Get Current Orders
+        self.getCurrentOrders()
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,12 +68,57 @@ extension MyOrders: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.arrayCurrentOrders.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellMyOrder", for: indexPath) as! CellMyOrder
         
+        //Get Model
+        let model = self.arrayCurrentOrders[indexPath.row]
+        
+        //Set Data
+        if model.kitchenLogo.contains("https") {
+            let url = URL(string: model.kitchenLogo)
+            cell.imageViewLogo.sd_setImage(with: url, placeholderImage: UIImage(named: "NoImage"))
+        }else {
+            let url = URL(string: "https:" + model.kitchenLogo)
+            cell.imageViewLogo.sd_setImage(with: url, placeholderImage: UIImage(named: "NoImage"))
+        }
+        
+        cell.lblVenueName.text = model.kitchenName
+        cell.lblSeatNumber.text = "Seat No: \(model.rowName) - \(model.seatName)"
+        cell.lblOrderDate.text = model.orderDate
+        cell.lblTotalAmount.text = "$\(model.totalAmount)"
+        
         return cell
+    }
+}
+
+
+//MARK: - Web Services
+extension MyOrders {
+    //MARK: - Get Current Orders
+    func getCurrentOrders() -> Void {
+        MyOrderModel.getCurrentOrders(strVenueID: "1", showLoader: true) { (isSuccess, response, error) in
+            if isSuccess == true {
+                //Get Data
+                self.arrayCurrentOrders = response?.formattedData as! [MyOrderModel]
+                print("Current Orders = \(self.arrayCurrentOrders)")
+                
+                //Set Data
+                DispatchQueue.main.async {
+                    self.collectionViewMyOrders.reloadData()
+                }
+                
+            }else {
+            }
+        }
+    }
+    
+    
+    //MARK: - Get Past Orders
+    func getPastOrders() -> Void {
+        
     }
 }

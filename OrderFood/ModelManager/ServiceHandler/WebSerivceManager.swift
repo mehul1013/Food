@@ -128,6 +128,7 @@ let WS_DELETE_CART          = WS_BASE_URL + "guestcarts/items/delete/"
 let WS_GET_CATEGORY         = WS_BASE_URL + "categories/list/"
 let WS_GET_ITEM             = WS_BASE_URL + "items/list/"
 let WS_SEARCH_ITEM          = WS_BASE_URL + "items/searchList/"
+let WS_CURRENT_ORDER        = WS_BASE_URL + "orders/list/"
 
 
 
@@ -325,7 +326,11 @@ class WebSerivceManager:NSObject {
         
         //Header
         //HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 6aeb3973-e5af-4585-840f-14dca848f05a"]
-        HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 6aeb3973-e5af-4585-840f-14dca848f05a",
+        
+        /*HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 6aeb3973-e5af-4585-840f-14dca848f05a",
+                                                       "Content-Type" : "application/json"]*/
+        
+        HeaderClass.objHeaderClass.HeaderDictionary = ["Authorization" : "Bearer 80b203a0-4d81-4a7a-b3f0-ccb3b4ed7ec4",
                                                        "Content-Type" : "application/json"]
         print(HeaderClass.objHeaderClass.HeaderDictionary)
         

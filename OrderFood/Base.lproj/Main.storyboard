@@ -489,6 +489,13 @@
                                             <constraint firstItem="W5W-29-3gf" firstAttribute="leading" secondItem="SvC-5h-zj2" secondAttribute="trailing" constant="10" id="y31-fm-enB"/>
                                             <constraint firstItem="kCj-wc-zAH" firstAttribute="leading" secondItem="teQ-gI-GG7" secondAttribute="leading" constant="15" id="yqC-Uy-Lj9"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imageViewLogo" destination="SvC-5h-zj2" id="5VG-Aa-HTA"/>
+                                            <outlet property="lblOrderDate" destination="f6P-rJ-Q9j" id="Bj0-Zi-AXS"/>
+                                            <outlet property="lblSeatNumber" destination="gZY-S7-HN1" id="wqM-oJ-pqT"/>
+                                            <outlet property="lblTotalAmount" destination="r2w-Hv-a0a" id="CJf-xn-6tH"/>
+                                            <outlet property="lblVenueName" destination="W5W-29-3gf" id="QjL-1D-vQp"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -519,6 +526,7 @@
                     <connections>
                         <outlet property="btnCurrentOrder" destination="Myo-1Q-c5c" id="mxd-Dx-MDh"/>
                         <outlet property="btnPastOrder" destination="wro-fd-Cjh" id="tQo-s8-TdS"/>
+                        <outlet property="collectionViewMyOrders" destination="Q5A-60-Njt" id="8FN-DJ-aON"/>
                         <outlet property="constraintLeading_Separator" destination="xci-0c-RZU" id="VNW-If-jnK"/>
                         <outlet property="lblSeparator" destination="KN2-vB-9dR" id="Z9o-rY-N5J"/>
                     </connections>

@@ -37,6 +37,7 @@
 		0E311C85209DB15E008F7DD1 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C79209DB15E008F7DD1 /* Roboto-Thin.ttf */; };
 		0E311C86209DB15E008F7DD1 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */; };
 		0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */; };
+		0E4F792F211B3CD800725505 /* MyOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F792E211B3CD800725505 /* MyOrderModel.swift */; };
 		0E52208820F246B800572A17 /* VenueInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E52208720F246B800572A17 /* VenueInfo.swift */; };
 		0E6B100C20ADF250007F3EFA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B100B20ADF250007F3EFA /* Search.swift */; };
 		0E6E69D1210351C300870AF0 /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6E69D0210351C200870AF0 /* Introduction.swift */; };
@@ -133,6 +134,7 @@
 		0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetail.swift; sourceTree = "<group>"; };
 		0E4D54E420D68DF8001F181C /* OrderFood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderFood.entitlements; sourceTree = "<group>"; };
+		0E4F792E211B3CD800725505 /* MyOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderModel.swift; sourceTree = "<group>"; };
 		0E52208720F246B800572A17 /* VenueInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueInfo.swift; sourceTree = "<group>"; };
 		0E6B100B20ADF250007F3EFA /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		0E6E69D0210351C200870AF0 /* Introduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 				0E52208720F246B800572A17 /* VenueInfo.swift */,
 				0E0D030120FB7854008E980A /* RestaurantModel.swift */,
 				FF6826B920FE0687001E74E6 /* UserModel.swift */,
+				0E4F792E211B3CD800725505 /* MyOrderModel.swift */,
 			);
 			path = WebserviceModels;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				0ECA5FBE209CA7410034AE81 /* AppDelegate.swift in Sources */,
 				0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */,
 				0E735F3F20CBDC85006D2DC9 /* CardInformation.swift in Sources */,
+				0E4F792F211B3CD800725505 /* MyOrderModel.swift in Sources */,
 				0E9DEDA7210D884A00E8EE45 /* MyOrders.swift in Sources */,
 				2A648DA220C15B430059E75B /* Item.swift in Sources */,
 				0E311C6C209D8FE1008F7DD1 /* SuperViewController.swift in Sources */,

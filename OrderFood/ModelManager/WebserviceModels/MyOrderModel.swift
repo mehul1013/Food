@@ -56,11 +56,31 @@ class MyOrderModel: Mappable {
     }
     
     
-    //MARK: - Get Cart
+    //MARK: - Get Current Orders
     class func getCurrentOrders(strVenueID: String, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
         
         //Make URL
         var strURL = WS_CURRENT_ORDER + "\(strVenueID)/current.json"
+        strURL = strURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        print(strURL)
+        
+        WebSerivceManager.GETRequest(url: strURL, showLoader: showLoader) { (isSuccess, response, error) in
+            if isSuccess == false {
+                completionHandler(isSuccess, nil, error)
+            }else {
+                let dictionary = self.mapperObj.mapArray(JSONArray: response?.data as! [[String : Any]])
+                response?.formattedData = dictionary as AnyObject?
+                
+                completionHandler(isSuccess, response, error)
+            }
+        }
+    }
+    
+    //MARK: - Get Past Orders
+    class func getPastOrders(strVenueID: String, showLoader: Bool, completionHandler:@escaping ((Bool?, WebServiceReponse?, Error?) -> Void)) {
+        
+        //Make URL
+        var strURL = WS_CURRENT_ORDER + "\(strVenueID)/past.json"
         strURL = strURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         print(strURL)
         

@@ -16,4 +16,5 @@ class CellMyOrder: UICollectionViewCell {
     @IBOutlet weak var lblOrderDate: UILabel!
     @IBOutlet weak var lblTotalAmount: UILabel!
     
+    @IBOutlet weak var btnOrderNumber: UIButton!
 }

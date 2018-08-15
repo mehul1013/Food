@@ -52,6 +52,7 @@
 		0ECA5FC8209CA7410034AE81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA5FC6209CA7410034AE81 /* LaunchScreen.storyboard */; };
 		0ECA5FD3209CA7410034AE81 /* OrderFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FD2209CA7410034AE81 /* OrderFoodTests.swift */; };
 		0ECA5FDE209CA7410034AE81 /* OrderFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECA5FDD209CA7410034AE81 /* OrderFoodUITests.swift */; };
+		0EE25E7421246885006E7063 /* OrderInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE25E7321246885006E7063 /* OrderInformation.swift */; };
 		2A648DA020C13C300059E75B /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A648D9F20C13C2F0059E75B /* Cart.swift */; };
 		2A648DA220C15B430059E75B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A648DA120C15B430059E75B /* Item.swift */; };
 		2A9CB46020C00F4900B749AD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CB43220C00F4900B749AD /* MBProgressHUD.m */; };
@@ -155,6 +156,7 @@
 		0ECA5FD9209CA7410034AE81 /* OrderFoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderFoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECA5FDD209CA7410034AE81 /* OrderFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFoodUITests.swift; sourceTree = "<group>"; };
 		0ECA5FDF209CA7410034AE81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EE25E7321246885006E7063 /* OrderInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInformation.swift; sourceTree = "<group>"; };
 		1F757BEDC2925B660A2405CE /* Pods_OrderFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A648D9F20C13C2F0059E75B /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		2A648DA120C15B430059E75B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 			children = (
 				0E9DEDA6210D884A00E8EE45 /* MyOrders.swift */,
 				0E7DFC68210DA584006AD910 /* CellMyOrder.swift */,
+				0EE25E7321246885006E7063 /* OrderInformation.swift */,
 			);
 			path = MyOrders;
 			sourceTree = "<group>";
@@ -916,6 +919,7 @@
 				0E6E69D32103535F00870AF0 /* CellIntro.swift in Sources */,
 				2AC9CB0A20AC6537005AD6A9 /* CellMyCart.swift in Sources */,
 				2A9CB46920C00F4900B749AD /* SDWebImagePrefetcher.m in Sources */,
+				0EE25E7421246885006E7063 /* OrderInformation.swift in Sources */,
 				2A9CB47020C00F4900B749AD /* UIView+WebCacheOperation.m in Sources */,
 				0E52208820F246B800572A17 /* VenueInfo.swift in Sources */,
 				0EC267BB20CD6BA7008257E2 /* CartModel.swift in Sources */,

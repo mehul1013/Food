@@ -17,4 +17,5 @@ class CellMyOrder: UICollectionViewCell {
     @IBOutlet weak var lblTotalAmount: UILabel!
     
     @IBOutlet weak var btnOrderNumber: UIButton!
+    @IBOutlet weak var imageViewOrderStatus: UIImageView!
 }

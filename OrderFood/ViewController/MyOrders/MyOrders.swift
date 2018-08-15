@@ -59,6 +59,9 @@ class MyOrders: SuperViewController {
     @IBAction func btnCurrentOrderClicked(_ sender: Any) {
         //Animate Separator
         self.constraintLeading_Separator.constant = 0
+        
+        self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
@@ -75,10 +78,11 @@ class MyOrders: SuperViewController {
         let value = UIScreen.main.bounds.size.width / 2
         self.constraintLeading_Separator.constant = value
         
+        self.scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.size.width, y: 0), animated: true)
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         }) { (isCompleted) in
-            self.scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.size.width, y: 0), animated: true)
         }
         
         if arrayPastOrders.count <= 0 {
@@ -87,6 +91,14 @@ class MyOrders: SuperViewController {
             self.collectionViewPastOrders.reloadData()
         }
     }
+    
+    
+    func btnOrderNumberClicked(_ sender: UIButton) -> Void {
+        //Navigate to Order Information
+        let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.ORDER_INFORMATION) as! OrderInformation
+        
+        self.navigationController?.pushViewController(viewCTR, animated: true)
+    }
 }
 
 
@@ -94,6 +106,9 @@ class MyOrders: SuperViewController {
 extension MyOrders: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.frame.size.width
+        
+        print("Content Offset : \(scrollView.contentOffset.x)")
+        print("Page : \(page)")
         
         if page == 0 && scrollView.contentOffset.x == 0 {
             //Current Order
@@ -167,12 +182,34 @@ extension MyOrders: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             cell.imageViewLogo.sd_setImage(with: url, placeholderImage: UIImage(named: "NoImage"))
         }
         
+        //Order Status
+        /*if model.orderStatus.lowercased() == "" {
+            //Ordered
+            cell.imageViewOrderStatus.image = UIImage(named: "")
+        }else*/ if model.orderStatus.lowercased() == "new" {
+            //Confirmed
+            cell.imageViewOrderStatus.image = UIImage(named: "Order1")
+        }else if model.orderStatus.lowercased() == "preparing" {
+            //Preparing
+            cell.imageViewOrderStatus.image = UIImage(named: "Order3")
+        }else if model.orderStatus.lowercased() == "onway" {
+            //On Way
+            cell.imageViewOrderStatus.image = UIImage(named: "Order3")
+        }else /*if model.orderStatus.lowercased() == ""*/ {
+            //Delivered
+            cell.imageViewOrderStatus.image = UIImage(named: "Order4")
+        }
+        
         cell.lblVenueName.text = model.kitchenName
         cell.lblSeatNumber.text = "Seat No: \(model.rowName) - \(model.seatName)"
         cell.lblOrderDate.text = model.orderDate
         cell.lblTotalAmount.text = "$\(model.totalAmount)"
         
         cell.btnOrderNumber.setTitle("Order Number : \(model.orderNumber)", for: .normal)
+        
+        //Add Target
+        cell.btnOrderNumber.tag = indexPath.row
+        cell.btnOrderNumber.addTarget(self, action: #selector(btnOrderNumberClicked), for: .touchUpInside)
         
         return cell
     }

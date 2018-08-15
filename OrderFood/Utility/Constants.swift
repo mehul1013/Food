@@ -113,6 +113,7 @@ class Constants: NSObject {
         static let CARD_INFORMATION         = "CardInformation"
         static let RESTAURANTS              = "Restaurants"
         static let MY_ORDERS                = "MyOrders"
+        static let ORDER_INFORMATION        = "OrderInformation"
     }
     
     

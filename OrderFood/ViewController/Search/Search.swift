@@ -355,17 +355,27 @@ extension Search {
                 self.arrayItems = response?.formattedData as! [SearchItem]
                 print("Item Count = \(self.arrayItems.count)")
                 
-                //If any ITEM added to CART, then assign NUMBER OF ITEM to related MODEL
-                if AppUtils.APPDELEGATE().arrayCart.count > 0 {
-                    for item in AppUtils.APPDELEGATE().arrayCart {
-                        for model in self.arrayItems {
-                            if model.id == item.itemID {
-                                model.numberOfItem = item.numberOfItem!
+                if self.arrayItems.count <= 0 {
+                    //Show No Data
+                    self.showNoData(self)
+                }else {
+                    //Hide No Data
+                    self.hideNoData()
+                    
+                    //If any ITEM added to CART, then assign NUMBER OF ITEM to related MODEL
+                    if AppUtils.APPDELEGATE().arrayCart.count > 0 {
+                        for item in AppUtils.APPDELEGATE().arrayCart {
+                            for model in self.arrayItems {
+                                if model.id == item.itemID {
+                                    model.numberOfItem = item.numberOfItem!
+                                }
                             }
                         }
                     }
                 }
             }else {
+                //Show No Data
+                self.showNoData(self)
             }
             
             //Reload Table View

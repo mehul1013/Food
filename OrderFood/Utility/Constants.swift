@@ -238,6 +238,7 @@ extension UIDevice {
 struct Colors {
     static let YELLOW  = UIColor(red: 231/255.0, green: 231/255.0, blue: 48/255.0, alpha: 1.0)
     static let BLACK   = UIColor(red: 26/255.0, green: 26/255.0, blue: 26/255.0, alpha: 1.0)
+    static let MAROON  = UIColor(red: 161/255.0, green: 55/255.0, blue: 36/255.0, alpha: 1.0)
 }
 
 //Check Screen Status

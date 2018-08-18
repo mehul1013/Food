@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class CategoryViewController: SuperViewController {
 
     var tableViewItems: UITableView!
     var arrayCartItem = [Int]()
@@ -402,29 +402,39 @@ extension CategoryViewController {
                 self.arrayItems = response?.formattedData as! [Item]
                 print("Item Count = \(self.arrayItems.count)")
                 
-                if self.arrayItems.count > 0 {
+                if self.arrayItems.count <= 0 {
+                    //Show No Data
+                    self.showNoData(self)
+                }else {
+                    //Hide No Data
+                    self.hideNoData()
                     
-                    //If any ITEM added to CART from SEARCH screen, then assign NUMBER OF ITEM to related MODEL
-                    if AppUtils.APPDELEGATE().arrayCart.count > 0 {
-                        for item in AppUtils.APPDELEGATE().arrayCart {
-                            for model in self.arrayItems {
-                                if model.id == item.itemID {
-                                    model.numberOfItem = item.numberOfItem!
+                    if self.arrayItems.count > 0 {
+                        
+                        //If any ITEM added to CART from SEARCH screen, then assign NUMBER OF ITEM to related MODEL
+                        if AppUtils.APPDELEGATE().arrayCart.count > 0 {
+                            for item in AppUtils.APPDELEGATE().arrayCart {
+                                for model in self.arrayItems {
+                                    if model.id == item.itemID {
+                                        model.numberOfItem = item.numberOfItem!
+                                    }
                                 }
                             }
+                            
+                            //Get Selected Item
+                            self.getItemsFromCart()
                         }
                         
-                        //Get Selected Item
-                        self.getItemsFromCart()
+                        //Reload Table View
+                        //self.tableViewItems.reloadData()
+                        
+                        //Filter Data on Veg / Non-Veg condition
+                        self.filterItems(AppUtils.APPDELEGATE().isNeedToShowVegItemsOnly)
                     }
-                    
-                    //Reload Table View
-                    //self.tableViewItems.reloadData()
-                    
-                    //Filter Data on Veg / Non-Veg condition
-                    self.filterItems(AppUtils.APPDELEGATE().isNeedToShowVegItemsOnly)
                 }
             }else {
+                //Show No Data
+                self.showNoData(self)
             }
         }
     }

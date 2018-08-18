@@ -18,6 +18,7 @@ class Restaurants: SuperViewController {
     var restaurant = [RestaurantModel]()
     var cartInfo: CartModel!
     
+    
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,13 +135,24 @@ extension Restaurants {
                 
                 //Set Data
                 DispatchQueue.main.async {
-                    self.collectionViewRestaurant.reloadData()
                     
-                    //Get Cart, if available
-                    self.getCart()
+                    if self.restaurant.count <= 0 {
+                        //Show No Data
+                        self.showNoData(self)
+                    }else {
+                        //Hide No Data
+                        self.hideNoData()
+                        
+                        self.collectionViewRestaurant.reloadData()
+                        
+                        //Get Cart, if available
+                        self.getCart()
+                    }
                 }
                 
             }else {
+                //Show No Data
+                self.showNoData(self)
             }
         }
     }

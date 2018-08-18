@@ -136,6 +136,7 @@ extension MyOrders: UIScrollViewDelegate {
             }else {
                 self.collectionViewMyOrders.reloadData()
             }
+            
         }else if page == 1 && scrollView.contentOffset.x == UIScreen.main.bounds.width {
             //Past Order
             isCurrentOrderScreen = false
@@ -237,9 +238,17 @@ extension MyOrders {
                 self.arrayCurrentOrders = response?.formattedData as! [MyOrderModel]
                 print("Current Orders = \(self.arrayCurrentOrders)")
                 
-                //Set Data
-                DispatchQueue.main.async {
-                    self.collectionViewMyOrders.reloadData()
+                if self.arrayCurrentOrders.count <= 0 {
+                    //Show No Data
+                    self.showNoData(self)
+                }else {
+                    //Hide No Data
+                    self.hideNoData()
+                    
+                    //Set Data
+                    DispatchQueue.main.async {
+                        self.collectionViewMyOrders.reloadData()
+                    }
                 }
                 
             }else {
@@ -256,9 +265,17 @@ extension MyOrders {
                 self.arrayPastOrders = response?.formattedData as! [MyOrderModel]
                 print("Past Orders = \(self.arrayCurrentOrders)")
                 
-                //Set Data
-                DispatchQueue.main.async {
-                    self.collectionViewPastOrders.reloadData()
+                if self.arrayPastOrders.count <= 0 {
+                    //Show No Data
+                    self.showNoData(self)
+                }else {
+                    //Hide No Data
+                    self.hideNoData()
+                    
+                    //Set Data
+                    DispatchQueue.main.async {
+                        self.collectionViewPastOrders.reloadData()
+                    }
                 }
                 
             }else {

@@ -37,6 +37,7 @@
 		0E311C85209DB15E008F7DD1 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C79209DB15E008F7DD1 /* Roboto-Thin.ttf */; };
 		0E311C86209DB15E008F7DD1 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */; };
 		0E311C8B209DBB74008F7DD1 /* VenueDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */; };
+		0E3C9DD32127F6D50049D3B8 /* MyOrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3C9DD22127F6D50049D3B8 /* MyOrderInfo.swift */; };
 		0E4F792F211B3CD800725505 /* MyOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F792E211B3CD800725505 /* MyOrderModel.swift */; };
 		0E52208820F246B800572A17 /* VenueInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E52208720F246B800572A17 /* VenueInfo.swift */; };
 		0E6B100C20ADF250007F3EFA /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B100B20ADF250007F3EFA /* Search.swift */; };
@@ -134,6 +135,7 @@
 		0E311C79209DB15E008F7DD1 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		0E311C7A209DB15E008F7DD1 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		0E311C8A209DBB74008F7DD1 /* VenueDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetail.swift; sourceTree = "<group>"; };
+		0E3C9DD22127F6D50049D3B8 /* MyOrderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderInfo.swift; sourceTree = "<group>"; };
 		0E4D54E420D68DF8001F181C /* OrderFood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OrderFood.entitlements; sourceTree = "<group>"; };
 		0E4F792E211B3CD800725505 /* MyOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderModel.swift; sourceTree = "<group>"; };
 		0E52208720F246B800572A17 /* VenueInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueInfo.swift; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				0E0D030120FB7854008E980A /* RestaurantModel.swift */,
 				FF6826B920FE0687001E74E6 /* UserModel.swift */,
 				0E4F792E211B3CD800725505 /* MyOrderModel.swift */,
+				0E3C9DD22127F6D50049D3B8 /* MyOrderInfo.swift */,
 			);
 			path = WebserviceModels;
 			sourceTree = "<group>";
@@ -952,6 +955,7 @@
 				0E311C6E209D8FE1008F7DD1 /* Constants.swift in Sources */,
 				2ABB1B2F20A172F10097B596 /* Checkout.swift in Sources */,
 				0E6E69D1210351C300870AF0 /* Introduction.swift in Sources */,
+				0E3C9DD32127F6D50049D3B8 /* MyOrderInfo.swift in Sources */,
 				2A9CB46820C00F4900B749AD /* SDWebImageManager.m in Sources */,
 				2A9CB46520C00F4900B749AD /* SDWebImageDecoder.m in Sources */,
 				2A9CB46720C00F4900B749AD /* SDWebImageDownloaderOperation.m in Sources */,

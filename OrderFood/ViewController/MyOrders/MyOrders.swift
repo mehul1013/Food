@@ -97,6 +97,17 @@ class MyOrders: SuperViewController {
         //Navigate to Order Information
         let viewCTR = Constants.StoryBoardFile.MAIN_STORYBOARD.instantiateViewController(withIdentifier: Constants.StoryBoardIdentifier.ORDER_INFORMATION) as! OrderInformation
         
+        //Get Model
+        var model: MyOrderModel!
+        if self.isCurrentOrderScreen == true {
+            model = self.arrayCurrentOrders[sender.tag]
+        }else {
+            model = self.arrayPastOrders[sender.tag]
+        }
+        
+        //Pass Data
+        viewCTR.strOrderID = model.id
+        
         self.navigationController?.pushViewController(viewCTR, animated: true)
     }
 }

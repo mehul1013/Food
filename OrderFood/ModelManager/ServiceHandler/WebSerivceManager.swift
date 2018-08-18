@@ -129,6 +129,7 @@ let WS_GET_CATEGORY         = WS_BASE_URL + "categories/list/"
 let WS_GET_ITEM             = WS_BASE_URL + "items/list/"
 let WS_SEARCH_ITEM          = WS_BASE_URL + "items/searchList/"
 let WS_CURRENT_ORDER        = WS_BASE_URL + "orders/list/"
+let WS_ORDER_INFO           = WS_BASE_URL + "orders/read/"
 
 
 

@@ -21,6 +21,7 @@ class CellOrderInfo: UITableViewCell {
     @IBOutlet weak var imageViewVegOrNot: UIImageView!
     @IBOutlet weak var lblItemName: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var lblOrderStatus: UILabel!
     
 }
 
@@ -29,8 +30,12 @@ class OrderInformation: SuperViewController {
 
     @IBOutlet weak var tableViewOrderInfo: UITableView!
     
+    var strOrderID: String = ""
+    var orderInfo: MyOrderInfo!
+    var arrayItem = [MyOrderItemInfo]()
+    
     var arraySection0Title = ["Order Number", "Payment", "Date", "Deliver To"]
-    var arraySection0SubTitle = ["9ewf4ewfew4ewf654e6ew1f694fwe1ef1w", "Cash", "Jan 26, 2016 at 2:40 PM", "A - 1"]
+    var arraySection0SubTitle = ["", "", "", ""]
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -39,11 +44,31 @@ class OrderInformation: SuperViewController {
         
         //Navigation Bar Title
         self.navigationItem.title = "Order Summary"
+        
+        //Get Order Information
+        self.getOrderInformation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    //MARK: - Set Data
+    func setData() -> Void {
+        arraySection0SubTitle[0] = self.strOrderID
+        arraySection0SubTitle[1] = "Cash"
+        arraySection0SubTitle[2] = self.orderInfo.orderDesc.orderDate
+        arraySection0SubTitle[3] = "\(self.orderInfo.orderDesc.rowName) - \(self.orderInfo.orderDesc.seatName)"
+        
+        //Get Items
+        for item in self.orderInfo.itemArray! {
+            self.arrayItem.append(item)
+        }
+        
+        //Reload TableView
+        self.tableViewOrderInfo.reloadData()
     }
 }
 
@@ -56,9 +81,12 @@ extension OrderInformation: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 4
+            return self.arraySection0SubTitle.count
         }
-        return 3
+        if self.arrayItem.count > 0 {
+            return self.arrayItem.count + 1
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -69,7 +97,10 @@ extension OrderInformation: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             return 65
         }else {
-            return 40
+            if indexPath.row >= self.arrayItem.count {
+                return 115
+            }
+            return 60
         }
     }
     
@@ -95,12 +126,52 @@ extension OrderInformation: UITableViewDelegate, UITableViewDataSource {
             cell.lblSubTitle.text = self.arraySection0SubTitle[indexPath.row]
             
         }else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "CellMyCartItem") as! CellOrderInfo
-            
-            cell.lblItemName.text = "Cheese Pizza x 1"
+            if indexPath.row >= self.arrayItem.count {
+                let cellTotal = tableView.dequeueReusableCell(withIdentifier: "CellTotal") as! CellMyCart
+                
+                //Set Data
+                cellTotal.lblSubTotal.text   = "$\(self.orderInfo.orderDesc.itemAmount)"
+                cellTotal.lblTaxes.text      = "$\(self.orderInfo.orderDesc.tax)"
+                cellTotal.lblGrandTotal.text = "$\(self.orderInfo.orderDesc.totalAmount)"
+                
+                cellTotal.selectionStyle = .none
+                return cellTotal
+                
+            }else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "CellMyCartItem") as! CellOrderInfo
+                
+                //Get Model
+                let model = self.arrayItem[indexPath.row]
+                
+                cell.lblItemName.text = model.name + " x \(model.qty)"
+                cell.lblPrice.text = "$ \(model.total)"
+                cell.lblOrderStatus.text = model.status
+            }
         }
         
         cell.selectionStyle = .none
         return cell
+    }
+}
+
+
+//MARK: - Web Service
+extension OrderInformation {
+    //Get Order Information
+    func getOrderInformation() -> Void {
+        MyOrderInfo.getOrderInfo(strOrderID: self.strOrderID, showLoader: true) { (isSuccess, response, error) in
+            if isSuccess == true {
+                //Get Data
+                self.orderInfo = response?.formattedData as! MyOrderInfo
+                print("Order Info = \(self.orderInfo)")
+                
+                //Set Data
+                DispatchQueue.main.async {
+                    self.setData()
+                }
+                
+            }else {
+            }
+        }
     }
 }
